@@ -421,6 +421,26 @@ section.cta-band { background: linear-gradient(110deg, color-mix(in srgb, var(--
 .hl div { background: linear-gradient(165deg, color-mix(in srgb, var(--grad-b) 12%, var(--surface)) 0%, var(--surface) 60%) }
 section.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-b) 10%, var(--band)) 0%, var(--band) 40%, color-mix(in srgb, var(--grad-c) 10%, var(--band)) 100%) }
 .topnav { background: linear-gradient(90deg, color-mix(in srgb, var(--grad-b) 16%, var(--hero)), var(--hero) 45%, color-mix(in srgb, var(--grad-c) 16%, var(--hero))) }
+/* Tương phản mạnh: phần đầu và khung liên hệ đổ màu đậm, chữ trắng */
+.hero, .contact { --hero-fg: #FFFFFF; --hero-muted: rgba(255, 255, 255, .84); color: #FFFFFF;
+  background:
+    radial-gradient(55% 80% at 100% 0%, color-mix(in srgb, var(--grad-b) 85%, transparent) 0%, transparent 70%),
+    radial-gradient(50% 70% at 0% 100%, color-mix(in srgb, var(--grad-c) 70%, transparent) 0%, transparent 72%),
+    linear-gradient(135deg, color-mix(in srgb, var(--grad-a) 70%, #000) 0%, var(--grad-a) 45%, color-mix(in srgb, var(--grad-b) 80%, var(--grad-a)) 100%) }
+.hero h1 { background: linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 45%, color-mix(in srgb, var(--grad-c) 55%, #FFFFFF) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none }
+.hero .tag, .hero .addr, .hero p { color: rgba(255, 255, 255, .9) }
+.hero .btn-primary, .contact .btn-primary { background: #FFFFFF; color: color-mix(in srgb, var(--grad-a) 85%, #000); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .45) }
+.hero .btn-ghost, .contact .btn-ghost { color: #FFFFFF; border-color: rgba(255, 255, 255, .7) }
+.hero .btn-ghost:hover, .contact .btn-ghost:hover { background: rgba(255, 255, 255, .12) }
+.facts { border-top-color: rgba(255, 255, 255, .3) }
+.badges span { border-color: rgba(255, 255, 255, .55); color: #FFFFFF; background: rgba(255, 255, 255, .1) }
+.photo img { box-shadow: 0 22px 48px -20px rgba(0, 0, 0, .55) }
+.card { --hero-fg: var(--fg); --hero-muted: var(--muted); color: var(--fg); background: var(--surface); box-shadow: 0 20px 44px -24px rgba(0, 0, 0, .5) }
+.card .btn-primary { background: linear-gradient(120deg, var(--grad-a), var(--grad-b)); color: var(--accent-ink) }
+.card .btn-ghost { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 55%, transparent) }
+section.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-b) 20%, var(--band)) 0%, var(--band) 45%, color-mix(in srgb, var(--grad-c) 20%, var(--band)) 100%) }
+.topnav { background: linear-gradient(90deg, color-mix(in srgb, var(--grad-b) 26%, var(--bg)), var(--bg) 45%, color-mix(in srgb, var(--grad-c) 26%, var(--bg))) }
+.hl div { background: linear-gradient(165deg, color-mix(in srgb, var(--grad-b) 20%, var(--surface)) 0%, var(--surface) 65%) }
 @media (prefers-reduced-motion: reduce) { section.cta-band { animation: none } }
 </style>
 <nav class="topnav" aria-label="Mục lục">
