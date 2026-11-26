@@ -1,0 +1,71 @@
+/* Phần dùng chung cho mọi trang, nạp sau CSS riêng của từng trang.
+   Tiền tố "body" để chắc chắn ghi đè được CSS nội tuyến. */
+
+/* Thanh Gọi / Zalo trên điện thoại: nổi cao hơn đáy màn hình
+   để không bị biểu tượng "Powered by Netlify" (gói miễn phí, cao 64px ở góc phải dưới) che mất nút Zalo. */
+@media (max-width: 860px) {
+  body .fab {
+    left: max(12px, env(safe-area-inset-left, 0px));
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .35);
+  }
+  body .fab a { border-top: 0 }
+  body footer { padding-bottom: 10rem }
+  /* Menu cuộn ngang: làm mờ mép phải để khách biết còn mục phía sau */
+  body .links {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    padding-right: 20px;
+  }
+}
+
+/* Form để lại số điện thoại (Netlify Forms) */
+body .leadform {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem 1rem;
+}
+body .leadform-head { grid-column: 1 / -1; display: grid; gap: .2rem }
+body .leadform-head b { font-size: 1.15rem }
+body .leadform-head span, body .leadform .lead-consent { color: var(--muted); font-size: .88rem }
+body .leadform label { display: grid; gap: .3rem; font-size: .85rem; font-weight: 600; color: var(--muted); min-width: 0 }
+body .leadform input, body .leadform select, body .leadform textarea {
+  font: 500 1rem var(--f-body, system-ui, sans-serif);
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: .65rem .75rem;
+  width: 100%;
+  min-width: 0;
+}
+body .leadform textarea { resize: vertical }
+body .leadform input:focus-visible, body .leadform select:focus-visible, body .leadform textarea:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px }
+body .leadform .full { grid-column: 1 / -1 }
+body .leadform .lead-consent { grid-column: 1 / -1; margin: 0 }
+body .leadform .lead-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem }
+body .leadform button[disabled] { opacity: .6; cursor: wait }
+body .leadform .lead-msg { margin: 0; font-weight: 600; color: var(--fg) }
+body .leadform .lead-msg.ok { color: var(--ok, #2E7D4F) }
+body .leadform .lead-msg.err { color: var(--no, #B23B3B) }
+body .leadform .lead-msg a { color: inherit }
+body .leadform .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
+@media (max-width: 560px) {
+  body .leadform { grid-template-columns: 1fr; padding: 1.1rem }
+}
+
+/* Nút Zalo / gọi nổi trên máy tính: nằm trên biểu tượng "Powered by Netlify" ở góc phải dưới */
+@media (min-width: 861px) {
+  body .float-contact { bottom: calc(env(safe-area-inset-bottom, 0px) + 84px) }
+}
