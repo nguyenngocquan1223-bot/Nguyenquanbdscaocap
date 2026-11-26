@@ -407,27 +407,31 @@ section.cta-band { background: var(--accent); color: var(--accent-ink); padding-
 @media (max-width: 700px) { .brand { font-size: .95rem } .brand small { font-size: .55rem; letter-spacing: .1em } .links a { font-size: .9rem; padding: .45rem .55rem } .links a::after { left: .55rem; right: .55rem } }
 @media (prefers-reduced-motion: reduce) { .links a, .links a::after { transition: none } }
 /* Hiệu ứng đổ màu (gradient) */
-:root { --grad-a: var(--accent); --grad-b: #2BA0A8; --grad-c: #E3A33B }
+:root { --grad-a: var(--accent); --grad-b: #1FB5BF; --grad-c: #F2A93B }
 .hero { background:
-  radial-gradient(60% 70% at 92% 8%, color-mix(in srgb, var(--grad-b) 30%, transparent) 0%, transparent 70%),
-  radial-gradient(50% 60% at 8% 100%, color-mix(in srgb, var(--grad-c) 22%, transparent) 0%, transparent 70%),
-  linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, var(--hero)) 0%, var(--hero) 55%, color-mix(in srgb, var(--grad-c) 10%, var(--hero)) 100%) }
-.hero h1, .brand { background: linear-gradient(100deg, var(--grad-a) 0%, var(--grad-b) 55%, var(--grad-c) 110%); -webkit-background-clip: text; background-clip: text; color: transparent }
+  radial-gradient(55% 75% at 95% 5%, color-mix(in srgb, var(--grad-b) 62%, transparent) 0%, transparent 70%),
+  radial-gradient(45% 65% at 0% 100%, color-mix(in srgb, var(--grad-c) 55%, transparent) 0%, transparent 72%),
+  radial-gradient(40% 50% at 55% 110%, color-mix(in srgb, var(--grad-a) 30%, transparent) 0%, transparent 70%),
+  linear-gradient(155deg, color-mix(in srgb, var(--accent) 24%, var(--hero)) 0%, var(--hero) 50%, color-mix(in srgb, var(--grad-c) 26%, var(--hero)) 100%) }
+.hero h1, .brand { background: linear-gradient(100deg, color-mix(in srgb, var(--grad-a) 85%, #000) 0%, var(--grad-a) 30%, var(--grad-b) 70%, var(--grad-c) 115%); -webkit-background-clip: text; background-clip: text; color: transparent }
 .brand small { -webkit-text-fill-color: var(--hero-muted) }
 .head h2 { position: relative; padding-bottom: .55rem }
-.head h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
+.head h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 88px; height: 5px; border-radius: 4px; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
 .btn-primary, .hero .btn-primary, .contact .btn-primary, .navcall { background: linear-gradient(120deg, var(--grad-a), var(--grad-b)); color: var(--accent-ink); border: 0; box-shadow: 0 8px 20px -10px color-mix(in srgb, var(--accent) 70%, transparent) }
 .btn-primary:hover, .navcall:hover { filter: brightness(1.06) saturate(1.05) }
-section.cta-band { background: linear-gradient(110deg, var(--grad-a) 0%, var(--grad-b) 60%, var(--grad-c) 130%); background-size: 180% 100%; animation: flow 14s ease-in-out infinite alternate }
+section.cta-band { background: linear-gradient(110deg, color-mix(in srgb, var(--grad-a) 80%, #000) 0%, var(--grad-a) 30%, var(--grad-b) 70%, var(--grad-c) 110%); background-size: 180% 100%; animation: flow 14s ease-in-out infinite alternate }
 @keyframes flow { from { background-position: 0% 50% } to { background-position: 100% 50% } }
 .hl div { border-top: 0; position: relative; overflow: hidden }
-.hl div::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
+.hl div::before { content: ""; position: absolute; inset: 0 0 auto; height: 6px; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
 .stats div { border-top: 0; position: relative }
 .stats div::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
 .tab[aria-selected="true"] { background: linear-gradient(120deg, var(--grad-a), var(--grad-b)); border-color: transparent }
-.contact { background: linear-gradient(170deg, var(--hero) 0%, color-mix(in srgb, var(--grad-b) 14%, var(--hero)) 100%) }
+.contact { background: radial-gradient(60% 80% at 100% 0%, color-mix(in srgb, var(--grad-b) 45%, transparent) 0%, transparent 70%), linear-gradient(170deg, var(--hero) 0%, color-mix(in srgb, var(--grad-c) 28%, var(--hero)) 100%) }
 .pcard { position: relative }
-.pcard::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; z-index: 1; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
+.pcard::before { content: ""; position: absolute; inset: 0 0 auto; height: 6px; z-index: 1; background: linear-gradient(90deg, var(--grad-a), var(--grad-c)) }
+.hl div { background: linear-gradient(165deg, color-mix(in srgb, var(--grad-b) 12%, var(--surface)) 0%, var(--surface) 60%) }
+section.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-b) 10%, var(--band)) 0%, var(--band) 40%, color-mix(in srgb, var(--grad-c) 10%, var(--band)) 100%) }
+.topnav { background: linear-gradient(90deg, color-mix(in srgb, var(--grad-b) 16%, var(--hero)), var(--hero) 45%, color-mix(in srgb, var(--grad-c) 16%, var(--hero))) }
 @media (prefers-reduced-motion: reduce) { section.cta-band { animation: none } }
 </style>
 <nav class="topnav" aria-label="Mục lục">
