@@ -383,11 +383,23 @@ section.cta-band { background: var(--accent); color: var(--accent-ink); padding-
 .fab a { background: var(--surface); color: var(--fg); border-top: 1px solid var(--line) }
 @media (max-width: 860px) { .hl { grid-template-columns: 1fr 1fr } }
 @media (max-width: 420px) { .hl { grid-template-columns: 1fr } }
+/* Menu nổi bật: chữ đậm, gạch chân màu nhấn, tô màu mục đang xem */
+.brand { font-size: 1.12rem; font-weight: 800 }
+.links { gap: .1rem }
+.links a { position: relative; color: var(--fg); font-weight: 700; font-size: .95rem; padding: .5rem .7rem; border-radius: 8px; transition: color .2s ease, background-color .2s ease }
+.links a::after { content: ""; position: absolute; left: .7rem; right: .7rem; bottom: .2rem; height: 2.5px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease }
+.links a:hover, .links a:focus-visible { color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent) }
+.links a:hover::after, .links a.on::after { transform: scaleX(1) }
+.links a.on { color: var(--accent) }
+.links a.other { font-style: italic; font-weight: 600; color: var(--muted); margin-left: .35rem; padding-left: 1rem; border-left: 1px solid var(--line); border-radius: 0 }
+.links a.other::after { left: 1rem }
+@media (max-width: 700px) { .brand { font-size: .95rem } .brand small { font-size: .55rem; letter-spacing: .1em } .links a { font-size: .9rem; padding: .45rem .55rem } .links a::after { left: .55rem; right: .55rem } }
+@media (prefers-reduced-motion: reduce) { .links a, .links a::after { transition: none } }
 </style>
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
     <a class="brand" href="/">Nguyễn Quân BĐS<small>Iconia LakeSide</small></a>
-    <div class="links"><a href="#diem-noi-bat">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#can-ho">Căn hộ</a><a href="#chinh-sach">Thanh toán</a><a href="#phap-ly">Pháp lý</a><a href="#lien-he">Liên hệ</a><a href="/">Dự án khác</a></div>
+    <div class="links"><a href="#diem-noi-bat">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#can-ho">Căn hộ</a><a href="#chinh-sach">Thanh toán</a><a href="#phap-ly">Pháp lý</a><a href="#lien-he">Liên hệ</a><a class="other" href="/">Dự án khác</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -697,5 +709,23 @@ section.cta-band { background: var(--accent); color: var(--accent-ink); padding-
 })();
 </script>
 
+<script>
+/* Tô màu mục menu tương ứng với phần khách đang xem */
+(function () {
+  const links = [...document.querySelectorAll('.links a[href^="#"]')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const secs = [...map.keys()].map(id => document.getElementById(id)).filter(Boolean);
+  if (!secs.length || !('IntersectionObserver' in window)) return;
+  const box = document.querySelector('.links');
+  let cur = null;
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) cur = e.target.id; });
+    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+    const a = map.get(cur);
+    if (a && box.scrollWidth > box.clientWidth) box.scrollTo({ left: a.offsetLeft - box.offsetLeft - 12, behavior: 'smooth' });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  secs.forEach(s => io.observe(s));
+})();
+</script>
 </body>
 </html>
