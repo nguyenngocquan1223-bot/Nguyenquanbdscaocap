@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gamuda Central Park · Tòa Brighton | Nguyễn Ngọc Quân - River Homes</title>
+<title>Gamuda Central Park | Nguyễn Quân BĐS</title>
 <meta name="description" content="Căn hộ Gamuda Central Park trong công viên Yên Sở 323 ha, sổ hồng lâu dài: phối cảnh, mặt bằng 29 trục căn tòa Brighton, 5 phương án thanh toán. Tư vấn 0929 599 292.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gamuda Central Park · Tòa Brighton">
@@ -343,12 +343,33 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </style>
 
 
+<style>
+/* Bảng màu thương hiệu Nguyễn Quân BĐS: hệ Thủy (xanh navy, xanh lam) và Kim (bạc, trắng ngọc), không dùng màu Thổ (vàng đất, nâu) */
+:root { --bg: #F4F7FA; --surface: #FFFFFF; --band: #E9EFF5; --fg: #0E1726; --muted: #536173; --line: #D5DEE8; --accent: #1C4F80; --accent-ink: #FFFFFF; --gold: #8A9DB3; --ph-bg: #E3ECF6; --ph-fg: #1C4F80; --hero: #0A1A2F; --hero-fg: #EEF3F9; --hero-muted: #A7B7CA; --ok: #2F7D62; --warn: #B4691A; --no: #B23B3B }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #08101B; --surface: #101B2A; --band: #0C1522; --fg: #E5ECF4; --muted: #9AAABD; --line: #213149; --accent: #79AEDF; --accent-ink: #06101C; --gold: #A3B5C9; --ph-bg: #142338; --ph-fg: #A9CBEB; --hero: #050C17; --hero-fg: #EAF1F8; --hero-muted: #91A5BB; --ok: #5CC29B; --warn: #E0A04A; --no: #E07777; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #08101B; --surface: #101B2A; --band: #0C1522; --fg: #E5ECF4; --muted: #9AAABD; --line: #213149; --accent: #79AEDF; --accent-ink: #06101C; --gold: #A3B5C9; --ph-bg: #142338; --ph-fg: #A9CBEB; --hero: #050C17; --hero-fg: #EAF1F8; --hero-muted: #91A5BB; --ok: #5CC29B; --warn: #E0A04A; --no: #E07777; color-scheme: dark }
+.btn:focus-visible, input:focus-visible, summary:focus-visible, .tab:focus-visible, .u:focus-visible { outline-color: #6FA8DC }
+.hero { background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--accent) 38%, var(--hero)) 0%, var(--hero) 60%) }
+.brand { letter-spacing: .01em }
+.brand small { display: block; font: 600 .62rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--hero-muted) }
+@media (max-width: 700px) { .brand { display: block; font-size: .92rem } .navin { gap: .6rem } }
+/* Điểm nổi bật */
+.hl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem }
+.hl div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; display: grid; gap: .35rem; align-content: start }
+.hl b { font: 800 1.35rem var(--f-display); color: var(--accent); font-variant-numeric: tabular-nums }
+.hl span { color: var(--muted); font-size: .92rem }
+/* Dải kêu gọi giữa trang */
+section.cta-band { background: var(--hero); color: var(--hero-fg); padding-block: 0 }
+.cta-band .wrap { padding-block: 1.6rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between }
+.cta-band p { font-weight: 600; font-size: 1.05rem }
+.cta-band .btn-primary { background: var(--hero-fg); color: var(--hero) }
+@media (max-width: 860px) { .hl { grid-template-columns: 1fr 1fr } }
+@media (max-width: 420px) { .hl { grid-template-columns: 1fr } }
+</style>
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
-    <a class="brand" href="/">← Các dự án</a>
-    <div class="links">
-      <a href="/">Trang chủ</a><a href="#toa-thap">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#phoi-canh">Phối cảnh</a><a href="#tien-ich">Tiện ích</a><a href="#mat-bang">Mặt bằng</a><a href="#can-ho">Căn hộ</a><a href="#chon-can">Chọn căn</a><a href="#thanh-toan">Thanh toán</a><a href="#lien-he">Liên hệ</a>
-    </div>
+    <a class="brand" href="/">Nguyễn Quân BĐS<small>Gamuda Central Park</small></a>
+    <div class="links"><a href="#diem-noi-bat">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#can-ho">Căn hộ</a><a href="#thanh-toan">Thanh toán</a><a href="#phap-ly">Pháp lý</a><a href="#lien-he">Liên hệ</a><a href="/">Dự án khác</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -361,7 +382,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <p class="addr">Lô HH2, Công viên Yên Sở, Hà Nội</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#lien-he">Đặt lịch xem nhà mẫu</a>
-        <a class="btn btn-ghost" href="#chon-can">Chọn căn theo trục</a>
+        <a class="btn btn-ghost" href="#can-ho">Xem căn hộ</a>
       </div>
     </div>
     <figure class="photo">
@@ -379,6 +400,79 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   </div>
 </header>
 
+<section id="diem-noi-bat">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Vì sao đáng cân nhắc</div><h2>Bốn điều khách hỏi đầu tiên</h2></div>
+    <div class="hl"><div><b>323 ha</b><span>Công viên Yên Sở bao quanh, 132 ha mặt nước</span></div><div><b>15 phút</b><span>Tới phố cổ Hoàn Kiếm, sát Vành đai 3</span></div><div><b>Sổ hồng lâu dài</b><span>Chủ đầu tư Gamuda Land, đại lý F1 River Homes</span></div><div><b>1%/tháng</b><span>Gói Đặc biệt: 10% ký HĐMB, sau đó 1% mỗi tháng</span></div></div>
+  </div>
+</section>
+
+<section class="alt" id="phoi-canh">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Phối cảnh dự án</div>
+      <h2>Không gian sống giữa công viên</h2>
+      <p class="lead">Bấm vào ảnh bất kỳ để xem kích thước lớn.</p>
+    </div>
+    <div class="pgrid">
+      <figure class="big"><img class="zoomable" src="toan-canh.webp" alt="Toàn cảnh ba tòa tháp Central Park bên hồ" width="2000" height="1125" loading="lazy"><figcaption>Toàn cảnh dự án</figcaption></figure>
+      <figure><img class="zoomable" src="lobby.webp" alt="Sảnh tòa Brighton" width="1800" height="1196" loading="lazy"><figcaption>Sảnh tòa Brighton</figcaption></figure>
+      <figure><img class="zoomable" src="sunken-lounge.webp" alt="Khu Sunken Lounge tầng 6 về đêm" width="1800" height="1005" loading="lazy"><figcaption>Sunken Lounge tầng 6</figcaption></figure>
+      <figure><img class="zoomable" src="study-pod.webp" alt="Phòng học cá nhân Study Pod" width="1800" height="1012" loading="lazy"><figcaption>Phòng học cá nhân</figcaption></figure>
+      <figure class="wide"><img class="zoomable" src="sanh-brighton.webp" alt="Lối vào tòa Brighton" width="1567" height="1044" loading="lazy"><figcaption>Lối vào Brighton</figcaption></figure>
+      <figure class="wide"><img class="zoomable" src="khoi-de.webp" alt="Khối đế thương mại về đêm" width="1567" height="1044" loading="lazy"><figcaption>Khối đế thương mại</figcaption></figure>
+      <figure><img class="zoomable" src="cong-vien.webp" alt="Lối đi gỗ ven hồ trong công viên" width="1705" height="959" loading="lazy"><figcaption>Không gian ven hồ</figcaption></figure>
+    </div>
+    <p class="note">Ảnh phối cảnh mang tính minh họa. Dự án thiết kế theo tiêu chuẩn công trình xanh EDGE của IFC (Nhóm Ngân hàng Thế giới).</p>
+  </div>
+</section>
+<section id="vi-tri">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Vị trí</div>
+      <h2>Sống trong công viên, cách phố cổ 15 phút</h2>
+      <p class="lead">Dự án nằm bên Vành đai 3, cửa ngõ phía Nam Hà Nội. Thời gian di chuyển theo công bố của chủ đầu tư, giờ cao điểm có thể lâu hơn.</p>
+    </div>
+    <div class="loc">
+      <figure>
+        <img src="vi-tri.webp" alt="Phối cảnh vị trí tòa A, B, C với Vành đai 3, hồ Yên Sở và các hướng view" width="960" height="540" loading="lazy">
+        <figcaption>Vị trí ba tòa A, B, C và các hướng view</figcaption>
+      </figure>
+      <ul class="dist">
+        <li><span>Hồ Hoàn Kiếm, phố cổ</span><span class="t num">≈ 15 phút</span></li>
+        <li><span>Vành đai 3 trên cao</span><span class="t">Ngay cạnh</span></li>
+        <li><span>Tuyến Metro số 4</span><span class="t">Đang quy hoạch</span></li>
+        <li><span>Hướng Bắc: hồ Yên Sở, Vành đai 3</span><span class="t">View hồ</span></li>
+        <li><span>Hướng Tây: hồ Linh Đàm, bến xe Nước Ngầm</span><span class="t">View phố</span></li>
+        <li><span>Hướng Đông: sông Hồng, cầu Thanh Trì</span><span class="t">View sông</span></li>
+        <li><span>Hướng Nam: cao tốc Pháp Vân – Cầu Giẽ</span><span class="t">Đi các tỉnh</span></li>
+      </ul>
+    </div>
+    <div class="stats">
+      <div><b class="num">323 ha</b><span>Công viên Yên Sở bao quanh</span></div>
+      <div><b class="num">132 ha</b><span>Mặt nước và hồ điều hòa</span></div>
+      <div><b class="num">147 ha</b><span>Công viên và cây xanh</span></div>
+      <div><b class="num">0,8 ha</b><span>Diện tích xây dựng 3 tòa tháp</span></div>
+    </div>
+  </div>
+</section>
+<section class="alt" id="tien-ich">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Tiện ích</div>
+      <h2>Hơn 80 tiện ích trên 3,5 ha</h2>
+      <p class="lead">Mỗi tòa có các tầng tiện ích riêng cho cư dân, cùng 3 sảnh căn hộ và 3 sảnh thương mại tách biệt.</p>
+    </div>
+    <div class="amen">
+      <div><span class="k">Tầng 6 · Ngoài trời</span><h3>Bể bơi vô cực dài chuẩn Olympic</h3><p class="lead">Kèm khu thư giãn Sunken Lounge.</p></div>
+      <div><span class="k">Cho trẻ em</span><h3>Sân chơi tổ chim</h3><p class="lead">Khu vui chơi ngoài trời thiết kế riêng cho trẻ nhỏ.</p></div>
+      <div><span class="k">Học tập</span><h3>Thư viện The Sunlit Library</h3><p class="lead">Cùng phòng học cá nhân (Private Study Pod).</p></div>
+      <div><span class="k">Thể thao</span><h3>Sân bóng rổ, chòi Yoga</h3><p class="lead">Tiện ích ngoài trời trong khuôn viên.</p></div>
+      <div><span class="k">Đỗ xe</span><h3>1 tầng hầm + 4 tầng nổi</h3><p class="lead">Tổng diện tích để xe 94.263,92 m² cho cả dự án.</p></div>
+      <div><span class="k">Vận hành</span><h3>Miễn phí quản lý 2 năm</h3><p class="lead">Ưu đãi đặt chỗ sớm. Từ năm thứ 3 dự kiến khoảng 27.000 đ/m²/tháng (đã gồm VAT).</p></div>
+    </div>
+  </div>
+</section>
 <section id="toa-thap">
   <div class="wrap">
     <div class="head">
@@ -413,91 +507,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </div>
 </section>
-
-<section class="alt" id="vi-tri">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Vị trí</div>
-      <h2>Sống trong công viên, cách phố cổ 15 phút</h2>
-      <p class="lead">Dự án nằm bên Vành đai 3, cửa ngõ phía Nam Hà Nội. Thời gian di chuyển theo công bố của chủ đầu tư, giờ cao điểm có thể lâu hơn.</p>
-    </div>
-    <div class="loc">
-      <figure>
-        <img src="vi-tri.webp" alt="Phối cảnh vị trí tòa A, B, C với Vành đai 3, hồ Yên Sở và các hướng view" width="960" height="540" loading="lazy">
-        <figcaption>Vị trí ba tòa A, B, C và các hướng view</figcaption>
-      </figure>
-      <ul class="dist">
-        <li><span>Hồ Hoàn Kiếm, phố cổ</span><span class="t num">≈ 15 phút</span></li>
-        <li><span>Vành đai 3 trên cao</span><span class="t">Ngay cạnh</span></li>
-        <li><span>Tuyến Metro số 4</span><span class="t">Đang quy hoạch</span></li>
-        <li><span>Hướng Bắc: hồ Yên Sở, Vành đai 3</span><span class="t">View hồ</span></li>
-        <li><span>Hướng Tây: hồ Linh Đàm, bến xe Nước Ngầm</span><span class="t">View phố</span></li>
-        <li><span>Hướng Đông: sông Hồng, cầu Thanh Trì</span><span class="t">View sông</span></li>
-        <li><span>Hướng Nam: cao tốc Pháp Vân – Cầu Giẽ</span><span class="t">Đi các tỉnh</span></li>
-      </ul>
-    </div>
-    <div class="stats">
-      <div><b class="num">323 ha</b><span>Công viên Yên Sở bao quanh</span></div>
-      <div><b class="num">132 ha</b><span>Mặt nước và hồ điều hòa</span></div>
-      <div><b class="num">147 ha</b><span>Công viên và cây xanh</span></div>
-      <div><b class="num">0,8 ha</b><span>Diện tích xây dựng 3 tòa tháp</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="phoi-canh">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Phối cảnh dự án</div>
-      <h2>Không gian sống giữa công viên</h2>
-      <p class="lead">Bấm vào ảnh bất kỳ để xem kích thước lớn.</p>
-    </div>
-    <div class="pgrid">
-      <figure class="big"><img class="zoomable" src="toan-canh.webp" alt="Toàn cảnh ba tòa tháp Central Park bên hồ" width="2000" height="1125" loading="lazy"><figcaption>Toàn cảnh dự án</figcaption></figure>
-      <figure><img class="zoomable" src="lobby.webp" alt="Sảnh tòa Brighton" width="1800" height="1196" loading="lazy"><figcaption>Sảnh tòa Brighton</figcaption></figure>
-      <figure><img class="zoomable" src="sunken-lounge.webp" alt="Khu Sunken Lounge tầng 6 về đêm" width="1800" height="1005" loading="lazy"><figcaption>Sunken Lounge tầng 6</figcaption></figure>
-      <figure><img class="zoomable" src="study-pod.webp" alt="Phòng học cá nhân Study Pod" width="1800" height="1012" loading="lazy"><figcaption>Phòng học cá nhân</figcaption></figure>
-      <figure class="wide"><img class="zoomable" src="sanh-brighton.webp" alt="Lối vào tòa Brighton" width="1567" height="1044" loading="lazy"><figcaption>Lối vào Brighton</figcaption></figure>
-      <figure class="wide"><img class="zoomable" src="khoi-de.webp" alt="Khối đế thương mại về đêm" width="1567" height="1044" loading="lazy"><figcaption>Khối đế thương mại</figcaption></figure>
-      <figure><img class="zoomable" src="cong-vien.webp" alt="Lối đi gỗ ven hồ trong công viên" width="1705" height="959" loading="lazy"><figcaption>Không gian ven hồ</figcaption></figure>
-    </div>
-    <p class="note">Ảnh phối cảnh mang tính minh họa. Dự án thiết kế theo tiêu chuẩn công trình xanh EDGE của IFC (Nhóm Ngân hàng Thế giới).</p>
-  </div>
-</section>
-
-<section class="alt" id="tien-ich">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Tiện ích</div>
-      <h2>Hơn 80 tiện ích trên 3,5 ha</h2>
-      <p class="lead">Mỗi tòa có các tầng tiện ích riêng cho cư dân, cùng 3 sảnh căn hộ và 3 sảnh thương mại tách biệt.</p>
-    </div>
-    <div class="amen">
-      <div><span class="k">Tầng 6 · Ngoài trời</span><h3>Bể bơi vô cực dài chuẩn Olympic</h3><p class="lead">Kèm khu thư giãn Sunken Lounge.</p></div>
-      <div><span class="k">Cho trẻ em</span><h3>Sân chơi tổ chim</h3><p class="lead">Khu vui chơi ngoài trời thiết kế riêng cho trẻ nhỏ.</p></div>
-      <div><span class="k">Học tập</span><h3>Thư viện The Sunlit Library</h3><p class="lead">Cùng phòng học cá nhân (Private Study Pod).</p></div>
-      <div><span class="k">Thể thao</span><h3>Sân bóng rổ, chòi Yoga</h3><p class="lead">Tiện ích ngoài trời trong khuôn viên.</p></div>
-      <div><span class="k">Đỗ xe</span><h3>1 tầng hầm + 4 tầng nổi</h3><p class="lead">Tổng diện tích để xe 94.263,92 m² cho cả dự án.</p></div>
-      <div><span class="k">Vận hành</span><h3>Miễn phí quản lý 2 năm</h3><p class="lead">Ưu đãi đặt chỗ sớm. Từ năm thứ 3 dự kiến khoảng 27.000 đ/m²/tháng (đã gồm VAT).</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="mat-bang">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Mặt bằng tầng điển hình · Tòa Brighton</div>
-      <h2>29 căn mỗi tầng, chia ba cánh</h2>
-      <p class="lead">Mặt bằng gốc của chủ đầu tư, ghi mã căn, loại căn, diện tích thông thủy và tim tường. Bấm vào ảnh để phóng to.</p>
-    </div>
-    <div class="tabs" role="tablist" id="mb-tabs">
-      <button class="tab" type="button" role="tab" aria-selected="true" data-plan="mb-tang-15-40.webp">Tầng 15–31 & 35–40</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" data-plan="mb-tang-8-12.webp">Tầng 8–12</button>
-    </div>
-    <figure class="plan-img"><img class="zoomable" id="mb-img" src="mb-tang-15-40.webp" alt="Mặt bằng tầng điển hình tòa Brighton" width="2170" height="3083" loading="lazy"></figure>
-  </div>
-</section>
-
 <section class="alt" id="can-ho">
   <div class="wrap">
     <div class="head">
@@ -521,30 +530,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Ảnh 3D mang tính minh họa nội thất. Diện tích cuối cùng do đơn vị đo đạc xác định và ghi trong hợp đồng mua bán.</p>
   </div>
 </section>
-
-<section id="loai-can">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Cơ cấu sản phẩm · Tòa Brighton</div>
-      <h2>Phần lớn là căn 2 phòng ngủ cho gia đình trẻ</h2>
-      <p class="lead">Diện tích dưới đây là diện tích thông thủy (NFA) theo tài liệu chủ đầu tư. Giá từng căn sẽ cập nhật khi có bảng giá chính thức.</p>
-    </div>
-    <div class="tbl">
-      <table>
-        <thead><tr><th>Loại căn</th><th>Diện tích thông thủy</th><th>Số căn</th><th>Tỷ trọng</th><th>Giá bán</th></tr></thead>
-        <tbody>
-          <tr><td><b>Studio</b></td><td>35,8 – 39,3 m²</td><td>64</td><td><span class="share"><span class="trk"><i style="width:7%"></i></span>7%</span></td><td>Chờ công bố</td></tr>
-          <tr><td><b>1 phòng ngủ</b></td><td>41,9 – 45,2 m²</td><td>96</td><td><span class="share"><span class="trk"><i style="width:10%"></i></span>10%</span></td><td>Chờ công bố</td></tr>
-          <tr><td><b>2 phòng ngủ</b><small>Loại A: 60,9 – 65,0 m²<br>Loại B: 71,6 – 73,6 m²</small></td><td>60,9 – 73,6 m²</td><td>576</td><td><span class="share"><span class="trk"><i style="width:62%"></i></span>62%</span></td><td>Chờ công bố</td></tr>
-          <tr><td><b>3 phòng ngủ</b><small>87,7 – 90,8 m²<br>96,8 – 99,2 m²</small></td><td>87,7 – 99,2 m²</td><td>192</td><td><span class="share"><span class="trk"><i style="width:21%"></i></span>21%</span></td><td>Chờ công bố</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">Tỷ trọng tính trên 928 căn có trong bảng cơ cấu. Tòa Brighton có 980 căn; 52 căn còn lại (căn sân vườn, Duplex, Penthouse Duplex) sẽ được công bố sau.</p>
-  </div>
-</section>
-
-<section class="alt" id="chon-can">
+<section id="chon-can">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Chọn căn · Tòa Brighton</div>
@@ -576,8 +562,44 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Số liệu theo mặt bằng tầng điển hình của chủ đầu tư. Các tầng còn lại (7, 13–14, 32–34) có mặt bằng riêng, vui lòng hỏi chuyên viên. Diện tích cuối cùng do đơn vị đo đạc xác định và ghi trong hợp đồng mua bán.</p>
   </div>
 </section>
+<section class="cta-band" id="cta-1"><div class="wrap"><p>Đã thấy căn phù hợp? Nhận giá và quỹ căn còn trống.</p><a class="btn btn-primary" href="#lien-he">Nhận bảng giá</a></div></section>
 
-<section id="thanh-toan">
+<section class="alt" id="mat-bang">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Mặt bằng tầng điển hình · Tòa Brighton</div>
+      <h2>29 căn mỗi tầng, chia ba cánh</h2>
+      <p class="lead">Mặt bằng gốc của chủ đầu tư, ghi mã căn, loại căn, diện tích thông thủy và tim tường. Bấm vào ảnh để phóng to.</p>
+    </div>
+    <div class="tabs" role="tablist" id="mb-tabs">
+      <button class="tab" type="button" role="tab" aria-selected="true" data-plan="mb-tang-15-40.webp">Tầng 15–31 & 35–40</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-plan="mb-tang-8-12.webp">Tầng 8–12</button>
+    </div>
+    <figure class="plan-img"><img class="zoomable" id="mb-img" src="mb-tang-15-40.webp" alt="Mặt bằng tầng điển hình tòa Brighton" width="2170" height="3083" loading="lazy"></figure>
+  </div>
+</section>
+<section id="loai-can">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Cơ cấu sản phẩm · Tòa Brighton</div>
+      <h2>Phần lớn là căn 2 phòng ngủ cho gia đình trẻ</h2>
+      <p class="lead">Diện tích dưới đây là diện tích thông thủy (NFA) theo tài liệu chủ đầu tư. Giá từng căn sẽ cập nhật khi có bảng giá chính thức.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Loại căn</th><th>Diện tích thông thủy</th><th>Số căn</th><th>Tỷ trọng</th><th>Giá bán</th></tr></thead>
+        <tbody>
+          <tr><td><b>Studio</b></td><td>35,8 – 39,3 m²</td><td>64</td><td><span class="share"><span class="trk"><i style="width:7%"></i></span>7%</span></td><td>Chờ công bố</td></tr>
+          <tr><td><b>1 phòng ngủ</b></td><td>41,9 – 45,2 m²</td><td>96</td><td><span class="share"><span class="trk"><i style="width:10%"></i></span>10%</span></td><td>Chờ công bố</td></tr>
+          <tr><td><b>2 phòng ngủ</b><small>Loại A: 60,9 – 65,0 m²<br>Loại B: 71,6 – 73,6 m²</small></td><td>60,9 – 73,6 m²</td><td>576</td><td><span class="share"><span class="trk"><i style="width:62%"></i></span>62%</span></td><td>Chờ công bố</td></tr>
+          <tr><td><b>3 phòng ngủ</b><small>87,7 – 90,8 m²<br>96,8 – 99,2 m²</small></td><td>87,7 – 99,2 m²</td><td>192</td><td><span class="share"><span class="trk"><i style="width:21%"></i></span>21%</span></td><td>Chờ công bố</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Tỷ trọng tính trên 928 căn có trong bảng cơ cấu. Tòa Brighton có 980 căn; 52 căn còn lại (căn sân vườn, Duplex, Penthouse Duplex) sẽ được công bố sau.</p>
+  </div>
+</section>
+<section class="alt" id="thanh-toan">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Chính sách bán hàng</div>
@@ -635,26 +657,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </div>
 </section>
-
-<section class="alt" id="phap-ly">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Pháp lý & tiến độ</div>
-      <h2>Giấy tờ khách nên hỏi trước khi đặt cọc</h2>
-      <p class="lead">Với nhà hình thành trong tương lai, Luật Kinh doanh BĐS 2023 yêu cầu dự án có đủ các điều kiện dưới đây trước khi ký hợp đồng mua bán. Trạng thái sẽ được cập nhật khi có giấy tờ.</p>
-    </div>
-    <ul class="legal">
-      <li><span class="dot"></span><span><b>Quyết định giao đất / cho thuê đất</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
-      <li><span class="dot"></span><span><b>Giấy phép xây dựng</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
-      <li><span class="dot"></span><span><b>Nghiệm thu phần móng</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
-      <li><span class="dot"></span><span><b>Văn bản Sở Xây dựng đủ điều kiện bán</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
-      <li><span class="dot"></span><span><b>Bảo lãnh ngân hàng cho người mua</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
-      <li><span class="dot info"></span><span><b>Hình thức sở hữu</b><small>Sổ hồng, thời hạn sử dụng lâu dài</small></span><span class="chip info">CĐT công bố</span></li>
-    </ul>
-    <p class="note">Hợp đồng mua bán dự kiến ký từ 01/2027. Trước thời điểm đó, hỏi rõ khoản tiền giữ chỗ được hoàn lại trong trường hợp nào.</p>
-  </div>
-</section>
-
 <section id="tra-gop">
   <div class="wrap">
     <div class="head">
@@ -686,8 +688,27 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </div>
   </div>
 </section>
+<section class="cta-band" id="cta-2"><div class="wrap"><p>Muốn tính dòng tiền cho căn của bạn? Gửi mã căn, tôi tính giúp.</p><a class="btn btn-primary" href="#lien-he">Tính dòng tiền</a></div></section>
 
-<section class="alt" id="hoi-dap">
+<section class="alt" id="phap-ly">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Pháp lý & tiến độ</div>
+      <h2>Giấy tờ khách nên hỏi trước khi đặt cọc</h2>
+      <p class="lead">Với nhà hình thành trong tương lai, Luật Kinh doanh BĐS 2023 yêu cầu dự án có đủ các điều kiện dưới đây trước khi ký hợp đồng mua bán. Trạng thái sẽ được cập nhật khi có giấy tờ.</p>
+    </div>
+    <ul class="legal">
+      <li><span class="dot"></span><span><b>Quyết định giao đất / cho thuê đất</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
+      <li><span class="dot"></span><span><b>Giấy phép xây dựng</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
+      <li><span class="dot"></span><span><b>Nghiệm thu phần móng</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
+      <li><span class="dot"></span><span><b>Văn bản Sở Xây dựng đủ điều kiện bán</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
+      <li><span class="dot"></span><span><b>Bảo lãnh ngân hàng cho người mua</b><small>Đang cập nhật</small></span><span class="chip pending">Chờ cập nhật</span></li>
+      <li><span class="dot info"></span><span><b>Hình thức sở hữu</b><small>Sổ hồng, thời hạn sử dụng lâu dài</small></span><span class="chip info">CĐT công bố</span></li>
+    </ul>
+    <p class="note">Hợp đồng mua bán dự kiến ký từ 01/2027. Trước thời điểm đó, hỏi rõ khoản tiền giữ chỗ được hoàn lại trong trường hợp nào.</p>
+  </div>
+</section>
+<section id="hoi-dap">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Hỏi đáp</div>
@@ -701,7 +722,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <details><summary>Phí dịch vụ và phí gửi xe là bao nhiêu?</summary><p>Miễn phí quản lý vận hành 2 năm đầu (ưu đãi đặt chỗ sớm). Sau đó, phí quản lý dự kiến khoảng 27.000 đ/m²/tháng, đã gồm VAT. Phí gửi xe sẽ cập nhật khi có thông báo của ban quản lý.</p></details>
   </div>
 </section>
-
 <section class="contact" id="lien-he">
   <div class="wrap">
     <div>

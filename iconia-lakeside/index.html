@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Iconia LakeSide · Mipec Tố Hữu | Nguyễn Ngọc Quân - River Homes</title>
+<title>Iconia LakeSide | Nguyễn Quân BĐS</title>
 <meta name="description" content="Iconia LakeSide (Mipec Tố Hữu) tại 54 Tố Hữu: 603 căn hộ, 104 liền kề bên hồ Mễ Trì. Layout căn, tổng mặt bằng, chính sách chiết khấu đến 15,8%. Tư vấn 0929 599 292.">
 <link rel="canonical" href="https://nguyenquanbdscaocap.com/iconia-lakeside/">
 <meta property="og:type" content="website">
@@ -337,11 +337,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
 </style>
+</head>
+<body>
 <style>
-/* Bảng màu riêng Iconia: nâu đồng theo nhận diện dự án */
-:root { --bg: #F8F5F2; --surface: #FFFFFF; --band: #EFE8E2; --fg: #231B17; --muted: #6E6058; --line: #E1D6CD; --accent: #8A5A3C; --accent-ink: #FFFFFF; --gold: #B08A4A; --hero: #2B211C; --hero-fg: #F4ECE5; --hero-muted: #C7B4A5 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #14100E; --surface: #1E1815; --band: #18130F; --fg: #EEE6E0; --muted: #B3A396; --line: #3A302A; --accent: #D2A07A; --accent-ink: #1A120D; --gold: #D9B072; --hero: #120E0C; --hero-fg: #F1E8E1; --hero-muted: #B8A595; color-scheme: dark } }
-:root[data-theme="dark"] { --bg: #14100E; --surface: #1E1815; --band: #18130F; --fg: #EEE6E0; --muted: #B3A396; --line: #3A302A; --accent: #D2A07A; --accent-ink: #1A120D; --gold: #D9B072; --hero: #120E0C; --hero-fg: #F1E8E1; --hero-muted: #B8A595; color-scheme: dark }
+/* Bố cục riêng trang Iconia */
 .photo.tall img { aspect-ratio: 4 / 5; object-fit: cover; object-position: top; max-height: 560px }
 .wide-fig { max-width: none; margin-top: 1.5rem }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem }
@@ -351,14 +350,33 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .plan .who b { color: var(--accent) }
 @media (max-width: 680px) { .two { grid-template-columns: 1fr } .pgrid .wide3 img { aspect-ratio: 16 / 10 } }
 </style>
-</head>
-<body>
+<style>
+/* Bảng màu thương hiệu Nguyễn Quân BĐS: hệ Thủy (xanh navy, xanh lam) và Kim (bạc, trắng ngọc), không dùng màu Thổ (vàng đất, nâu) */
+:root { --bg: #F4F7FA; --surface: #FFFFFF; --band: #E9EFF5; --fg: #0E1726; --muted: #536173; --line: #D5DEE8; --accent: #1C4F80; --accent-ink: #FFFFFF; --gold: #8A9DB3; --ph-bg: #E3ECF6; --ph-fg: #1C4F80; --hero: #0A1A2F; --hero-fg: #EEF3F9; --hero-muted: #A7B7CA; --ok: #2F7D62; --warn: #B4691A; --no: #B23B3B }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #08101B; --surface: #101B2A; --band: #0C1522; --fg: #E5ECF4; --muted: #9AAABD; --line: #213149; --accent: #79AEDF; --accent-ink: #06101C; --gold: #A3B5C9; --ph-bg: #142338; --ph-fg: #A9CBEB; --hero: #050C17; --hero-fg: #EAF1F8; --hero-muted: #91A5BB; --ok: #5CC29B; --warn: #E0A04A; --no: #E07777; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #08101B; --surface: #101B2A; --band: #0C1522; --fg: #E5ECF4; --muted: #9AAABD; --line: #213149; --accent: #79AEDF; --accent-ink: #06101C; --gold: #A3B5C9; --ph-bg: #142338; --ph-fg: #A9CBEB; --hero: #050C17; --hero-fg: #EAF1F8; --hero-muted: #91A5BB; --ok: #5CC29B; --warn: #E0A04A; --no: #E07777; color-scheme: dark }
+.btn:focus-visible, input:focus-visible, summary:focus-visible, .tab:focus-visible, .u:focus-visible { outline-color: #6FA8DC }
+.hero { background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--accent) 38%, var(--hero)) 0%, var(--hero) 60%) }
+.brand { letter-spacing: .01em }
+.brand small { display: block; font: 600 .62rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--hero-muted) }
+@media (max-width: 700px) { .brand { display: block; font-size: .92rem } .navin { gap: .6rem } }
+/* Điểm nổi bật */
+.hl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem }
+.hl div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; display: grid; gap: .35rem; align-content: start }
+.hl b { font: 800 1.35rem var(--f-display); color: var(--accent); font-variant-numeric: tabular-nums }
+.hl span { color: var(--muted); font-size: .92rem }
+/* Dải kêu gọi giữa trang */
+section.cta-band { background: var(--hero); color: var(--hero-fg); padding-block: 0 }
+.cta-band .wrap { padding-block: 1.6rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between }
+.cta-band p { font-weight: 600; font-size: 1.05rem }
+.cta-band .btn-primary { background: var(--hero-fg); color: var(--hero) }
+@media (max-width: 860px) { .hl { grid-template-columns: 1fr 1fr } }
+@media (max-width: 420px) { .hl { grid-template-columns: 1fr } }
+</style>
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
-    <a class="brand" href="/">← Các dự án</a>
-    <div class="links">
-      <a href="/">Trang chủ</a><a href="#tong-quan">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#phoi-canh">Phối cảnh</a><a href="#mat-bang">Mặt bằng</a><a href="#can-ho">Căn hộ</a><a href="#thap-tang">Liền kề</a><a href="#chinh-sach">Chính sách</a><a href="#phap-ly">Pháp lý</a><a href="#lien-he">Liên hệ</a>
-    </div>
+    <a class="brand" href="/">Nguyễn Quân BĐS<small>Iconia LakeSide</small></a>
+    <div class="links"><a href="#diem-noi-bat">Tổng quan</a><a href="#vi-tri">Vị trí</a><a href="#can-ho">Căn hộ</a><a href="#chinh-sach">Thanh toán</a><a href="#phap-ly">Pháp lý</a><a href="#lien-he">Liên hệ</a><a href="/">Dự án khác</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -389,25 +407,29 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   </div>
 </header>
 
-<section id="tong-quan">
+<section id="diem-noi-bat">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Tổng quan</div>
-      <h2>Đô thị thu nhỏ trên quỹ đất hiếm ở phía Tây</h2>
-      <p class="lead">Dự án tổ hợp Trung tâm thương mại, văn phòng và nhà ở MIC Tower, tên thương mại Iconia LakeSide. Ở, làm việc, mua sắm và đưa con đi học trong cùng một khuôn viên.</p>
-    </div>
-    <div class="amen">
-      <div><span class="k">Tòa căn hộ</span><h3>38–42 tầng, 603 căn</h3><p class="lead">5 tầng khối đế gồm văn phòng, trung tâm thương mại và khu chăm sóc sức khỏe. 3 tầng hầm đỗ xe.</p></div>
-      <div><span class="k">Riêng tư</span><h3>3 cụm thang, 8 thang máy</h3><p class="lead">Cư dân, khách văn phòng và khách trung tâm thương mại đi theo lối riêng.</p></div>
-      <div><span class="k">Liền kề</span><h3>104 căn, 4 tầng</h3><p class="lead">Diện tích đất 75–116 m², có thể vừa ở vừa làm showroom, văn phòng nhỏ.</p></div>
-      <div><span class="k">Thiết kế</span><h3>Bruce Henderson Architects</h3><p class="lead">Đơn vị kiến trúc của Úc. Tổng thầu thi công: Delta.</p></div>
-      <div><span class="k">Cho trẻ em</span><h3>Nhà trẻ 3 tầng trong dự án</h3><p class="lead">Cùng khu vui chơi trẻ em ngoài trời và trong nhà.</p></div>
-      <div><span class="k">Hệ thống</span><h3>Lọc nước trung tâm</h3><p class="lead">An ninh 3 lớp, kính Low-E 2 lớp cách âm cách nhiệt (theo tài liệu chủ đầu tư).</p></div>
-    </div>
+    <div class="head"><div class="eyebrow">Vì sao đáng cân nhắc</div><h2>Bốn điều khách hỏi đầu tiên</h2></div>
+    <div class="hl"><div><b>Bên hồ Mễ Trì</b><span>Giao lộ Tố Hữu – Lương Thế Vinh, cạnh công viên Phùng Khoang</span></div><div><b>603 + 104</b><span>Căn hộ và nhà liền kề, số lượng hữu hạn</span></div><div><b>Mipec · Delta</b><span>Chủ đầu tư Mipec, thiết kế Bruce Henderson (Úc), thi công Delta</span></div><div><b>Đến 15,8%</b><span>Chiết khấu dự kiến khi thanh toán sớm, hỗ trợ lãi 0% 30 tháng</span></div></div>
   </div>
 </section>
 
-<section class="alt" id="vi-tri">
+<section class="alt" id="phoi-canh">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Phối cảnh</div>
+      <h2>Kiến trúc nâu – be, mặt đứng phủ xanh</h2>
+      <p class="lead">Bấm vào ảnh để xem cỡ lớn.</p>
+    </div>
+    <div class="pgrid">
+      <figure class="big"><img class="zoomable" src="lien-ke-1.webp" alt="Phối cảnh dãy nhà liền kề có sân vườn trên mái" width="1800" height="1164" loading="lazy"><figcaption>Nhà liền kề</figcaption></figure>
+      <figure><img class="zoomable" src="sanh-pho.webp" alt="Phối cảnh khối đế và lối vào tòa căn hộ" width="754" height="1356" loading="lazy"><figcaption>Khối đế tòa căn hộ</figcaption></figure>
+      <figure><img class="zoomable" src="toa-thap.webp" alt="Phối cảnh tòa căn hộ" width="1359" height="1532" loading="lazy"><figcaption>Tòa căn hộ</figcaption></figure>
+      <figure class="wide3"><img class="zoomable" src="lien-ke-2.webp" alt="Mặt tiền dãy liền kề với pergola và ban công kính" width="1800" height="1184" loading="lazy"><figcaption>Mặt tiền liền kề</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section id="vi-tri">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Vị trí</div>
@@ -429,44 +451,23 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Theo tài liệu chủ đầu tư, các tiện ích trên nằm "trong bán kính vài phút". Thời gian thực tế phụ thuộc giờ đi và phương tiện.</p>
   </div>
 </section>
-
-<section id="phoi-canh">
+<section class="alt" id="tong-quan">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Phối cảnh</div>
-      <h2>Kiến trúc nâu – be, mặt đứng phủ xanh</h2>
-      <p class="lead">Bấm vào ảnh để xem cỡ lớn.</p>
+      <div class="eyebrow">Tổng quan</div>
+      <h2>Đô thị thu nhỏ trên quỹ đất hiếm ở phía Tây</h2>
+      <p class="lead">Dự án tổ hợp Trung tâm thương mại, văn phòng và nhà ở MIC Tower, tên thương mại Iconia LakeSide. Ở, làm việc, mua sắm và đưa con đi học trong cùng một khuôn viên.</p>
     </div>
-    <div class="pgrid">
-      <figure class="big"><img class="zoomable" src="lien-ke-1.webp" alt="Phối cảnh dãy nhà liền kề có sân vườn trên mái" width="1800" height="1164" loading="lazy"><figcaption>Nhà liền kề</figcaption></figure>
-      <figure><img class="zoomable" src="sanh-pho.webp" alt="Phối cảnh khối đế và lối vào tòa căn hộ" width="754" height="1356" loading="lazy"><figcaption>Khối đế tòa căn hộ</figcaption></figure>
-      <figure><img class="zoomable" src="toa-thap.webp" alt="Phối cảnh tòa căn hộ" width="1359" height="1532" loading="lazy"><figcaption>Tòa căn hộ</figcaption></figure>
-      <figure class="wide3"><img class="zoomable" src="lien-ke-2.webp" alt="Mặt tiền dãy liền kề với pergola và ban công kính" width="1800" height="1184" loading="lazy"><figcaption>Mặt tiền liền kề</figcaption></figure>
+    <div class="amen">
+      <div><span class="k">Tòa căn hộ</span><h3>38–42 tầng, 603 căn</h3><p class="lead">5 tầng khối đế gồm văn phòng, trung tâm thương mại và khu chăm sóc sức khỏe. 3 tầng hầm đỗ xe.</p></div>
+      <div><span class="k">Riêng tư</span><h3>3 cụm thang, 8 thang máy</h3><p class="lead">Cư dân, khách văn phòng và khách trung tâm thương mại đi theo lối riêng.</p></div>
+      <div><span class="k">Liền kề</span><h3>104 căn, 4 tầng</h3><p class="lead">Diện tích đất 75–116 m², có thể vừa ở vừa làm showroom, văn phòng nhỏ.</p></div>
+      <div><span class="k">Thiết kế</span><h3>Bruce Henderson Architects</h3><p class="lead">Đơn vị kiến trúc của Úc. Tổng thầu thi công: Delta.</p></div>
+      <div><span class="k">Cho trẻ em</span><h3>Nhà trẻ 3 tầng trong dự án</h3><p class="lead">Cùng khu vui chơi trẻ em ngoài trời và trong nhà.</p></div>
+      <div><span class="k">Hệ thống</span><h3>Lọc nước trung tâm</h3><p class="lead">An ninh 3 lớp, kính Low-E 2 lớp cách âm cách nhiệt (theo tài liệu chủ đầu tư).</p></div>
     </div>
   </div>
 </section>
-
-<section class="alt" id="mat-bang">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Tổng mặt bằng</div>
-      <h2>Liền kề bao quanh, tòa căn hộ ở góc ngã tư</h2>
-      <p class="lead">Mặt bằng có mã từng căn liền kề và vị trí các tiện ích. Bấm vào ảnh để phóng to.</p>
-    </div>
-    <figure class="plan-img"><img class="zoomable" src="tong-mat-bang.webp" alt="Tổng mặt bằng dự án Iconia LakeSide" width="2000" height="1979" loading="lazy"></figure>
-    <div class="two">
-      <div>
-        <h3>Tiện ích ngoài trời</h3>
-        <ol class="olist"><li>Quảng trường công viên</li><li>Chòi nghỉ chân</li><li>Khu vui chơi trẻ em</li><li>Gym ngoài trời</li><li>Trường mầm non</li><li>Khu vui chơi trẻ em</li></ol>
-      </div>
-      <div>
-        <h3>Tiện ích trong nhà</h3>
-        <ol class="olist" start="7"><li>Câu lạc bộ Gym</li><li>Câu lạc bộ bóng bàn</li><li>Thư viện</li><li>Thương mại dịch vụ</li><li>Hầm gửi xe</li></ol>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="can-ho">
   <div class="wrap">
     <div class="head">
@@ -494,7 +495,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Các tầng khác có bố trí riêng. Thông số chính thức của từng căn được xác lập trong hợp đồng mua bán.</p>
   </div>
 </section>
-
 <section class="alt" id="thap-tang">
   <div class="wrap">
     <div class="head">
@@ -514,8 +514,29 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note"><b>Bàn giao thô:</b> mặt ngoài hoàn thiện theo thiết kế chủ đầu tư; bên trong không trát trần và tường, chưa chia phòng, chưa xây cầu thang (để chờ lỗ thang) để chủ nhà tự hoàn thiện.</p>
   </div>
 </section>
+<section class="cta-band" id="cta-1"><div class="wrap"><p>Muốn biết giá căn bạn vừa xem? Nhận bảng giá và quỹ căn.</p><a class="btn btn-primary" href="#lien-he">Nhận bảng giá</a></div></section>
 
-<section id="chinh-sach">
+<section id="mat-bang">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Tổng mặt bằng</div>
+      <h2>Liền kề bao quanh, tòa căn hộ ở góc ngã tư</h2>
+      <p class="lead">Mặt bằng có mã từng căn liền kề và vị trí các tiện ích. Bấm vào ảnh để phóng to.</p>
+    </div>
+    <figure class="plan-img"><img class="zoomable" src="tong-mat-bang.webp" alt="Tổng mặt bằng dự án Iconia LakeSide" width="2000" height="1979" loading="lazy"></figure>
+    <div class="two">
+      <div>
+        <h3>Tiện ích ngoài trời</h3>
+        <ol class="olist"><li>Quảng trường công viên</li><li>Chòi nghỉ chân</li><li>Khu vui chơi trẻ em</li><li>Gym ngoài trời</li><li>Trường mầm non</li><li>Khu vui chơi trẻ em</li></ol>
+      </div>
+      <div>
+        <h3>Tiện ích trong nhà</h3>
+        <ol class="olist" start="7"><li>Câu lạc bộ Gym</li><li>Câu lạc bộ bóng bàn</li><li>Thư viện</li><li>Thương mại dịch vụ</li><li>Hầm gửi xe</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="alt" id="chinh-sach">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Chính sách bán hàng</div>
@@ -583,8 +604,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Ở các phương án vay, chủ đầu tư hỗ trợ lãi suất tối đa 11%/năm và phí trả nợ trước hạn tối đa 1%; phần vượt khách tự trả. Điều kiện vay theo ngân hàng chỉ định.</p>
   </div>
 </section>
+<section class="cta-band" id="cta-2"><div class="wrap"><p>Chưa chắc phương án nào lợi hơn? Tôi tính dòng tiền giúp bạn.</p><a class="btn btn-primary" href="#lien-he">Tính dòng tiền</a></div></section>
 
-<section class="alt" id="phap-ly">
+<section id="phap-ly">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Pháp lý</div>
@@ -602,8 +624,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p class="note">Khách hàng có thể đề nghị xem bản sao các văn bản trên khi gặp chuyên viên.</p>
   </div>
 </section>
-
-<section id="hoi-dap">
+<section class="alt" id="hoi-dap">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Hỏi đáp</div><h2>Câu khách hay hỏi</h2></div>
     <details><summary>Iconia LakeSide và Mipec Tố Hữu có phải một dự án?</summary><p>Đúng. Iconia LakeSide là tên thương mại của dự án MIC Tower tại 54 Tố Hữu, do Công ty Cổ phần Đầu tư MIC (thương hiệu Mipec) làm chủ đầu tư.</p></details>
@@ -612,7 +633,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <details><summary>Nhà liền kề bàn giao như thế nào?</summary><p>Bàn giao thô bên trong: chưa trát trần, tường; chưa chia phòng; chưa xây cầu thang. Mặt ngoài, mái, cửa và ban công hoàn thiện theo thiết kế chủ đầu tư.</p></details>
   </div>
 </section>
-
 <section class="contact" id="lien-he">
   <div class="wrap">
     <div class="head" style="margin:0">
