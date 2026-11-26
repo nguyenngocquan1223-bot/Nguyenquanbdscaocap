@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gamuda Central Park | Nguyễn Quân BĐS</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="description" content="Căn hộ Gamuda Central Park trong công viên Yên Sở 323 ha, sổ hồng lâu dài: phối cảnh, mặt bằng 29 trục căn tòa Brighton, 5 phương án thanh toán. Tư vấn 0929 599 292.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gamuda Central Park · Tòa Brighton">
@@ -764,9 +765,22 @@ section.cta-band { background: var(--accent); color: var(--accent-ink); padding-
       <p>Gọi điện hoặc nhắn Zalo cùng số trên<br>Hẹn lịch trước để được đón tiếp tại nhà mẫu</p>
       <div class="cbtns"><a class="btn btn-primary" href="tel:0929599292">Gọi ngay</a><a class="btn btn-ghost" href="https://zalo.me/0929599292" target="_blank" rel="noopener">Nhắn Zalo</a><button class="btn btn-ghost" id="copy" type="button">Sao chép số</button></div>
     </div>
+    <form class="leadform" name="lien-he" method="POST" action="/cam-on/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="lien-he">
+      <input type="hidden" name="trang" value="Gamuda Central Park">
+      <p class="hp" aria-hidden="true"><label>Bỏ trống ô này <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="leadform-head"><b>Nhận bảng giá và quỹ căn</b><span>Để lại số điện thoại hoặc Zalo, tôi gọi lại cho bạn.</span></div>
+      <label>Họ tên<input name="ho-ten" autocomplete="name" required maxlength="60"></label>
+      <label>Số điện thoại / Zalo<input name="so-dien-thoai" type="tel" inputmode="tel" autocomplete="tel" required maxlength="16"></label>
+      <label class="full">Quan tâm<select name="du-an"><option selected>Gamuda Central Park</option><option>Iconia LakeSide</option><option>Ký gửi căn hộ</option><option>Khác</option></select></label>
+      <label class="full">Ghi chú (không bắt buộc)<textarea name="ghi-chu" rows="2" maxlength="500" placeholder="Ngân sách, loại căn, thời điểm cần nhà…"></textarea></label>
+      <p class="lead-consent">Khi bấm gửi, bạn đồng ý để chuyên viên Nguyễn Ngọc Quân dùng thông tin trên để liên hệ tư vấn.</p>
+      <div class="lead-foot"><button class="btn btn-primary" type="submit">Gửi thông tin</button><p class="lead-msg" role="status" aria-live="polite"></p></div>
+    </form>
   </div>
 </section>
 
+<link rel="stylesheet" href="/site.css">
 <div class="fab" aria-label="Liên hệ nhanh"><a href="tel:0929599292">Gọi 0929 599 292</a><a href="https://zalo.me/0929599292" target="_blank" rel="noopener">Zalo</a></div>
 <div class="lightbox" id="lightbox" hidden><button type="button" class="lb-close" id="lb-close" aria-label="Đóng">×</button><img id="lb-img" alt=""></div>
 <footer><div class="wrap">Thông tin trên trang tổng hợp từ tài liệu của chủ đầu tư Gamuda Land, mang tính tham khảo. Giá, chính sách và tiến độ có thể thay đổi theo thông báo chính thức.</div></footer>
@@ -931,5 +945,6 @@ section.cta-band { background: var(--accent); color: var(--accent-ink); padding-
   secs.forEach(s => io.observe(s));
 })();
 </script>
+<script src="/lead.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cam-on/
+
+Sitemap: https://nguyenquanbdscaocap.com/sitemap.xml
