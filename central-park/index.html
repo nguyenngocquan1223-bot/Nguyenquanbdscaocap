@@ -434,6 +434,44 @@ section.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-
 section.alt { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-b) 20%, var(--band)) 0%, var(--band) 45%, color-mix(in srgb, var(--grad-c) 20%, var(--band)) 100%) }
 .topnav { background: linear-gradient(90deg, color-mix(in srgb, var(--grad-b) 26%, var(--bg)), var(--bg) 45%, color-mix(in srgb, var(--grad-c) 26%, var(--bg))) }
 .hl div { background: linear-gradient(165deg, color-mix(in srgb, var(--grad-b) 20%, var(--surface)) 0%, var(--surface) 65%) }
+/* Đổ màu trái → phải: đậm bên trái, nhạt dần, hòa vào trắng dịu bên phải */
+.hero, .contact { background:
+  radial-gradient(45% 70% at 100% 0%, rgba(255, 255, 255, .55) 0%, transparent 70%),
+  linear-gradient(90deg,
+    color-mix(in srgb, var(--grad-a) 72%, #000) 0%,
+    var(--grad-a) 28%,
+    color-mix(in srgb, var(--grad-b) 70%, #FFFFFF) 60%,
+    color-mix(in srgb, var(--grad-b) 22%, #FFFFFF) 82%,
+    #FAFCFC 100%) }
+.hero figcaption { color: var(--muted) }
+.hero .facts { margin-top: 1rem; padding: 0 1.2rem; border: 0; border-radius: 14px; background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); box-shadow: 0 12px 30px -18px rgba(0, 0, 0, .35) }
+.hero .facts dt { color: var(--muted) }
+.hero .facts dd { color: var(--fg) }
+.hero .wrap.facts-wrap { padding-bottom: 2rem }
+@media (max-width: 860px) {
+  .hero, .contact { background: linear-gradient(180deg, color-mix(in srgb, var(--grad-a) 72%, #000) 0%, var(--grad-a) 30%, color-mix(in srgb, var(--grad-b) 60%, #FFFFFF) 70%, #F6FAFA 100%) }
+  .contact .head p { color: rgba(255, 255, 255, .92) }
+}
+/* Thanh menu to, rõ: tên và số điện thoại nổi bật */
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px) }
+.topnav { background: linear-gradient(90deg, color-mix(in srgb, var(--grad-a) 12%, #FFFFFF) 0%, #FFFFFF 55%, #FFFFFF 100%); box-shadow: 0 2px 14px -8px rgba(0, 0, 0, .25) }
+.navin { height: 76px; gap: 1.4rem }
+.brand { font-size: 1.5rem; font-weight: 800; line-height: 1.1; background: linear-gradient(100deg, color-mix(in srgb, var(--grad-a) 75%, #000) 0%, var(--grad-a) 100%); -webkit-background-clip: text; background-clip: text; color: transparent }
+.brand small { font-size: .7rem; letter-spacing: .16em; margin-top: .15rem; -webkit-text-fill-color: var(--muted) }
+.links a { font-size: 1.08rem; font-weight: 700; color: var(--fg) }
+.links a.other { font-size: 1rem }
+.navcall { font-size: 1.2rem; font-weight: 800; letter-spacing: .02em; padding: .6rem 1.2rem; border-radius: 10px }
+@media (max-width: 1360px) and (min-width: 701px) { .links a.other { display: none } }
+@media (max-width: 1000px) { .links a { font-size: 1rem; padding: .5rem .55rem } .brand { font-size: 1.3rem } }
+@media (max-width: 700px) {
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 112px) }
+  .navin { height: auto; flex-wrap: wrap; padding-block: .55rem .3rem; gap: .2rem .8rem }
+  .brand { font-size: 1.2rem; flex: 1 }
+  .brand small { font-size: .6rem }
+  .navcall { display: inline-flex; font-size: 1rem; padding: .45rem .8rem }
+  .links { flex-basis: 100%; order: 3 }
+  .links a { font-size: .95rem }
+}
 @media (prefers-reduced-motion: reduce) { section.cta-band { animation: none } }
 </style>
 <nav class="topnav" aria-label="Mục lục">
