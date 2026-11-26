@@ -64,3 +64,8 @@ body .leadform .hp { position: absolute; left: -9999px; width: 1px; height: 1px;
 @media (max-width: 560px) {
   body .leadform { grid-template-columns: 1fr; padding: 1.1rem }
 }
+
+/* Nút Zalo / gọi nổi trên máy tính: nằm trên biểu tượng "Powered by Netlify" ở góc phải dưới */
+@media (min-width: 861px) {
+  body .float-contact { bottom: calc(env(safe-area-inset-bottom, 0px) + 84px) }
+}
