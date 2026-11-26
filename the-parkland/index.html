@@ -341,6 +341,28 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </head>
 <body>
 <style>
+/* Layout 3D, bản đồ kết nối, thư viện tiện ích */
+.lo3 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; align-items: center }
+.lo3 figure { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; min-width: 0 }
+.lo3 img { width: 100%; height: auto; cursor: zoom-in }
+.lo3-info { display: grid; gap: .8rem; align-content: start }
+.lo3-info h3 { font-size: 1.4rem }
+.lo3-info dl { margin: 0; display: grid; gap: .5rem }
+.lo3-info dl div { border-bottom: 1px solid var(--line); padding-bottom: .5rem }
+.lo3-info dt { font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.lo3-info dd { margin: 0; font-weight: 700; font-size: 1.1rem; font-variant-numeric: tabular-nums }
+.mapfig { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden }
+.mapfig img { width: 100%; height: auto; cursor: zoom-in }
+.mapfig figcaption, .gal figcaption { font-size: .78rem; color: var(--muted); padding: .5rem .8rem }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; padding: 0; list-style: none }
+.chips li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: .35rem .8rem; font-size: .88rem }
+.chips b { color: var(--accent) }
+.gal { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; align-items: start }
+.gal figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; min-width: 0 }
+.gal img { width: 100%; height: auto; display: block; cursor: zoom-in }
+.gal .full { grid-column: 1 / -1 }
+.ti-tbl td, .ti-tbl th { text-align: center } .ti-tbl td:first-child, .ti-tbl th:first-child { text-align: left }
+@media (max-width: 760px) { .lo3, .gal { grid-template-columns: 1fr } }
 /* Bố cục riêng các trang dự án Ocean City */
 .zones { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; margin-top: 2rem }
 .zone { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; display: grid; gap: .45rem; align-content: start }
@@ -587,7 +609,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
     <a class="brand" href="/">Nguyễn Quân BĐS<small>The ParkLand</small></a>
-    <div class="links"><a href="#quy-mo">Quy mô</a><a href="#can-ho">Căn hộ</a><a href="#vi-tri">Vị trí</a><a href="#tien-ich">Tiện ích</a><a href="#chinh-sach">Chính sách</a><a href="#lien-he">Liên hệ</a><a class="other" href="/">Dự án khác</a></div>
+    <div class="links"><a href="#quy-mo">Quy mô</a><a href="#can-ho">Căn hộ</a><a href="#vi-tri">Vị trí</a><a href="#tien-ich">Tiện ích</a><a href="#chinh-sach">Chính sách</a><a href="#ket-noi">Kết nối</a><a href="#layout-3d">Layout 3D</a><a href="#anh-tien-ich">Ảnh tiện ích</a><a href="#lien-he">Liên hệ</a><a class="other" href="/">Dự án khác</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -768,6 +790,49 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   </div>
 </section>
 
+<section id="ket-noi">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Kết nối vùng</div><h2>Giữa Vành đai 3.5, Vành đai 4 và cao tốc Hà Nội – Hải Phòng</h2><p class="lead">The ParkLand nằm giữa phân khu Đảo Dừa và Chà Là, phía Đông Nam Ocean Park 2, đi bộ ra trục đại lộ Ngọc Trai.</p></div>
+    <figure class="mapfig"><img class="zoomable" src="ket-noi-vung.webp" alt="Bản đồ liên kết vùng The ParkLand · ảnh minh họa" loading="lazy"><figcaption>Bản đồ liên kết vùng The ParkLand · ảnh minh họa</figcaption></figure>
+    <ul class="chips"><li><b>Vành đai 3.5</b> phía Bắc</li><li><b>Vành đai 4</b> phía Đông Nam</li><li><b>Cao tốc Hà Nội – Hải Phòng</b> sát dự án</li><li><b>Vincom Mega Mall</b>, K-Town, Little Hongkong</li><li><b>VinWonders Wave Park</b></li><li><b>Vinmec</b> Medical Resort</li><li><b>Vinschool</b></li></ul>
+  </div>
+
+</section>
+<section class="alt" id="layout-3d">
+  <div class="wrap lo3-wrap">
+    <div class="head"><div class="eyebrow">Layout 3D căn hộ</div><h2>Bảy loại căn, xem từng căn bóc mái 3D</h2><p class="lead">Layout phân khu Forest Garden theo tài liệu bán hàng. Bấm vào loại căn để đổi ảnh.</p></div>
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab" data-img="lo-studio.webp" data-name="Studio" data-a1="30 – 33 m²" data-a2="Từ 31,58 m² (mặt bằng điển hình)" data-note="">Studio</button><button class="tab" type="button" role="tab" data-img="lo-1pn-plus.webp" data-name="1 PN+" data-a1="46 – 48,5 m²" data-a2="Từ 46,67 m²" data-note="">1 PN+</button><button class="tab" type="button" role="tab" data-img="lo-2pn.webp" data-name="2 PN" data-a1="56 – 65 m²" data-a2="Từ 56,44 m²" data-note="">2 PN</button><button class="tab" type="button" role="tab" data-img="lo-2pn-plus.webp" data-name="2 PN+" data-a1="65 – 68 m²" data-a2="Từ 65,78 m²" data-note="">2 PN+</button><button class="tab" type="button" role="tab" data-img="lo-3pn.webp" data-name="3 PN" data-a1="78 – 81 m²" data-a2="Từ 78,64 m²" data-note="">3 PN</button><button class="tab" type="button" role="tab" data-img="lo-duplex.webp" data-name="Duplex" data-a1="113 – 123 m²" data-a2="Tổng 2 tầng" data-note="">Duplex</button><button class="tab" type="button" role="tab" data-img="lo-penthouse.webp" data-name="Penthouse" data-a1="120 – 150 m²" data-a2="Tầng cao" data-note="">Penthouse</button></div>
+    <div class="lo3">
+      <figure><img class="zoomable" src="lo-studio.webp" alt="Layout căn Studio" loading="lazy"></figure>
+      <div class="lo3-info">
+        <h3 data-f="name">Studio</h3>
+        <dl><div><dt>Diện tích thông thủy</dt><dd data-f="a1">–</dd></div><div><dt>Ghi chú diện tích</dt><dd data-f="a2">–</dd></div></dl>
+        <p class="note" data-f="note" style="margin:0"></p>
+        <a class="btn btn-primary" href="#lien-he">Hỏi căn còn trống loại này</a>
+      </div>
+    </div>
+    <figure class="mapfig" style="margin-top:1.5rem"><img class="zoomable" src="layout-dien-hinh.webp" alt="Mặt bằng căn hộ điển hình The ParkLand: Studio, 1PN+, 2PN, 2PN+, 3PN, Penthouse, Duplex" loading="lazy"><figcaption>Mặt bằng căn hộ điển hình của chủ đầu tư, ghi diện tích thông thủy</figcaption></figure>
+    <p class="note">Ảnh 3D minh họa nội thất, theo bộ tài liệu Forest Garden. Diện tích ở dòng "Ghi chú" lấy từ mặt bằng căn hộ điển hình bên dưới.</p>
+  </div>
+</section>
+<section id="anh-tien-ich">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Hình ảnh tiện ích</div><h2>Tiện ích trong tòa: gym, co-working, phòng game, khu trẻ em</h2><p class="lead">Bộ ảnh tham khảo phong cách thiết kế tiện ích của chủ đầu tư.</p></div>
+    <div class="gal"><figure><img class="zoomable" src="ti-gym.webp" alt="Phòng Gym" loading="lazy"><figcaption>Phòng Gym</figcaption></figure><figure><img class="zoomable" src="ti-coworking.webp" alt="Không gian Co-working" loading="lazy"><figcaption>Không gian Co-working</figcaption></figure><figure><img class="zoomable" src="ti-game.webp" alt="Phòng Game" loading="lazy"><figcaption>Phòng Game</figcaption></figure><figure><img class="zoomable" src="ti-tre-em.webp" alt="Khu trẻ em trong nhà" loading="lazy"><figcaption>Khu trẻ em trong nhà</figcaption></figure></div>
+    <h3 style="margin:2rem 0 .8rem">Tiện ích trong từng tòa</h3>
+    <div class="tbl"><table class="ti-tbl"><thead><tr><th>Tiện ích</th><th>P1</th><th>P2</th><th>P3</th><th>P5</th><th>P6</th><th>P8</th></tr></thead><tbody>
+      <tr><td>Gym</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Dance / Yoga Studio</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Khu trẻ em trong nhà</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Khu Game</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Co-working</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Lounge cư dân</td><td>–</td><td>✓</td><td>✓</td><td>–</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Phòng thay đồ khu thể thao</td><td>✓</td><td>✓</td><td>–</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Ngoài trời</td><td colspan="4">Bể bơi ngoài trời, đường dạo bộ, công viên, khu vui chơi trẻ em, vườn thư giãn</td><td colspan="2">Sân pickleball, đường dạo bộ, công viên, khu vui chơi trẻ em</td></tr>
+    </tbody></table></div>
+    <p class="note">Ảnh phối cảnh, ảnh tham khảo của chủ đầu tư, mang tính minh họa. Bấm vào ảnh để phóng to.</p>
+  </div>
+</section>
 <section class="contact" id="lien-he">
   <div class="wrap">
     <div class="head" style="margin:0">
@@ -846,6 +911,20 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   }, { rootMargin: '-45% 0px -50% 0px' });
   secs.forEach(s => io.observe(s));
 })();
+</script>
+<script>
+/* Chọn loại căn để xem layout */
+document.querySelectorAll(".lo3-wrap").forEach(function (w) {
+  var img = w.querySelector(".lo3 img"), name = w.querySelector("[data-f=name]"), a1 = w.querySelector("[data-f=a1]"), a2 = w.querySelector("[data-f=a2]"), note = w.querySelector("[data-f=note]");
+  var tabs = w.querySelectorAll(".tab");
+  function show(t) {
+    tabs.forEach(function (x) { x.setAttribute("aria-selected", x === t ? "true" : "false"); });
+    img.src = t.dataset.img; img.alt = "Layout căn " + t.dataset.name;
+    name.textContent = t.dataset.name; a1.textContent = t.dataset.a1 || "–"; a2.textContent = t.dataset.a2 || "–"; note.textContent = t.dataset.note || "";
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { show(t); }); });
+  show(tabs[0]);
+});
 </script>
 <script src="/lead.js" defer></script>
 </body>
