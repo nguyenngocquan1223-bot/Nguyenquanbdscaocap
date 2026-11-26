@@ -472,6 +472,32 @@ html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px) }
   .links { flex-basis: 100%; order: 3 }
   .links a { font-size: .95rem }
 }
+/* Phần đầu sáng, chữ đậm; đổ màu tương phản rõ từ trái sang phải */
+.hero, .contact { --hero-fg: var(--fg); --hero-muted: var(--muted); color: var(--fg);
+  background:
+    radial-gradient(38% 60% at 0% 0%, color-mix(in srgb, var(--grad-a) 34%, transparent) 0%, transparent 75%),
+    radial-gradient(40% 70% at 12% 100%, color-mix(in srgb, var(--grad-c) 40%, transparent) 0%, transparent 72%),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--grad-a) 32%, var(--bg)) 0%,
+      color-mix(in srgb, var(--grad-b) 26%, var(--bg)) 38%,
+      color-mix(in srgb, var(--grad-b) 10%, var(--bg)) 68%,
+      var(--bg) 100%) }
+.hero h1 { background: linear-gradient(100deg, color-mix(in srgb, var(--grad-a) 70%, #000) 0%, var(--grad-a) 35%, var(--grad-b) 72%, var(--grad-c) 110%); -webkit-background-clip: text; background-clip: text; color: transparent }
+.hero .tag, .hero .addr, .hero p, .contact .head p { color: color-mix(in srgb, var(--fg) 82%, transparent) }
+.hero .eyebrow, .contact .eyebrow { color: var(--accent) }
+.hero .btn-primary, .contact .btn-primary { background: linear-gradient(120deg, color-mix(in srgb, var(--grad-a) 80%, #000), var(--grad-a) 45%, var(--grad-b)); color: var(--accent-ink); box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--grad-a) 80%, transparent) }
+.hero .btn-ghost, .contact .btn-ghost { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 60%, transparent); background: color-mix(in srgb, var(--surface) 60%, transparent) }
+.hero .btn-ghost:hover, .contact .btn-ghost:hover { background: color-mix(in srgb, var(--accent) 10%, var(--surface)) }
+.hero figcaption { color: var(--muted) }
+.badges span { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); background: color-mix(in srgb, var(--surface) 70%, transparent) }
+.contact h2 { background: linear-gradient(100deg, color-mix(in srgb, var(--grad-a) 70%, #000), var(--grad-a) 50%, var(--grad-b)); -webkit-background-clip: text; background-clip: text; color: transparent }
+.contact .cert p { color: var(--muted) }
+@media (max-width: 860px) {
+  .hero, .contact { background:
+    radial-gradient(70% 40% at 0% 0%, color-mix(in srgb, var(--grad-a) 34%, transparent) 0%, transparent 75%),
+    linear-gradient(180deg, color-mix(in srgb, var(--grad-a) 28%, var(--bg)) 0%, color-mix(in srgb, var(--grad-b) 18%, var(--bg)) 55%, var(--bg) 100%) }
+  .contact .head p { color: color-mix(in srgb, var(--fg) 82%, transparent) }
+}
 @media (prefers-reduced-motion: reduce) { section.cta-band { animation: none } }
 </style>
 <nav class="topnav" aria-label="Mục lục">
