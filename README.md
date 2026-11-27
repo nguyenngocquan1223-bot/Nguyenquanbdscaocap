@@ -7,6 +7,8 @@ Website tĩnh của chuyên viên kinh doanh Nguyễn Ngọc Quân (River Homes)
 - `iconia-lakeside/`: dự án Iconia LakeSide (Mipec Tố Hữu)
 - `the-parkland/`, `the-cityon/`: dự án của MIK Group tại Ocean Park 2 và 3
 - `lumiere-springbay/`, `masteri-grand-coast/`: dự án của Masterise Homes tại Ocean Park 2
+- `lumiere-hanoi-seasons-garden/` (HSG), `lumiere-essence-peak/` (LEP), `lumiere-prime-hills/` (LPH), `masteri-era-landmark/` (MEL), `masteri-trinity-square/` (MTS): dự án Masterise Homes, mỗi tên kèm mã viết tắt
+- LUMIÈRE Ocean Crest (LOC) và LUMIÈRE Orient Pearl (LOP): mới có thẻ trên trang chủ, chưa có trang riêng vì chưa có tài liệu
 
 Ảnh lấy từ tài liệu chủ đầu tư, xuất ở kích thước gốc, không phóng to.
 Triển khai: Netlify, nhánh `main`, không cần lệnh build, thư mục publish là thư mục gốc.
