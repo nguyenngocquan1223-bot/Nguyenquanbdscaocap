@@ -348,6 +348,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .pcard:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px }
 .pcard img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover }
 .pcard .body { padding: 1.2rem 1.3rem 1.4rem; display: grid; gap: .6rem; align-content: start }
+.pfilter { display: grid; gap: .6rem; margin: 0 0 1.4rem }
+.frow, .kvrow { display: flex; flex-wrap: wrap; gap: .5rem }
+.kvrow[hidden], .pfilter[hidden] { display: none }
+.fchip { font-family: inherit; font-weight: 600; font-size: .95rem; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: .55rem 1rem; cursor: pointer; display: inline-flex; gap: .45rem; align-items: center; min-height: 44px }
+.fchip small { font-weight: 800; font-size: .75rem; background: color-mix(in srgb, var(--accent) 12%, transparent); border-radius: 999px; padding: .1rem .45rem }
+.fchip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink) }
+.fchip.on small { background: rgb(255 255 255 / .22) }
+.kvrow .fchip { font-size: .88rem; padding: .4rem .85rem; min-height: 40px }
+.fcount { margin: 0; color: var(--muted); font-size: .9rem }
+.pcard .kvtag { justify-self: start; font-size: .75rem; font-weight: 700; letter-spacing: .02em; color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, transparent); border-radius: 6px; padding: .15rem .5rem }
+.pcard[hidden], .pempty[hidden] { display: none }
+.pempty { grid-column: 1 / -1; color: var(--muted) }
 .pcard .loc { color: var(--muted); font-size: .9rem }
 .pcard ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .3rem; font-size: .92rem }
 .pcard li::before { content: "·"; color: var(--accent); font-weight: 800; margin-right: .45rem }
@@ -611,124 +623,143 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 <section id="du-an">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Dự án đang phân phối</div><h2>Chọn dự án để xem chi tiết</h2><p class="lead">Mỗi trang có phối cảnh, mặt bằng, layout căn, chính sách bán hàng và pháp lý theo tài liệu chủ đầu tư.</p></div>
+    <div class="pfilter" hidden>
+      <div class="frow" role="group" aria-label="Lọc theo tỉnh, thành phố"><button type="button" class="fchip on" data-tinh="all" aria-pressed="true">Tất cả<small>13</small></button><button type="button" class="fchip" data-tinh="ha-noi" aria-pressed="false">Hà Nội<small>6</small></button><button type="button" class="fchip" data-tinh="hung-yen" aria-pressed="false">Hưng Yên<small>7</small></button></div>
+      <div class="kvrow" data-for="ha-noi" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hà Nội<small>6</small></button><button type="button" class="fchip" data-kv="noi-do" aria-pressed="false">Nội đô<small>3</small></button><button type="button" class="fchip" data-kv="dong-anh" aria-pressed="false">Đông Anh · Global Gate<small>2</small></button><button type="button" class="fchip" data-kv="gia-lam" aria-pressed="false">Gia Lâm · Ocean Park 1<small>1</small></button></div><div class="kvrow" data-for="hung-yen" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hưng Yên<small>7</small></button><button type="button" class="fchip" data-kv="ocp2" aria-pressed="false">Ocean Park 2<small>5</small></button><button type="button" class="fchip" data-kv="ocp3" aria-pressed="false">Ocean Park 3<small>2</small></button></div>
+      <p class="fcount" aria-live="polite"></p>
+    </div>
     <div class="cards">
-      <a class="pcard" href="/central-park/">
+      <a class="pcard" href="/central-park/" data-tinh="ha-noi" data-kv="noi-do">
         <img src="card-central-park.webp" alt="Gamuda Central Park" width="1200" height="675" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Nội đô</span>
           <h3>Gamuda Central Park</h3>
           <span class="loc">Lô HH2, Công viên Yên Sở · Gamuda Land</span>
           <ul><li>3 tòa 40 tầng trong công viên 323 ha</li><li>Tòa Brighton 980 căn, Studio đến 3 phòng ngủ</li><li>Ký HĐMB dự kiến 01/2027 · bàn giao Q4/2029</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/iconia-lakeside/">
+      <a class="pcard" href="/iconia-lakeside/" data-tinh="ha-noi" data-kv="noi-do">
         <img src="card-iconia.webp" alt="Iconia LakeSide" width="1200" height="776" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Nội đô</span>
           <h3>Iconia LakeSide</h3>
           <span class="loc">54 Tố Hữu, Trung Văn · Mipec (MIC)</span>
           <ul><li>603 căn hộ và 104 nhà liền kề bên hồ Mễ Trì</li><li>Căn hộ 2–9 phòng ngủ, liền kề 75–116 m² đất</li><li>Chiết khấu dự kiến đến 15,8% khi thanh toán sớm</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/the-parkland/">
-        <img src="card-parkland.webp" alt="The ParkLand" width="1800" height="1157" loading="lazy">
-        <div class="body">
-          <h3>The ParkLand</h3>
-          <span class="loc">Imperia Ocean City, Vinhomes Ocean Park 2 · MIK Group</span>
-          <ul><li>3 phân khu quanh công viên trung tâm 3,6 ha</li><li>Studio đến Penthouse, 30–150 m²</li><li>Vay 70%, hỗ trợ lãi 0% đến khi nhận nhà · bàn giao dự kiến 2029</li></ul>
-          <span class="go">Xem dự án →</span>
-        </div>
-      </a>
-      <a class="pcard" href="/the-cityon/">
-        <img src="card-cityon.webp" alt="The CityOn" width="1800" height="1013" loading="lazy">
-        <div class="body">
-          <h3>The CityOn</h3>
-          <span class="loc">Vinhomes Ocean Park 3 · MIK Group</span>
-          <ul><li>Tòa A2 mở bán đầu tiên, 601 căn</li><li>Căn nhỏ cho người mua nhà lần đầu</li><li>Tiến độ giãn khoảng 1%/tháng · bàn giao dự kiến Q3/2030</li></ul>
-          <span class="go">Xem dự án →</span>
-        </div>
-      </a>
-      <a class="pcard" href="/lumiere-hanoi-seasons-garden/">
+      <a class="pcard" href="/lumiere-hanoi-seasons-garden/" data-tinh="ha-noi" data-kv="noi-do">
         <img src="card-hsg.webp" alt="LUMIÈRE Hanoi Seasons Garden" width="1200" height="675" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Nội đô</span>
           <h3>LUMIÈRE Hanoi Seasons Garden <span class="abbr">HSG</span></h3>
           <span class="loc">233–235 Nguyễn Trãi, P. Khương Đình · Masterise Homes</span>
           <ul><li>Tòa L1, L2 phân khu The Bloom, cạnh ga Thượng Đình</li><li>Studio đến 3 phòng ngủ + 1 đa năng</li><li>Vay 70%, lãi 0% đến khi đủ điều kiện bàn giao</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/lumiere-essence-peak/">
+      <a class="pcard" href="/lumiere-essence-peak/" data-tinh="ha-noi" data-kv="dong-anh">
         <img src="card-lep.webp" alt="LUMIÈRE Essence Peak" width="1200" height="675" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Đông Anh · Global Gate</span>
           <h3>LUMIÈRE Essence Peak <span class="abbr">LEP</span></h3>
           <span class="loc">Vinhomes Global Gate, Cổ Loa, Đông Anh · Masterise Homes</span>
           <ul><li>2 tòa Peak I, Peak II cao 45 tầng</li><li>53 tiện ích, bể bơi bốn mùa trong mỗi tòa</li><li>Bàn giao dự kiến Q3/2028 · có tour 360°</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/lumiere-prime-hills/">
+      <a class="pcard" href="/lumiere-prime-hills/" data-tinh="ha-noi" data-kv="dong-anh">
         <img src="card-lph.webp" alt="LUMIÈRE Prime Hills" width="1200" height="675" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Đông Anh · Global Gate</span>
           <h3>LUMIÈRE Prime Hills <span class="abbr">LPH</span></h3>
           <span class="loc">Lô HH-01, Vinhomes Global Gate, Đông Anh · Masterise Homes</span>
           <ul><li>Đã có giấy phép xây dựng 01/2025</li><li>Hoàn thành phần móng 07/2025</li><li>Nhận tài liệu chi tiết qua Zalo</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/masteri-era-landmark/">
-        <img src="card-mel.webp" alt="Masteri Era Landmark" width="1200" height="675" loading="lazy">
-        <div class="body">
-          <h3>Masteri Era Landmark <span class="abbr">MEL</span></h3>
-          <span class="loc">Vinhomes Ocean Park 3 · Masterise Homes</span>
-          <ul><li>3 phân khu The Spark, The Vision, The Flow</li><li>10 tòa 28 tầng, mật độ xây dựng 12,7%</li><li>209 tiện ích trong và ngoài nhà</li></ul>
-          <span class="go">Xem dự án →</span>
-        </div>
-      </a>
-      <a class="pcard" href="/masteri-trinity-square/">
-        <img src="card-mts.webp" alt="Masteri Trinity Square" width="1200" height="675" loading="lazy">
-        <div class="body">
-          <h3>Masteri Trinity Square <span class="abbr">MTS</span></h3>
-          <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
-          <ul><li>3 phân khu Southern, Central, Northern Square</li><li>9 tòa 27 tầng, 110 tiện ích</li><li>Mỗi phân khu một công viên nội khu riêng</li></ul>
-          <span class="go">Xem dự án →</span>
-        </div>
-      </a>
-      <a class="pcard" href="/lumiere-ocean-crest/">
-        <img src="card-loc.webp" alt="LUMIÈRE Ocean Crest" width="1200" height="675" loading="lazy">
-        <div class="body">
-          <h3>LUMIÈRE Ocean Crest <span class="abbr">LOC</span></h3>
-          <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
-          <ul><li>4 tòa 27 tầng giữa hồ tạo sóng và hồ Ngọc Trai</li><li>Bể bơi ngoài trời dài 50 m, bể bơi bốn mùa trong tòa</li><li>Chưa mở bán · bàn giao dự kiến Q1/2028</li></ul>
-          <span class="go">Xem dự án →</span>
-        </div>
-      </a>
-      <a class="pcard" href="/lumiere-orient-pearl/">
+      <a class="pcard" href="/lumiere-orient-pearl/" data-tinh="ha-noi" data-kv="gia-lam">
         <img src="card-lop.webp" alt="LUMIÈRE Orient Pearl" width="1200" height="675" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hà Nội · Gia Lâm · Ocean Park 1</span>
           <h3>LUMIÈRE Orient Pearl <span class="abbr">LOP</span></h3>
           <span class="loc">Vinhomes Ocean Park 1, Gia Lâm · Masterise Homes</span>
           <ul><li>4 tòa 30 tầng, mật độ xây dựng 18,7%</li><li>Công viên The Foresta, 86 tiện ích, có tour 360°</li><li>Bàn giao dự kiến Q3/2027</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/lumiere-springbay/">
+      <a class="pcard" href="/lumiere-springbay/" data-tinh="hung-yen" data-kv="ocp2">
         <img src="card-lumiere.webp" alt="Lumière SpringBay" width="1400" height="1304" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 2</span>
           <h3>Lumière SpringBay</h3>
           <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
           <ul><li>Dự án cao tầng đầu tiên tại Ocean Park 2</li><li>4 tòa L1, Z1, L2, Z2, Studio đến 3 phòng ngủ</li><li>Bàn giao dự kiến Q1/2027, sớm nhất trong các dự án</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <a class="pcard" href="/masteri-grand-coast/">
+      <a class="pcard" href="/masteri-grand-coast/" data-tinh="hung-yen" data-kv="ocp2">
         <img src="card-mgc.webp" alt="Masteri Grand Coast" width="1800" height="1016" loading="lazy">
         <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 2</span>
           <h3>Masteri Grand Coast</h3>
           <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
           <ul><li>7 tòa 27 tầng ven hồ tạo sóng, mật độ 15,8%</li><li>Studio đến 4 phòng ngủ, Duplex, Penthouse</li><li>Phân khu The Sand: chiết khấu đến 15%</li></ul>
           <span class="go">Xem dự án →</span>
         </div>
       </a>
+      <a class="pcard" href="/masteri-trinity-square/" data-tinh="hung-yen" data-kv="ocp2">
+        <img src="card-mts.webp" alt="Masteri Trinity Square" width="1200" height="675" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 2</span>
+          <h3>Masteri Trinity Square <span class="abbr">MTS</span></h3>
+          <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
+          <ul><li>3 phân khu Southern, Central, Northern Square</li><li>9 tòa 27 tầng, 110 tiện ích</li><li>Mỗi phân khu một công viên nội khu riêng</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
+      <a class="pcard" href="/lumiere-ocean-crest/" data-tinh="hung-yen" data-kv="ocp2">
+        <img src="card-loc.webp" alt="LUMIÈRE Ocean Crest" width="1200" height="675" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 2</span>
+          <h3>LUMIÈRE Ocean Crest <span class="abbr">LOC</span></h3>
+          <span class="loc">Vinhomes Ocean Park 2 · Masterise Homes</span>
+          <ul><li>4 tòa 27 tầng giữa hồ tạo sóng và hồ Ngọc Trai</li><li>Bể bơi ngoài trời dài 50 m, bể bơi bốn mùa trong tòa</li><li>Chưa mở bán · bàn giao dự kiến Q1/2028</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
+      <a class="pcard" href="/the-parkland/" data-tinh="hung-yen" data-kv="ocp2">
+        <img src="card-parkland.webp" alt="The ParkLand" width="1800" height="1157" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 2</span>
+          <h3>The ParkLand</h3>
+          <span class="loc">Imperia Ocean City, Vinhomes Ocean Park 2 · MIK Group</span>
+          <ul><li>3 phân khu quanh công viên trung tâm 3,6 ha</li><li>Studio đến Penthouse, 30–150 m²</li><li>Vay 70%, hỗ trợ lãi 0% đến khi nhận nhà · bàn giao dự kiến 2029</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
+      <a class="pcard" href="/masteri-era-landmark/" data-tinh="hung-yen" data-kv="ocp3">
+        <img src="card-mel.webp" alt="Masteri Era Landmark" width="1200" height="675" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 3</span>
+          <h3>Masteri Era Landmark <span class="abbr">MEL</span></h3>
+          <span class="loc">Vinhomes Ocean Park 3 · Masterise Homes</span>
+          <ul><li>3 phân khu The Spark, The Vision, The Flow</li><li>10 tòa 28 tầng, mật độ xây dựng 12,7%</li><li>209 tiện ích trong và ngoài nhà</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
+      <a class="pcard" href="/the-cityon/" data-tinh="hung-yen" data-kv="ocp3">
+        <img src="card-cityon.webp" alt="The CityOn" width="1800" height="1013" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 3</span>
+          <h3>The CityOn</h3>
+          <span class="loc">Vinhomes Ocean Park 3 · MIK Group</span>
+          <ul><li>Tòa A2 mở bán đầu tiên, 601 căn</li><li>Căn nhỏ cho người mua nhà lần đầu</li><li>Tiến độ giãn khoảng 1%/tháng · bàn giao dự kiến Q3/2030</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
+      <p class="pempty" hidden>Chưa có dự án ở khu vực này. <a href="#lien-he">Nhắn tôi</a> nhu cầu của bạn.</p>
     </div>
   </div>
 </section>
@@ -823,5 +854,40 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 })();
 </script>
 <script src="/lead.js" defer></script>
+<script>
+(function () {
+  var bar = document.querySelector(".pfilter"); if (!bar) return;
+  var cards = [].slice.call(document.querySelectorAll(".cards .pcard")), count = bar.querySelector(".fcount"), empty = document.querySelector(".pempty");
+  var st = { tinh: "all", kv: "all" };
+  var NAMES = { "ha-noi": "Hà Nội", "hung-yen": "Hưng Yên" };
+  function apply(push) {
+    var n = 0;
+    cards.forEach(function (c) {
+      var ok = (st.tinh === "all" || c.dataset.tinh === st.tinh) && (st.kv === "all" || c.dataset.kv === st.kv);
+      c.hidden = !ok; if (ok) n++;
+    });
+    bar.querySelectorAll("[data-tinh]").forEach(function (b) { var on = b.dataset.tinh === st.tinh; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+    bar.querySelectorAll(".kvrow").forEach(function (r) {
+      r.hidden = r.dataset.for !== st.tinh;
+      r.querySelectorAll("[data-kv]").forEach(function (b) { var on = b.dataset.kv === st.kv; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+    });
+    count.textContent = n + " dự án" + (st.tinh === "all" ? " tại Hà Nội và Hưng Yên" : " tại " + NAMES[st.tinh]);
+    empty.hidden = n > 0;
+    if (push) {
+      var q = st.tinh === "all" ? location.pathname : "?khu-vuc=" + st.tinh + (st.kv === "all" ? "" : "&vung=" + st.kv);
+      try { history.replaceState(null, "", q + "#du-an"); } catch (e) {}
+    }
+  }
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest(".fchip"); if (!b) return;
+    if (b.dataset.tinh) { st.tinh = b.dataset.tinh; st.kv = "all"; } else { st.kv = b.dataset.kv; }
+    apply(true);
+  });
+  var u = new URLSearchParams(location.search);
+  if (NAMES[u.get("khu-vuc")]) { st.tinh = u.get("khu-vuc"); if (bar.querySelector('.kvrow[data-for="' + st.tinh + '"] [data-kv="' + u.get("vung") + '"]')) st.kv = u.get("vung"); }
+  bar.hidden = false; apply(false);
+})();
+</script>
+
 </body>
 </html>
