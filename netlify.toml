@@ -3,3 +3,6 @@
 
 [build]
   publish = "."
+  # Chỉ build bản production. Netlify bỏ qua build khi lệnh ignore trả về exit 0,
+  # nên deploy preview (PR) và branch deploy sẽ bị huỷ để tiết kiệm credits.
+  ignore = "[ \"$CONTEXT\" = \"deploy-preview\" ] || [ \"$CONTEXT\" = \"branch-deploy\" ]"
