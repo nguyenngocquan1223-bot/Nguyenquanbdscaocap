@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin · Nguyễn Quân BĐS</title>
+<link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body class="dashboard-page">
+<header class="topbar"><a class="brand" href="/">NGUYỄN QUÂN <span>· ADMIN</span></a><div><span id="admin-email" class="muted"></span><button id="logout" class="button-secondary">Đăng xuất</button></div></header>
+<main class="dashboard">
+<p class="eyebrow">TỔNG QUAN</p>
+<h1>Bảng điều khiển</h1>
+<p class="muted">Khu vực quản trị riêng tư của website Nguyễn Quân BĐS.</p>
+<div class="notice"><strong>Giai đoạn thiết lập</strong><p>Website hiện vẫn tiếp nhận khách hàng qua Netlify Forms như trước. Dữ liệu form cũ chưa tự động đồng bộ vào bảng này. Sau khi kết nối Supabase và kiểm thử, chúng ta sẽ triển khai phần đồng bộ dữ liệu mà không làm gián đoạn form hiện tại.</p></div>
+<section class="panel">
+<div class="panel-heading"><div><h2>Yêu cầu ký gửi</h2><p class="muted">Các yêu cầu được lưu trong Supabase sau khi biểu mẫu ký gửi được kết nối.</p></div><span id="consignment-count" class="count">—</span></div>
+<div id="consignments" class="empty-state">Đang tải dữ liệu…</div>
+</section>
+<section class="panel">
+<h2>Thiết lập tiếp theo</h2>
+<ul class="setup-list">
+<li>Tạo dự án Supabase và cấu hình thông tin kết nối trên Netlify.</li>
+<li>Tạo tài khoản Auth cho email Admin đã chọn và bật xác minh email.</li>
+<li>Chạy file SQL trong Supabase để tạo bảng và chính sách bảo mật.</li>
+<li>Kết nối biểu mẫu ký gửi và luồng quản lý khách hàng.</li>
+</ul>
+</section>
+<a href="/" class="back-link">← Xem website công khai</a>
+</main>
+<script type="module" src="/admin/assets/admin.js"></script>
+</body>
+</html>
