@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Đăng nhập quản trị · Nguyễn Quân BĐS</title>
+<link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body class="auth-page">
+<main class="auth-card">
+<a class="brand" href="/">NGUYỄN QUÂN <span>· BĐS CAO CẤP</span></a>
+<p class="eyebrow">KHU VỰC QUẢN TRỊ</p>
+<h1>Đăng nhập Admin</h1>
+<p class="muted">Đăng nhập bằng email quản trị đã được cấp quyền.</p>
+<form id="login-form">
+<label>Email<input id="email" type="email" autocomplete="username" required value="Nguyenngocquan1223@gmail.com"></label>
+<label>Mật khẩu<input id="password" type="password" autocomplete="current-password" required></label>
+<button type="submit" id="submit">Đăng nhập</button>
+<p id="message" class="message" role="status" aria-live="polite"></p>
+</form>
+<a class="back-link" href="/">← Quay lại website</a>
+</main>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const ADMIN_EMAIL = "Nguyenngocquan1223@gmail.com".toLowerCase();
+const form = document.querySelector("#login-form");
+const message = document.querySelector("#message");
+const button = document.querySelector("#submit");
+let supabase;
+try {
+  const response = await fetch("/.netlify/functions/get-config");
+  if (!response.ok) throw new Error("Chưa cấu hình kết nối quản trị trên Netlify.");
+  const config = await response.json();
+  if (!config.supabaseUrl || !config.supabaseAnonKey) throw new Error("Thiếu cấu hình Supabase.");
+  supabase = createClient(config.supabaseUrl, config.supabaseAnonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+} catch (error) { message.textContent = error.message; button.disabled = true; }
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!supabase) return;
+  const email = document.querySelector("#email").value.trim().toLowerCase();
+  const password = document.querySelector("#password").value;
+  if (email !== ADMIN_EMAIL) { message.textContent = "Email này không được cấp quyền quản trị."; return; }
+  button.disabled = true; message.textContent = "Đang xác thực…";
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) { message.textContent = "Đăng nhập chưa thành công. Vui lòng kiểm tra email, mật khẩu và trạng thái tài khoản."; button.disabled = false; return; }
+  if ((data.user?.email || "").toLowerCase() !== ADMIN_EMAIL) {
+    await supabase.auth.signOut(); message.textContent = "Tài khoản không có quyền Admin."; button.disabled = false; return;
+  }
+  location.replace("/admin/");
+});
+</script>
+</body>
+</html>
