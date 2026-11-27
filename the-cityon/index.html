@@ -764,8 +764,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 
 <section id="mat-bang-tang">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Mặt bằng tầng</div><h2>Tòa A2, tầng 4–31</h2><p class="lead">Mặt bằng tầng điển hình của chủ đầu tư, ghi mã căn, loại căn, diện tích thông thủy (số trên) và tim tường (số dưới).</p></div>
-    <figure class="mapfig" style="margin:0"><img class="zoomable" src="mb-tang-a2-t4-31.webp" alt="Mặt bằng tầng 4–31 tòa A2 The CityOn: Studio 31,44–31,49 m², 1BR+ 46,67–46,87 m², 2BR 57,51–58,43 m², 2BR+ 66,23–66,24 m², 3BR 81,61–81,73 m² thông thủy" width="2200" height="1555" loading="lazy"><figcaption>Tòa A2 tầng 4–31 · Studio TT 31,44–31,49 m² · 1PN+ TT 46,67–46,87 m² · 2PN TT 57,51–58,43 m² · 2PN+ TT 66,23–66,24 m² · 3PN TT 81,61–81,73 m² · bấm để phóng to</figcaption></figure>
+    <div class="head"><div class="eyebrow">Mặt bằng theo tòa</div><h2>Tòa A2, từng tầng</h2><p class="lead">Chọn tầng để xem. Tầng 32–35 có căn Duplex 3PN (thông thủy 2 tầng 77,98 + 90,26 m²); tầng 35 có Penthouse 3PN 129,6–129,69 m² và 4PN 146,91 m² thông thủy.</p></div>
+    <div class="mbt"><div class="mbt-tabs" role="group" aria-label="Chọn tòa"><button type="button" aria-pressed="true">Tòa A2<small>601 căn</small></button></div><div class="mbt-floors"><div class="mbt-group" role="group" aria-label="Chọn tầng tòa A2"><button type="button" aria-pressed="true" data-src="mb/a2-t4-31.webp" data-cap="Tòa A2 · Tầng 4–31">Tầng 4–31</button><button type="button" aria-pressed="false" data-src="mb/a2-t3.webp" data-cap="Tòa A2 · Tầng 3">Tầng 3</button><button type="button" aria-pressed="false" data-src="mb/a2-t32.webp" data-cap="Tòa A2 · Tầng 32">Tầng 32</button><button type="button" aria-pressed="false" data-src="mb/a2-t33.webp" data-cap="Tòa A2 · Tầng 33">Tầng 33</button><button type="button" aria-pressed="false" data-src="mb/a2-t34.webp" data-cap="Tòa A2 · Tầng 34">Tầng 34</button><button type="button" aria-pressed="false" data-src="mb/a2-t35.webp" data-cap="Tòa A2 · Tầng 35 · Penthouse">Tầng 35 · Penthouse</button></div></div><figure class="mbt-fig"><img class="zoomable" src="mb/a2-t4-31.webp" alt="Tòa A2 · Tầng 4–31" width="2000" height="1414" loading="lazy"><figcaption>Tòa A2 · Tầng 4–31 · bấm ảnh để phóng to</figcaption></figure><p class="note">Mặt bằng của chủ đầu tư, ghi mã căn, loại căn, diện tích thông thủy (số trên) và tim tường (số dưới). Thông số chính thức theo hợp đồng mua bán.</p></div>
   </div>
 </section>
 <section class="alt" id="anh-tien-ich">
@@ -804,6 +804,19 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 </section>
 
 <link rel="stylesheet" href="/site.css">
+<style>
+.mbt-tabs,.mbt-floors{display:flex;flex-wrap:wrap;gap:.5rem}
+.mbt-floors{margin:.8rem 0 1rem}
+.mbt-tabs button,.mbt-floors button{font-family:inherit;font-weight:700;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:.5rem 1rem;cursor:pointer;min-height:44px}
+.mbt-floors button{font-weight:600;font-size:.88rem;padding:.4rem .85rem;min-height:40px}
+.mbt-tabs button[aria-pressed="true"],.mbt-floors button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.mbt-tabs small{font-weight:600;opacity:.8;margin-left:.3rem}
+.mbt-fig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mbt-fig img{width:100%;height:auto;display:block;cursor:zoom-in}
+.mbt-fig figcaption{padding:.6rem .9rem;font-size:.88rem;color:var(--muted);background:var(--surface)}
+.mbt-group[hidden]{display:none}
+@media (max-width:600px){.mbt-tabs small{display:none}.mbt-tabs button{padding:.45rem .9rem}}
+</style>
 <div class="fab" aria-label="Liên hệ nhanh"><a href="tel:0929599292">Gọi 0929 599 292</a><a href="https://zalo.me/0929599292" target="_blank" rel="noopener">Zalo</a></div>
 <div class="lightbox" id="lightbox" hidden><button type="button" class="lb-close" id="lb-close" aria-label="Đóng">×</button><img id="lb-img" alt=""></div>
 <footer class="site-foot">
@@ -869,5 +882,15 @@ document.querySelectorAll(".lo3-wrap").forEach(function (w) {
 });
 </script>
 <script src="/lead.js" defer></script>
+<script>
+(function(){document.querySelectorAll('.mbt').forEach(function(box){
+ var img=box.querySelector('.mbt-fig img'),cap=box.querySelector('.mbt-fig figcaption'),groups=box.querySelectorAll('.mbt-group');
+ function show(b){box.querySelectorAll('.mbt-floors button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});img.src=b.dataset.src;img.alt=b.dataset.cap;cap.textContent=b.dataset.cap+' · bấm ảnh để phóng to'}
+ box.querySelectorAll('.mbt-tabs button').forEach(function(t,i){t.addEventListener('click',function(){
+  box.querySelectorAll('.mbt-tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===t)});
+  groups.forEach(function(g,j){g.hidden=i!==j});show(groups[i].querySelector('button'))})});
+ box.querySelectorAll('.mbt-floors button').forEach(function(b){b.addEventListener('click',function(){show(b)})});
+})})();
+</script>
 </body>
 </html>
