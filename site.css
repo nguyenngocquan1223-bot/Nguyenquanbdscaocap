@@ -88,3 +88,12 @@ body .ticks li::before { content: "✓"; position: absolute; left: 1rem; top: .8
 body .ticks b { display: block; color: var(--fg); font-size: 1rem; margin-bottom: .15rem }
 body .profile .cert { margin-top: 0 }
 @media (max-width: 760px) { body .profile { grid-template-columns: 1fr; gap: 1.25rem } body .photo.portrait { max-width: 340px } }
+
+/* Dự án đã bán hết từ chủ đầu tư (MTS, LPH): nhãn ở đầu trang, khối chuyển nhượng, nhãn trên thẻ trang chủ */
+body .soldout { display: inline-block; margin-top: .9rem; padding: .35rem .85rem; border-radius: 999px; font-size: .88rem; font-weight: 700; background: rgba(255, 255, 255, .92); color: #7A2E12; box-shadow: 0 6px 16px -10px rgba(0, 0, 0, .5) }
+body .resale { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1rem; margin-top: 1.5rem }
+body .resale > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.25rem; display: grid; gap: .6rem; align-content: start; justify-items: start }
+body .resale b { font-size: 1.1rem }
+body .resale p { color: var(--muted); font-size: .95rem; margin: 0 }
+body .pcard { position: relative }
+body .pcard .sold { position: absolute; top: .75rem; left: .75rem; padding: .3rem .7rem; border-radius: 999px; font-size: .8rem; font-weight: 800; background: #7A2E12; color: #FFFFFF; box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .6) }
