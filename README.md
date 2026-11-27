@@ -17,5 +17,11 @@ Triển khai: Netlify, nhánh `main`, không cần lệnh build, thư mục publ
 - `lead.js`: gửi form "Nhận bảng giá" tới Netlify Forms không rời trang; tắt JavaScript thì chuyển sang `/cam-on/`.
 - Form tên `lien-he` có ở cả 3 trang; ô ẩn `trang` cho biết khách gửi từ trang nào. Cần bật **Forms → Form detection** trong Netlify và cài email thông báo.
 - `sitemap.xml`, `robots.txt`, `favicon.svg`: khi thêm dự án mới, thêm URL vào `sitemap.xml`.
-- `pay.css`, `pay.js`: khối "Tiến độ thanh toán" dùng chung. Mỗi phương án là một thẻ `.pc-plan` (tiêu đề + nhãn chiết khấu), dòng thời gian `.tl` với số % lớn `.tl-big`; có ô nhập giá thì tự tính tiền từng đợt (`data-p`, `data-n`, `data-fixed`, `data-less`, `data-kpbt`, `data-cash="0"`, `data-na` = mốc chưa có tỷ lệ chính xác). Không có ô nhập giá thì chỉ hiển thị lịch tham khảo.
+- `pay.css`, `pay.js`: khối "Tiến độ thanh toán" dùng chung. Dữ liệu nằm ở các `.tl-step` trong từng `.pc-plan` (`data-p`, `data-n`, `data-fixed`, `data-less`, `data-kpbt`, `data-cash="0"`, `data-na` = mốc chưa có tỷ lệ, `data-m`/`data-every` = tháng sau ký HĐMB). Cách trình bày chọn bằng `data-layout` trên `.paycalc`:
+  - `masteri` (MEL, MGC): thẻ xanh ngọc, dòng thời gian ngang.
+  - `lumiere` (HSG, LEP, LOP, LOC, SpringBay): thẻ ngà viền vàng, bảng hạn đóng – số tiền – lũy kế, chọn từng phương án.
+  - `year` (Central Park, cần `data-start`): bảng so sánh các phương án theo năm + bảng chi tiết.
+  - `phase` (Iconia LakeSide): bảng so sánh theo mốc ký / trước bàn giao / bàn giao / nhận sổ + bảng chi tiết.
+  - `mik` (The CityOn, The ParkLand): các phương án đặt cạnh nhau.
+  Mọi phương án có ô giá đều hiện thanh "Đóng bao nhiêu, vào lúc nào".
 - Ảnh chuyên viên: `quan-chan-dung.webp` (đầu trang chủ), `quan-vinh-danh.webp` (mục Về tôi), `quan-avatar.webp` (thẻ liên hệ mọi trang).

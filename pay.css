@@ -13,15 +13,15 @@
 .pc-jump a:hover { border-color: var(--accent) }
 .pc-plan { --ink: #FFFFFF; --ink-2: rgba(255, 255, 255, .8); --ink-line: rgba(255, 255, 255, .3); --pc-gold: #F6CF74;
   position: relative; min-width: 0; color: var(--ink); border-radius: 18px; overflow: hidden; scroll-margin-top: 5rem;
-  background: radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--accent) 55%, #0A2230) 0%, transparent 60%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 72%, #000) 0%, color-mix(in srgb, var(--accent) 46%, #06121C) 100%);
+  background: radial-gradient(120% 140% at 100% 0%, rgba(92, 190, 205, .35) 0%, transparent 60%), linear-gradient(135deg, #12708A 0%, #0B3E57 100%);
   box-shadow: 0 18px 40px -26px rgba(0, 0, 0, .55) }
 .pc-head { display: flex; justify-content: space-between; align-items: center; gap: .8rem 1rem; flex-wrap: wrap; padding: 1rem 1.25rem .9rem; border-bottom: 1px solid var(--ink-line) }
 .pc-kicker { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2) }
 .pc-head h3 { color: var(--ink); font-size: clamp(1.05rem, 2.4vw, 1.3rem); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; margin-top: .1rem }
-.pc-badge { display: inline-flex; align-items: baseline; gap: .35rem; background: #FFFFFF; color: color-mix(in srgb, var(--accent) 70%, #000); border-radius: 999px; padding: .3rem .9rem; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap }
+.pc-badge { display: inline-flex; align-items: baseline; gap: .35rem; background: #FFFFFF; color: #0B4A63; border-radius: 999px; padding: .3rem .9rem; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap }
 .pc-badge b { font-size: 1.25rem; font-weight: 800; letter-spacing: 0; text-transform: none }
 .pc-badge.soft { background: rgba(255, 255, 255, .14); color: var(--ink); border: 1px solid var(--ink-line) }
-.pc-body { padding: 1rem 1.25rem 1.2rem; display: grid; gap: 1rem; min-width: 0 }
+.pc-body { padding: 1rem 1.25rem 1.2rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; min-width: 0 }
 .pc-desc { font-size: .92rem; color: var(--ink-2); max-width: 80ch }
 .pc-desc b { color: var(--ink) }
 .pc-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: 0 }
@@ -34,7 +34,7 @@
 .tl-step { position: relative; display: grid; grid-template-columns: 1.4rem 5.4rem minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: .55rem; row-gap: .1rem; padding: .6rem 0; align-items: start }
 .tl-step::before { content: ""; position: absolute; left: calc(.7rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--ink-line) }
 .tl-step:first-child::before { top: 1.2rem } .tl-step:last-child::before { bottom: calc(100% - 1.2rem) }
-.tl-dot { grid-column: 1; grid-row: 1 / span 3; justify-self: center; width: 1rem; height: 1rem; margin-top: .3rem; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 60%, #000); position: relative; z-index: 1 }
+.tl-dot { grid-column: 1; grid-row: 1 / span 3; justify-self: center; width: 1rem; height: 1rem; margin-top: .3rem; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px var(--dot-ring, #0D4D66); position: relative; z-index: 1 }
 .tl-big { grid-column: 2; grid-row: 1 / span 3; font-size: 1.25rem; font-weight: 800; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; color: var(--ink); letter-spacing: -.01em }
 .tl-big small { display: block; font-size: .7rem; font-weight: 700; color: var(--ink-2); letter-spacing: .02em }
 .tl-when { grid-column: 3; font-size: .76rem; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: .03em }
@@ -43,6 +43,7 @@
 .tl-amt { grid-column: 3; font-weight: 800; font-size: 1rem; font-variant-numeric: tabular-nums; color: var(--ink) }
 .tl-amt:empty { display: none }
 .tl-amt small { display: block; font-weight: 600; font-size: .74rem; color: var(--ink-2) }
+.tl-amt small.cum { font-weight: 700; opacity: .85 }
 .tl-amt .na { font-weight: 600; font-size: .8rem; color: var(--ink-2) }
 .tl-step.bank .tl-big, .tl-step.bank .tl-amt, .tl-step.bank .tl-what b { color: var(--pc-gold) }
 .tl-step.bank .tl-dot { background: var(--pc-gold) }
@@ -70,6 +71,149 @@
   .pc-sum { grid-template-columns: 1fr 1fr } .pc-sum b { font-size: 1rem }
 }
 .pc-note { font-size: .85rem; color: var(--muted); margin: 0 }
+
+/* ===== Phần chung: "đóng bao nhiêu, vào lúc nào" ===== */
+.pc-phase { display: grid; gap: .55rem }
+.ph-title { font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin: 0 }
+.ph-bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--ink-line) }
+.ph-bar i { display: block; height: 100% }
+.pc-phase ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem }
+.pc-phase li { display: grid; gap: .05rem; padding-left: .85rem; position: relative }
+.pc-phase li::before { content: ""; position: absolute; left: 0; top: .3rem; width: .5rem; height: .5rem; border-radius: 2px; background: var(--c) }
+.pc-phase li span { font-size: .78rem; color: var(--ink-2); font-weight: 600 }
+.pc-phase li b { font-size: 1.05rem; font-variant-numeric: tabular-nums; color: var(--ink) }
+.pc-phase li small { font-size: .74rem; color: var(--ink-2) }
+.pc-plan { --ph-sign: #FFFFFF; --ph-pre: #7FD3E0; --ph-hand: var(--pc-gold); --ph-so: rgba(255, 255, 255, .45) }
+.ph-sign { --c: var(--ph-sign) } .ph-pre { --c: var(--ph-pre) } .ph-hand { --c: var(--ph-hand) } .ph-so { --c: var(--ph-so) } .ph-na { --c: transparent }
+.ph-bar .ph-sign { background: var(--ph-sign) } .ph-bar .ph-pre { background: var(--ph-pre) } .ph-bar .ph-hand { background: var(--ph-hand) } .ph-bar .ph-so { background: var(--ph-so) }
+
+/* Bảng chi tiết từng đợt */
+.pc-table-wrap { min-width: 0 }
+.pc-table { width: 100%; min-width: 0; border-collapse: collapse; font-size: .92rem; font-variant-numeric: tabular-nums }
+.pc-table th { text-align: left; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding: .5rem .6rem; border-bottom: 2px solid var(--ink-line) }
+.pc-table th.r { text-align: right }
+.pc-table td { padding: .65rem .6rem; border-bottom: 1px solid var(--ink-line); vertical-align: top }
+.pc-table .c-when { font-weight: 700; white-space: nowrap; width: 1% }
+.pc-table .c-what { color: var(--ink-2) }
+.pc-table .c-what b { color: var(--ink) }
+.pc-table .c-pct { text-align: right; font-weight: 800; white-space: nowrap; color: var(--pc-accent, var(--ink)) }
+.pc-table .c-pct small { display: inline; font-weight: 600; font-size: .75rem; margin-right: .15rem; color: var(--ink-2) }
+.pc-table .c-amt { text-align: right; font-weight: 800; white-space: nowrap }
+.pc-table .c-amt small { display: block; font-weight: 600; font-size: .74rem; color: var(--ink-2) }
+.pc-table .c-amt .na { font-weight: 600; font-size: .8rem; color: var(--ink-2); white-space: normal }
+.pc-table .c-cum { text-align: right; white-space: nowrap; color: var(--ink-2); font-size: .85rem; width: 1% }
+.cumbar { display: inline-block; width: 56px; height: 6px; border-radius: 999px; background: var(--ink-line); vertical-align: middle; margin-right: .45rem; overflow: hidden }
+.cumbar i { display: block; height: 100%; background: var(--pc-accent, var(--ink)) }
+.pc-table tr.bank .c-pct, .pc-table tr.bank .c-amt { color: var(--pc-gold) }
+.pc-table tr.ph-hand td { background: color-mix(in srgb, var(--pc-gold) 9%, transparent) }
+.pc-table tr.past { opacity: .55 }
+.pc-table tr.past .c-when::after { content: " · đã qua"; font-weight: 600; color: var(--pc-gold) }
+@media (max-width: 640px) {
+  .pc-table thead { display: none }
+  .pc-table, .pc-table tbody { display: block }
+  .pc-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: .8rem; padding: .7rem 0; border-bottom: 1px solid var(--ink-line) }
+  .pc-table td { border: 0; padding: 0 }
+  .pc-table .c-when { grid-column: 1; grid-row: 1; white-space: normal; width: auto }
+  .pc-table .c-what { grid-column: 1; grid-row: 2; font-size: .85rem }
+  .pc-table .c-pct { grid-column: 2; grid-row: 1 }
+  .pc-table .c-amt { grid-column: 2; grid-row: 2 }
+  .pc-table .c-cum { grid-column: 1 / -1; grid-row: 3; text-align: left; margin-top: .3rem; width: auto; font-size: .78rem }
+  .pc-table .c-cum:empty { display: none }
+  .pc-table .c-cum::before { content: "Lũy kế "; }
+  .pc-table tr.ph-hand { background: color-mix(in srgb, var(--pc-gold) 9%, transparent); padding-inline: .5rem; border-radius: 8px }
+  .pc-table tr.ph-hand td { background: none }
+}
+
+/* Chọn một phương án (Lumière, Central Park, Iconia) */
+.paycalc.js-on .pc-plan.off { display: none }
+.paycalc.js-on[data-layout="lumiere"] .tl, .paycalc.js-on[data-layout="lumiere"] .pc-hint,
+.paycalc.js-on[data-layout="year"] .tl, .paycalc.js-on[data-layout="year"] .pc-hint,
+.paycalc.js-on[data-layout="phase"] .tl, .paycalc.js-on[data-layout="phase"] .pc-hint { display: none }
+.paycalc.js-on:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"]) .pc-jump a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink) }
+.paycalc.js-on:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"]) .pc-jump a[aria-current="true"] small { color: inherit; opacity: .85 }
+
+/* Các nhóm dùng thẻ sáng */
+.paycalc:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .pc-plan {
+  --ink: var(--fg); --ink-2: var(--muted); --ink-line: var(--line); --pc-gold: var(--gold); --pc-accent: var(--accent); --dot-ring: var(--surface);
+  --ph-sign: var(--accent); --ph-pre: color-mix(in srgb, var(--accent) 45%, var(--surface)); --ph-hand: var(--gold); --ph-so: color-mix(in srgb, var(--muted) 45%, var(--surface));
+  background: var(--surface); border: 1px solid var(--line); box-shadow: 0 14px 34px -28px rgba(0, 0, 0, .45) }
+.paycalc:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .pc-sum div { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); border-color: var(--line) }
+.paycalc:is([data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .pc-badge { background: var(--accent); color: var(--accent-ink) }
+.paycalc:is([data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .pc-badge.soft { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)) }
+.paycalc:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .tl-dot { background: var(--accent) }
+.paycalc:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .tl-step.hand .tl-dot { background: var(--surface); box-shadow: 0 0 0 3px var(--accent) }
+.paycalc:is([data-layout="lumiere"], [data-layout="year"], [data-layout="phase"], [data-layout="mik"]) .tl-tag { background: color-mix(in srgb, var(--gold) 22%, var(--surface)); color: var(--fg) }
+
+/* LUMIÈRE: nền ngà, viền và chữ vàng đồng, tiêu đề chữ có chân */
+.paycalc[data-layout="lumiere"] .pc-plan { --lu: color-mix(in srgb, #B08A4E 82%, var(--fg)); --pc-accent: var(--lu); --pc-gold: var(--lu);
+  --ph-sign: var(--lu); --ph-pre: color-mix(in srgb, var(--lu) 45%, var(--surface)); --ph-hand: color-mix(in srgb, var(--fg) 70%, var(--surface));
+  background: linear-gradient(180deg, color-mix(in srgb, #C9A86A 9%, var(--surface)), var(--surface) 140px); border: 1px solid color-mix(in srgb, #C9A86A 45%, var(--line)) }
+.paycalc[data-layout="lumiere"] .pc-head { border-bottom: 1px solid color-mix(in srgb, #C9A86A 45%, var(--line)) }
+.paycalc[data-layout="lumiere"] .pc-kicker { color: var(--lu) }
+.paycalc[data-layout="lumiere"] .pc-head h3 { font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif; text-transform: none; font-weight: 700; font-size: clamp(1.35rem, 3vw, 1.7rem); letter-spacing: .005em }
+.paycalc[data-layout="lumiere"] .pc-badge { background: var(--lu); color: var(--surface) }
+.paycalc[data-layout="lumiere"] .pc-badge.soft { background: transparent; color: var(--lu); border: 1px solid var(--lu) }
+.paycalc[data-layout="lumiere"] .pc-sum div { background: var(--surface); border-color: color-mix(in srgb, #C9A86A 35%, var(--line)) }
+.paycalc[data-layout="lumiere"] .pc-table th { border-bottom-color: var(--lu) }
+.paycalc.js-on[data-layout="lumiere"] .pc-jump a[aria-current="true"] { background: var(--lu, #A8854D); border-color: transparent }
+
+/* Central Park và Iconia: bảng so sánh phương án */
+.pc-matrix { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; display: grid; gap: .6rem; min-width: 0 }
+.mx-title { font-weight: 800; font-size: 1rem; margin: 0 }
+.mx-hint { font-size: .8rem; color: var(--muted); margin: 0 }
+.mx-scroll { overflow-x: auto; scrollbar-width: thin }
+.pc-matrix table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums }
+.pc-matrix th, .pc-matrix td { padding: .6rem .55rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top }
+.pc-matrix thead th { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); border-bottom: 2px solid var(--accent) }
+.pc-matrix thead th small { display: block; text-transform: none; letter-spacing: 0; font-weight: 600 }
+.pc-matrix .r { text-align: right }
+.pc-matrix td b { display: block; font-weight: 800 }
+.pc-matrix td small { font-size: .74rem; color: var(--muted) }
+.pc-matrix td.tot { background: color-mix(in srgb, var(--accent) 7%, var(--surface)) }
+.pc-matrix tbody th { position: sticky; left: 0; background: var(--surface); font-weight: 700; white-space: nowrap }
+.pc-matrix tbody th a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed currentColor }
+.pc-matrix .dash { color: var(--muted) }
+.paycalc[data-layout="year"] .pc-head, .paycalc[data-layout="phase"] .pc-head { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); border-bottom-color: var(--line) }
+.paycalc[data-layout="year"] .pc-kicker, .paycalc[data-layout="phase"] .pc-kicker { color: var(--accent) }
+.paycalc[data-layout="year"] .pc-head h3, .paycalc[data-layout="phase"] .pc-head h3 { text-transform: none; font-size: 1.25rem }
+
+/* MIK Group: các phương án đặt cạnh nhau, dòng thời gian dọc */
+.paycalc[data-layout="mik"] { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); align-items: start }
+.paycalc[data-layout="mik"] > :not(.pc-plan) { grid-column: 1 / -1 }
+.paycalc[data-layout="mik"] .pc-jump { display: none }
+.paycalc[data-layout="mik"] .pc-plan { border-top: 5px solid var(--accent); height: 100% }
+.paycalc[data-layout="mik"] .pc-head { flex-direction: column; align-items: flex-start; border-bottom-color: var(--line) }
+.paycalc[data-layout="mik"] .pc-kicker { color: var(--accent) }
+.paycalc[data-layout="mik"] .pc-head h3 { font-size: 1.15rem }
+.paycalc[data-layout="mik"] .pc-sum { grid-template-columns: 1fr 1fr }
+.paycalc[data-layout="mik"] .pc-phase ul { grid-template-columns: 1fr 1fr }
+.paycalc[data-layout="mik"] .tl { grid-auto-flow: row; grid-auto-columns: auto; overflow: visible; padding: 0 }
+.paycalc[data-layout="mik"] .tl-step { grid-template-columns: 1.4rem 5.2rem minmax(0, 1fr); grid-template-rows: auto auto auto; row-gap: .1rem; padding: .55rem 0 }
+.paycalc[data-layout="mik"] .tl-step::before { left: calc(.7rem - 1px); right: auto; top: 0; bottom: 0; width: 2px; height: auto }
+.paycalc[data-layout="mik"] .tl-step:first-child::before { top: 1.2rem; left: calc(.7rem - 1px) }
+.paycalc[data-layout="mik"] .tl-step:last-child::before { bottom: calc(100% - 1.2rem); right: auto }
+.paycalc[data-layout="mik"] .tl-dot { grid-column: 1; grid-row: 1 / span 3; justify-self: center; margin-top: .3rem }
+.paycalc[data-layout="mik"] .tl-big { grid-column: 2; grid-row: 1 / span 3; align-self: start; font-size: 1.25rem; line-height: 1.15; white-space: normal; color: var(--accent) }
+.paycalc[data-layout="mik"] .tl-big small { display: block; font-size: .7rem }
+.paycalc[data-layout="mik"] .tl-when { grid-column: 3; grid-row: 1 } .paycalc[data-layout="mik"] .tl-what { grid-column: 3; grid-row: 2 }
+.paycalc[data-layout="mik"] .tl-amt { grid-column: 3; grid-row: 3 }
+.paycalc[data-layout="mik"] .tl-step.bank .tl-big { color: var(--gold) }
+.paycalc[data-layout="mik"] .pc-hint { display: none !important }
+.paycalc { grid-template-columns: minmax(0, 1fr) }
+.paycalc[data-layout="mik"] { grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)) }
+/* Bảng so sánh trên điện thoại: mỗi phương án một thẻ */
+@media (max-width: 640px) {
+  .pc-matrix { padding: .9rem }
+  .pc-matrix table { min-width: 0 }
+  .pc-matrix thead { display: none }
+  .pc-matrix table, .pc-matrix tbody { display: block }
+  .pc-matrix tr { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .8rem; padding: .8rem 0; border-bottom: 1px solid var(--line) }
+  .pc-matrix th, .pc-matrix td, .pc-matrix td.r { border: 0; padding: 0; text-align: left }
+  .pc-matrix tbody th { grid-column: 1 / -1; position: static; white-space: normal }
+  .pc-matrix td::before { content: attr(data-l); display: block; font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em }
+  .pc-matrix td.tot { grid-column: 1 / -1; padding: .45rem .6rem; border-radius: 8px }
+}
+
 /* Thẻ tài liệu chính sách */
 .docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.5rem }
 .doc { display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .15s, box-shadow .15s }
