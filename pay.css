@@ -64,3 +64,5 @@
 .pc-specs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem }
 .pc-specs li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1rem; display: grid; gap: .25rem }
 .pc-specs b { color: var(--accent) }
+.tour360 { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9 }
+.tour360 iframe { width: 100%; height: 100%; border: 0; display: block }
