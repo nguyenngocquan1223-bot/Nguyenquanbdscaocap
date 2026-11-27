@@ -11,6 +11,7 @@
 
   function calc(box) {
     var input = box.querySelector(".pc-price");
+    if (!input) return;
     var price = parse(input.value);
     box.querySelectorAll(".pc-plan").forEach(function (plan) {
       var disc = num(plan, "data-disc", 0), up = num(plan, "data-up", 0), kp = num(plan, "data-kpbt", 0.02);
@@ -21,6 +22,8 @@
         var one = fixed || (p * net - less);
         if (st.hasAttribute("data-kpbt")) one += fee;
         var amt = st.querySelector(".tl-amt");
+        if (!amt) return;
+        if (st.hasAttribute("data-na")) { amt.innerHTML = '<span class="na">' + (st.getAttribute("data-na") || "Theo thông báo của CĐT") + "</span>"; return; }
         if (!cash) { amt.innerHTML = "0 đ<small>trừ vào tiền cọc</small>"; return; }
         var total = one * n;
         if (st.classList.contains("bank")) bank += total; else own += total;
@@ -35,14 +38,24 @@
   document.querySelectorAll(".paycalc").forEach(function (box) {
     var input = box.querySelector(".pc-price");
     var re = function () {
+      if (!input) return;
       var v = parse(input.value);
       input.value = v ? v.toLocaleString("vi-VN") : "";
       calc(box);
     };
-    input.addEventListener("input", re);
+    if (input) input.addEventListener("input", re);
     box.querySelectorAll("[data-set]").forEach(function (b) {
-      b.addEventListener("click", function () { input.value = b.getAttribute("data-set"); re(); });
+      b.addEventListener("click", function () { if (!input) return; input.value = b.getAttribute("data-set"); re(); });
     });
+    // Gợi ý kéo ngang chỉ hiện khi dòng thời gian dài hơn khung
+    var hint = function () {
+      box.querySelectorAll(".pc-plan").forEach(function (p) {
+        var tl = p.querySelector(".tl"), h = p.querySelector(".pc-hint");
+        if (tl && h) h.classList.toggle("on", tl.scrollWidth > tl.clientWidth + 4);
+      });
+    };
+    window.addEventListener("resize", hint);
+    document.addEventListener("click", function () { setTimeout(hint, 60); });
     var tabs = box.querySelectorAll(".pc-tab"), plans = box.querySelectorAll(".pc-plan");
     tabs.forEach(function (t, i) {
       t.addEventListener("click", function () {
@@ -50,7 +63,7 @@
         plans.forEach(function (p, j) { p.hidden = i !== j; });
       });
     });
-    re();
+    re(); hint();
   });
 
   // Trạng thái thẻ chính sách theo ngày hôm nay

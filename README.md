@@ -17,3 +17,5 @@ Triển khai: Netlify, nhánh `main`, không cần lệnh build, thư mục publ
 - `lead.js`: gửi form "Nhận bảng giá" tới Netlify Forms không rời trang; tắt JavaScript thì chuyển sang `/cam-on/`.
 - Form tên `lien-he` có ở cả 3 trang; ô ẩn `trang` cho biết khách gửi từ trang nào. Cần bật **Forms → Form detection** trong Netlify và cài email thông báo.
 - `sitemap.xml`, `robots.txt`, `favicon.svg`: khi thêm dự án mới, thêm URL vào `sitemap.xml`.
+- `pay.css`, `pay.js`: khối "Tiến độ thanh toán" dùng chung. Mỗi phương án là một thẻ `.pc-plan` (tiêu đề + nhãn chiết khấu), dòng thời gian `.tl` với số % lớn `.tl-big`; có ô nhập giá thì tự tính tiền từng đợt (`data-p`, `data-n`, `data-fixed`, `data-less`, `data-kpbt`, `data-cash="0"`, `data-na` = mốc chưa có tỷ lệ chính xác). Không có ô nhập giá thì chỉ hiển thị lịch tham khảo.
+- Ảnh chuyên viên: `quan-chan-dung.webp` (đầu trang chủ), `quan-vinh-danh.webp` (mục Về tôi), `quan-avatar.webp` (thẻ liên hệ mọi trang).

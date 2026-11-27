@@ -69,3 +69,22 @@ body .leadform .hp { position: absolute; left: -9999px; width: 1px; height: 1px;
 @media (min-width: 861px) {
   body .float-contact { bottom: calc(env(safe-area-inset-bottom, 0px) + 84px) }
 }
+
+/* Ảnh đại diện chuyên viên trên thẻ liên hệ */
+body .me { display: flex; align-items: center; gap: .85rem }
+body .me .avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid rgba(255, 255, 255, .85); box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .5) }
+
+/* Trang chủ: ảnh chân dung ở đầu trang và khối "Về tôi" */
+body .photo.portrait { justify-self: center; width: 100%; max-width: 400px }
+body .photo.portrait img { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px }
+body .profile { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2rem; align-items: start; margin-top: 1.5rem }
+body .profile figure { margin: 0; display: grid; gap: .45rem }
+body .profile figure img { width: 100%; height: auto; border-radius: 14px; cursor: zoom-in }
+body .profile figcaption { font-size: .8rem; color: var(--muted) }
+body .profile-txt { display: grid; gap: 1.25rem; min-width: 0 }
+body .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem }
+body .ticks li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .85rem 1rem .85rem 2.6rem; position: relative; color: var(--muted); font-size: .92rem }
+body .ticks li::before { content: "✓"; position: absolute; left: 1rem; top: .85rem; font-weight: 800; color: var(--accent) }
+body .ticks b { display: block; color: var(--fg); font-size: 1rem; margin-bottom: .15rem }
+body .profile .cert { margin-top: 0 }
+@media (max-width: 760px) { body .profile { grid-template-columns: 1fr; gap: 1.25rem } body .photo.portrait { max-width: 340px } }

@@ -1,49 +1,75 @@
-/* Khối chính sách thanh toán: dòng thời gian + tính tiền từng đợt + thẻ tài liệu */
-.paycalc { margin-top: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.25rem; display: grid; gap: 1.1rem; min-width: 0 }
-.pc-top { display: grid; gap: .8rem; grid-template-columns: minmax(0, 1fr) auto; align-items: end }
+/* Khối chính sách thanh toán: mỗi phương án là một thẻ, dòng thời gian % lớn ở trên, số tiền tự tính ở dưới */
+.paycalc { margin-top: 1.5rem; display: grid; gap: 1.1rem; min-width: 0 }
+.pc-top { display: grid; gap: .8rem; grid-template-columns: minmax(0, 1fr) auto; align-items: end; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem }
 .pc-top label { display: grid; gap: .35rem; font-weight: 700; font-size: .92rem }
 .pc-top label small { font-weight: 500; color: var(--muted) }
 .pc-price { font-family: inherit; font-weight: 700; font-size: 1.25rem; line-height: 1.2; font-variant-numeric: tabular-nums; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--fg); width: 100%; min-width: 0 }
 .pc-price:focus { outline: 2px solid var(--accent); outline-offset: 1px }
 .pc-quick { display: flex; gap: .4rem; flex-wrap: wrap }
-.pc-quick button, .pc-tab { font-family: inherit; font-weight: 600; font-size: .88rem; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 999px; padding: .45rem .85rem; cursor: pointer }
-.pc-tabs { display: flex; gap: .45rem; flex-wrap: wrap }
-.pc-tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink) }
-.pc-tab small { font-weight: 800; margin-left: .3rem; opacity: .85 }
-.pc-plan { min-width: 0 }
-.pc-plan[hidden] { display: none }
-.pc-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: 0 0 1rem }
-.pc-sum div { background: color-mix(in srgb, var(--accent) 7%, var(--bg)); border-radius: 10px; padding: .65rem .8rem; display: grid; gap: .15rem }
-.pc-sum span { font-size: .8rem; color: var(--muted); font-weight: 600 }
-.pc-sum b { font-size: 1.08rem; font-variant-numeric: tabular-nums }
-.pc-sum .bank b { color: var(--gold) }
-.tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 }
-.tl-step { position: relative; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr) auto; gap: .2rem .7rem; padding: .55rem 0; align-items: start }
-.tl-step::before { content: ""; position: absolute; left: calc(.8rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--line) }
-.tl-step:first-child::before { top: 1.1rem } .tl-step:last-child::before { bottom: calc(100% - 1.1rem) }
-.tl-dot { grid-column: 1; grid-row: 1 / span 2; width: 1rem; height: 1rem; margin: .2rem 0 0 .3rem; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--accent); position: relative; z-index: 1 }
-.tl-step.bank .tl-dot { background: var(--gold); box-shadow: 0 0 0 1px var(--gold) }
-.tl-step.hand .tl-dot { background: var(--surface); box-shadow: 0 0 0 2px var(--accent) }
-.tl-when { grid-column: 2; font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .03em }
-.tl-what { grid-column: 2; font-size: .95rem }
-.tl-what b { color: var(--accent) }
-.tl-step.bank .tl-what b { color: var(--gold) }
-.tl-amt { grid-column: 3; grid-row: 1 / span 2; text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; align-self: center }
-.tl-amt small { display: block; font-weight: 600; font-size: .75rem; color: var(--muted) }
-.tl-step.bank .tl-amt { color: var(--gold) }
-.tl-tag { display: inline-block; font-size: .72rem; font-weight: 700; border-radius: 6px; padding: .05rem .4rem; margin-left: .35rem; background: color-mix(in srgb, var(--gold) 18%, var(--bg)); color: var(--fg); vertical-align: 1px }
-.pc-note { font-size: .85rem; color: var(--muted); margin: .9rem 0 0 }
+.pc-quick button, .pc-jump a { font-family: inherit; font-weight: 600; font-size: .88rem; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 999px; padding: .45rem .85rem; cursor: pointer; text-decoration: none; white-space: nowrap }
+.pc-jump { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center }
+.pc-jump > span { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-right: .2rem }
+.pc-jump a small { font-weight: 800; margin-left: .3rem; color: var(--accent) }
+.pc-jump a:hover { border-color: var(--accent) }
+.pc-plan { --ink: #FFFFFF; --ink-2: rgba(255, 255, 255, .8); --ink-line: rgba(255, 255, 255, .3); --pc-gold: #F6CF74;
+  position: relative; min-width: 0; color: var(--ink); border-radius: 18px; overflow: hidden; scroll-margin-top: 5rem;
+  background: radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--accent) 55%, #0A2230) 0%, transparent 60%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 72%, #000) 0%, color-mix(in srgb, var(--accent) 46%, #06121C) 100%);
+  box-shadow: 0 18px 40px -26px rgba(0, 0, 0, .55) }
+.pc-head { display: flex; justify-content: space-between; align-items: center; gap: .8rem 1rem; flex-wrap: wrap; padding: 1rem 1.25rem .9rem; border-bottom: 1px solid var(--ink-line) }
+.pc-kicker { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2) }
+.pc-head h3 { color: var(--ink); font-size: clamp(1.05rem, 2.4vw, 1.3rem); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; margin-top: .1rem }
+.pc-badge { display: inline-flex; align-items: baseline; gap: .35rem; background: #FFFFFF; color: color-mix(in srgb, var(--accent) 70%, #000); border-radius: 999px; padding: .3rem .9rem; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap }
+.pc-badge b { font-size: 1.25rem; font-weight: 800; letter-spacing: 0; text-transform: none }
+.pc-badge.soft { background: rgba(255, 255, 255, .14); color: var(--ink); border: 1px solid var(--ink-line) }
+.pc-body { padding: 1rem 1.25rem 1.2rem; display: grid; gap: 1rem; min-width: 0 }
+.pc-desc { font-size: .92rem; color: var(--ink-2); max-width: 80ch }
+.pc-desc b { color: var(--ink) }
+.pc-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: 0 }
+.pc-sum div { background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .14); border-radius: 12px; padding: .6rem .8rem; display: grid; gap: .1rem }
+.pc-sum span { font-size: .78rem; color: var(--ink-2); font-weight: 600 }
+.pc-sum b { font-size: 1.1rem; font-variant-numeric: tabular-nums; color: var(--ink) }
+.pc-sum .bank b { color: var(--pc-gold) }
+/* Dòng thời gian: điện thoại xếp dọc, máy tính nằm ngang */
+.tl { list-style: none; margin: 0; padding: 0; display: grid; min-width: 0 }
+.tl-step { position: relative; display: grid; grid-template-columns: 1.4rem 5.4rem minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: .55rem; row-gap: .1rem; padding: .6rem 0; align-items: start }
+.tl-step::before { content: ""; position: absolute; left: calc(.7rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--ink-line) }
+.tl-step:first-child::before { top: 1.2rem } .tl-step:last-child::before { bottom: calc(100% - 1.2rem) }
+.tl-dot { grid-column: 1; grid-row: 1 / span 3; justify-self: center; width: 1rem; height: 1rem; margin-top: .3rem; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 60%, #000); position: relative; z-index: 1 }
+.tl-big { grid-column: 2; grid-row: 1 / span 3; font-size: 1.25rem; font-weight: 800; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; color: var(--ink); letter-spacing: -.01em }
+.tl-big small { display: block; font-size: .7rem; font-weight: 700; color: var(--ink-2); letter-spacing: .02em }
+.tl-when { grid-column: 3; font-size: .76rem; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: .03em }
+.tl-what { grid-column: 3; font-size: .88rem; color: var(--ink-2) }
+.tl-what b { color: var(--ink) }
+.tl-amt { grid-column: 3; font-weight: 800; font-size: 1rem; font-variant-numeric: tabular-nums; color: var(--ink) }
+.tl-amt:empty { display: none }
+.tl-amt small { display: block; font-weight: 600; font-size: .74rem; color: var(--ink-2) }
+.tl-amt .na { font-weight: 600; font-size: .8rem; color: var(--ink-2) }
+.tl-step.bank .tl-big, .tl-step.bank .tl-amt, .tl-step.bank .tl-what b { color: var(--pc-gold) }
+.tl-step.bank .tl-dot { background: var(--pc-gold) }
+.tl-step.hand .tl-dot { background: transparent; box-shadow: 0 0 0 3px #FFFFFF; }
+.tl-step.past { opacity: .55 }
+.tl-step.past .tl-when::after { content: " · đã qua"; color: var(--pc-gold) }
+.tl-tag { display: inline-block; font-size: .68rem; font-weight: 800; border-radius: 6px; padding: .05rem .4rem; margin-left: .35rem; background: var(--pc-gold); color: #3A2A05; vertical-align: 1px; text-transform: uppercase; letter-spacing: .03em }
+.pc-hint { display: none; font-size: .78rem; color: var(--ink-2); margin: 0 }
 @media (min-width: 900px) {
-  .tl { grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); overflow-x: auto; padding-bottom: .4rem; scrollbar-width: thin }
-  .tl-step { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; padding: 0 .55rem 0 0; gap: .35rem }
-  .tl-step::before { left: 0; right: 0; top: calc(.5rem - 1px); bottom: auto; width: auto; height: 2px }
-  .tl-step:first-child::before { top: calc(.5rem - 1px); left: .5rem } .tl-step:last-child::before { bottom: auto; right: calc(100% - .5rem) }
-  .tl-dot { grid-row: 1; margin: 0 }
-  .tl-step.past { opacity: .6 }
-  .tl-when { grid-column: 1; grid-row: 2 } .tl-what { grid-column: 1; grid-row: 3 }
-  .tl-amt { grid-column: 1; grid-row: 4; text-align: left; align-self: start; font-size: 1.05rem }
+  .tl { grid-auto-flow: column; grid-auto-columns: minmax(104px, 1fr); overflow-x: auto; padding-bottom: .5rem; scrollbar-width: thin; scrollbar-color: var(--ink-line) transparent }
+  .tl-step { grid-template-columns: 1fr; grid-template-rows: 2.2rem 1rem auto auto auto; row-gap: .45rem; padding: 0 .7rem 0 0 }
+  .tl-step::before { left: 0; right: 0; top: calc(2.2rem + .45rem + .5rem - 1px); bottom: auto; width: auto; height: 2px }
+  .tl-step:first-child::before { top: calc(2.2rem + .45rem + .5rem - 1px); left: .5rem }
+  .tl-step:last-child::before { bottom: auto; right: calc(100% - .5rem) }
+  .tl-big { grid-column: 1; grid-row: 1; align-self: end; font-size: 1.7rem; line-height: 1; white-space: nowrap }
+  .tl-big small { display: inline; margin-right: .2rem; font-size: .8rem }
+  .tl-dot { grid-column: 1; grid-row: 2; justify-self: start; margin: 0 }
+  .tl-when { grid-column: 1; grid-row: 3 } .tl-what { grid-column: 1; grid-row: 4; font-size: .84rem }
+  .tl-amt { grid-column: 1; grid-row: 5 }
+  .pc-hint.on { display: block }
 }
-@media (max-width: 560px) { .pc-top { grid-template-columns: 1fr } .paycalc { padding: 1rem .85rem } }
+@media (max-width: 560px) {
+  .pc-top { grid-template-columns: 1fr; padding: .9rem }
+  .pc-head { padding: .9rem 1rem .8rem } .pc-body { padding: .9rem 1rem 1rem }
+  .pc-sum { grid-template-columns: 1fr 1fr } .pc-sum b { font-size: 1rem }
+}
+.pc-note { font-size: .85rem; color: var(--muted); margin: 0 }
 /* Thẻ tài liệu chính sách */
 .docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.5rem }
 .doc { display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .15s, box-shadow .15s }
@@ -57,9 +83,6 @@
 .doc .st.plan { background: color-mix(in srgb, var(--gold) 18%, var(--bg)); color: var(--fg) }
 .doc em { font-style: normal; font-weight: 700; color: var(--accent); font-size: .9rem }
 .tour-link { display: grid; gap: .8rem; justify-items: start; background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 1.25rem }
-.tl-step.past .tl-when::after { content: " · đã qua"; color: var(--warn, #b45309) }
-.pc-hint { display: none; font-size: .8rem; color: var(--muted); margin: .4rem 0 0 }
-@media (min-width: 900px) { .pc-hint { display: block } }
 .pc-warn { background: color-mix(in srgb, var(--gold) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--gold) 40%, var(--line)); border-radius: 12px; padding: 1rem 1.1rem; margin: 0 0 1rem }
 .pc-specs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem }
 .pc-specs li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1rem; display: grid; gap: .25rem }
