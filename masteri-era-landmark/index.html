@@ -15,7 +15,18 @@
 <meta property="og:image" content="https://nguyenquanbdscaocap.com/masteri-era-landmark/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}[hidden]{display:none!important}</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}[hidden]{display:none!important}.mbt-tabs,.mbt-floors{display:flex;flex-wrap:wrap;gap:.5rem}
+.mbt-floors{margin:.8rem 0 1rem}
+.mbt-tabs button,.mbt-floors button{font-family:inherit;font-weight:700;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:.5rem 1rem;cursor:pointer;min-height:44px}
+.mbt-floors button{font-weight:600;font-size:.88rem;padding:.4rem .85rem;min-height:40px}
+.mbt-tabs button[aria-pressed="true"],.mbt-floors button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.mbt-tabs small{font-weight:600;opacity:.8;margin-left:.3rem}
+.mbt-fig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mbt-fig img{width:100%;height:auto;display:block;cursor:zoom-in}
+.mbt-fig figcaption{padding:.6rem .9rem;font-size:.88rem;color:var(--muted);background:var(--surface)}
+.mbt-group[hidden]{display:none}
+@media (max-width:600px){.mbt-tabs small{display:none}.mbt-tabs button{padding:.45rem .9rem}}
+</style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2714%27%20fill=%27%231565A8%27/%3E%3Ctext%20x=%2732%27%20y=%2743%27%20font-family=%27Georgia,serif%27%20font-size=%2730%27%20font-weight=%27700%27%20fill=%27white%27%20text-anchor=%27middle%27%3ENQ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
@@ -629,7 +640,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
     <a class="brand" href="/">Nguyễn Quân BĐS<small>Masteri Era Landmark</small></a>
-    <div class="links"><a href="#tong-quan">Tổng quan</a><a href="#ket-noi">Kết nối</a><a href="#mat-bang">Mặt bằng</a><a href="#layout">Layout</a><a href="#ban-giao">Bàn giao</a><a href="#chinh-sach">Chính sách</a><a href="#tien-ich">Tiện ích</a><a href="#tour-360">Tour 360°</a><a href="#lien-he">Liên hệ</a><a class="other" href="/">Dự án khác</a></div>
+    <div class="links"><a href="#tong-quan">Tổng quan</a><a href="#ket-noi">Kết nối</a><a href="#mat-bang">Mặt bằng</a><a href="#mat-bang-tang">MB tòa</a><a href="#layout">Layout</a><a href="#ban-giao">Bàn giao</a><a href="#chinh-sach">Chính sách</a><a href="#tien-ich">Tiện ích</a><a href="#tour-360">Tour 360°</a><a href="#lien-he">Liên hệ</a><a class="other" href="/">Dự án khác</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -671,6 +682,12 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
     <figure class="mapfig"><img class="zoomable" src="tmb-the-spark.webp" alt="Mặt bằng tổng thể phân khu The Spark: tòa S1, S2, S3 có mã căn, loại căn và 47 tiện ích ngoài trời" width="2400" height="1656" loading="lazy"><figcaption>Phân khu The Spark (S1–S3) · mã căn và danh mục tiện ích · bấm để phóng to</figcaption></figure>
     <figure class="mapfig" style="margin-top:1.5rem"><img class="zoomable" src="tmb-the-flow.webp" alt="Mặt bằng phân khu The Flow: tòa F1, F2, F3 có mã căn và loại căn" width="2400" height="1566" loading="lazy"><figcaption>Phân khu The Flow (F1–F3) · mã căn và loại căn · bấm để phóng to</figcaption></figure>
     <p class="note">Mặt bằng của chủ đầu tư và đại lý phân phối. Phân khu The Vision (V1–V4) xem trên tổng mặt bằng phía trên. Thông số chính thức theo hợp đồng mua bán.</p>
+  </div>
+</section>
+<section class="alt" id="mat-bang-tang">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Mặt bằng theo tòa</div><h2>10 tòa, từng tầng điển hình</h2><p class="lead">Chọn tòa rồi chọn tầng. Phân khu The Spark (S1–S3), The Vision (V1, V2, V3, V3A), The Flow (F1–F3), từ Studio đến 3PN.</p></div>
+    <div class="mbt"><div class="mbt-tabs" role="group" aria-label="Chọn tòa"><button type="button" aria-pressed="true">Tòa S1<small>The Spark</small></button><button type="button" aria-pressed="false">Tòa S2<small>The Spark</small></button><button type="button" aria-pressed="false">Tòa S3<small>The Spark</small></button><button type="button" aria-pressed="false">Tòa V1<small>The Vision</small></button><button type="button" aria-pressed="false">Tòa V2<small>The Vision</small></button><button type="button" aria-pressed="false">Tòa V3<small>The Vision</small></button><button type="button" aria-pressed="false">Tòa V3A<small>The Vision</small></button><button type="button" aria-pressed="false">Tòa F1<small>The Flow</small></button><button type="button" aria-pressed="false">Tòa F2<small>The Flow</small></button><button type="button" aria-pressed="false">Tòa F3<small>The Flow</small></button></div><div class="mbt-floors"><div class="mbt-group" role="group" aria-label="Chọn tầng tòa S1"><button type="button" aria-pressed="true" data-src="mb/s1-t5-6.webp" data-cap="Tòa S1 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/s1-t7-27.webp" data-cap="Tòa S1 · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa S2"><button type="button" aria-pressed="false" data-src="mb/s2-t4-5.webp" data-cap="Tòa S2 · Tầng 4–5">Tầng 4–5</button><button type="button" aria-pressed="false" data-src="mb/s2-t6-27.webp" data-cap="Tòa S2 · Tầng 6–27">Tầng 6–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa S3"><button type="button" aria-pressed="false" data-src="mb/s3-t5-6.webp" data-cap="Tòa S3 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/s3-t7-27.webp" data-cap="Tòa S3 · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa V1"><button type="button" aria-pressed="false" data-src="mb/v1-t5-6.webp" data-cap="Tòa V1 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/v1-t7-27.webp" data-cap="Tòa V1 · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa V2"><button type="button" aria-pressed="false" data-src="mb/v2-t5-6.webp" data-cap="Tòa V2 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/v2-t7-27.webp" data-cap="Tòa V2 · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa V3"><button type="button" aria-pressed="false" data-src="mb/v3-t4-5.webp" data-cap="Tòa V3 · Tầng 4–5">Tầng 4–5</button><button type="button" aria-pressed="false" data-src="mb/v3-t6-27.webp" data-cap="Tòa V3 · Tầng 6–27">Tầng 6–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa V3A"><button type="button" aria-pressed="false" data-src="mb/v3a-t5-6.webp" data-cap="Tòa V3A · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/v3a-t7-27.webp" data-cap="Tòa V3A · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa F1"><button type="button" aria-pressed="false" data-src="mb/f1-t5-6.webp" data-cap="Tòa F1 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/f1-t7-27.webp" data-cap="Tòa F1 · Tầng 7–27">Tầng 7–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa F2"><button type="button" aria-pressed="false" data-src="mb/f2-t4-5.webp" data-cap="Tòa F2 · Tầng 4–5">Tầng 4–5</button><button type="button" aria-pressed="false" data-src="mb/f2-t6-27.webp" data-cap="Tòa F2 · Tầng 6–27">Tầng 6–27</button></div><div class="mbt-group" hidden role="group" aria-label="Chọn tầng tòa F3"><button type="button" aria-pressed="false" data-src="mb/f3-t5-6.webp" data-cap="Tòa F3 · Tầng 5–6">Tầng 5–6</button><button type="button" aria-pressed="false" data-src="mb/f3-t7-27.webp" data-cap="Tòa F3 · Tầng 7–27">Tầng 7–27</button></div></div><figure class="mbt-fig"><img class="zoomable" src="mb/s1-t5-6.webp" alt="Tòa S1 · Tầng 5–6" width="2000" height="1379" loading="lazy"><figcaption>Tòa S1 · Tầng 5–6 · bấm ảnh để phóng to</figcaption></figure><p class="note">Mặt bằng của chủ đầu tư, ghi mã căn, loại căn, diện tích tim tường (DT Tim) và thông thủy (DT TT). Thông số chính thức theo hợp đồng mua bán.</p></div>
   </div>
 </section>
 <section class="alt" id="layout">
@@ -798,5 +815,13 @@ document.querySelectorAll(".lo3-wrap").forEach(function (w) {
 </script>
 <script src="/lead.js" defer></script>
 <script src="/pay.js" defer></script>
+<script>(function(){document.querySelectorAll('.mbt').forEach(function(box){
+ var img=box.querySelector('.mbt-fig img'),cap=box.querySelector('.mbt-fig figcaption'),groups=box.querySelectorAll('.mbt-group');
+ function show(b){box.querySelectorAll('.mbt-floors button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});img.src=b.dataset.src;img.alt=b.dataset.cap;cap.textContent=b.dataset.cap+' · bấm ảnh để phóng to'}
+ box.querySelectorAll('.mbt-tabs button').forEach(function(t,i){t.addEventListener('click',function(){
+  box.querySelectorAll('.mbt-tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===t)});
+  groups.forEach(function(g,j){g.hidden=i!==j});show(groups[i].querySelector('button'))})});
+ box.querySelectorAll('.mbt-floors button').forEach(function(b){b.addEventListener('click',function(){show(b)})});
+})})();</script>
 </body>
 </html>
