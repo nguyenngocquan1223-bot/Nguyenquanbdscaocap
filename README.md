@@ -6,6 +6,7 @@ Website tĩnh của chuyên viên kinh doanh Nguyễn Ngọc Quân (hệ thống
 - `central-park/`: dự án Gamuda Central Park (tòa Brighton)
 - `iconia-lakeside/`: dự án Iconia LakeSide (Mipec Tố Hữu)
 - `the-parkland/`, `the-cityon/`: dự án của MIK Group tại Ocean Park 2 và 3
+- `the-fullton/`: dự án thấp tầng của CapitaLand Development tại Ocean Park 3
 - `lumiere-springbay/`, `masteri-grand-coast/`: dự án của Masterise Homes tại Ocean Park 2
 - `lumiere-hanoi-seasons-garden/` (HSG), `lumiere-essence-peak/` (LEP), `lumiere-prime-hills/` (LPH), `masteri-era-landmark/` (MEL), `masteri-trinity-square/` (MTS), `lumiere-ocean-crest/` (LOC), `lumiere-orient-pearl/` (LOP): dự án Masterise Homes, mỗi tên kèm mã viết tắt
 

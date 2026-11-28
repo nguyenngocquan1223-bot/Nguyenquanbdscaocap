@@ -628,6 +628,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .brand-card .blogo-red img { max-height: 56px; height: 56px }
 .brand-card span { color: var(--muted); font-size: .95rem }
 .brand-card small { font-size: .88rem }
+.brand-card small.past { color: var(--muted) }
 .brand-card a { color: var(--accent) }
 @media (max-width: 860px) { .brands { grid-template-columns: 1fr } }
 .bio .ctas { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .4rem }
@@ -657,8 +658,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   <div class="wrap">
     <div class="head"><div class="eyebrow">Dự án đang phân phối</div><h2>Chọn dự án để xem chi tiết</h2><p class="lead">Mỗi trang có phối cảnh, mặt bằng, layout căn, chính sách bán hàng và pháp lý theo tài liệu chủ đầu tư.</p></div>
     <div class="pfilter" hidden>
-      <div class="frow" role="group" aria-label="Lọc theo tỉnh, thành phố"><button type="button" class="fchip on" data-tinh="all" aria-pressed="true">Tất cả<small>13</small></button><button type="button" class="fchip" data-tinh="ha-noi" aria-pressed="false">Hà Nội<small>6</small></button><button type="button" class="fchip" data-tinh="hung-yen" aria-pressed="false">Hưng Yên (giáp Gia Lâm)<small>7</small></button></div>
-      <div class="kvrow" data-for="ha-noi" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hà Nội<small>6</small></button><button type="button" class="fchip" data-kv="noi-do" aria-pressed="false">Nội đô<small>3</small></button><button type="button" class="fchip" data-kv="dong-anh" aria-pressed="false">Đông Anh · Global Gate<small>2</small></button><button type="button" class="fchip" data-kv="gia-lam" aria-pressed="false">Gia Lâm · Ocean Park 1<small>1</small></button></div><div class="kvrow" data-for="hung-yen" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hưng Yên<small>7</small></button><button type="button" class="fchip" data-kv="ocp2" aria-pressed="false">Ocean Park 2<small>5</small></button><button type="button" class="fchip" data-kv="ocp3" aria-pressed="false">Ocean Park 3<small>2</small></button></div>
+      <div class="frow" role="group" aria-label="Lọc theo tỉnh, thành phố"><button type="button" class="fchip on" data-tinh="all" aria-pressed="true">Tất cả<small>14</small></button><button type="button" class="fchip" data-tinh="ha-noi" aria-pressed="false">Hà Nội<small>6</small></button><button type="button" class="fchip" data-tinh="hung-yen" aria-pressed="false">Hưng Yên (giáp Gia Lâm)<small>8</small></button></div>
+      <div class="kvrow" data-for="ha-noi" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hà Nội<small>6</small></button><button type="button" class="fchip" data-kv="noi-do" aria-pressed="false">Nội đô<small>3</small></button><button type="button" class="fchip" data-kv="dong-anh" aria-pressed="false">Đông Anh · Global Gate<small>2</small></button><button type="button" class="fchip" data-kv="gia-lam" aria-pressed="false">Gia Lâm · Ocean Park 1<small>1</small></button></div><div class="kvrow" data-for="hung-yen" hidden><button type="button" class="fchip on" data-kv="all" aria-pressed="true">Tất cả Hưng Yên<small>8</small></button><button type="button" class="fchip" data-kv="ocp2" aria-pressed="false">Ocean Park 2<small>5</small></button><button type="button" class="fchip" data-kv="ocp3" aria-pressed="false">Ocean Park 3<small>3</small></button></div>
       <p class="fcount" aria-live="polite"></p>
     </div>
     <div class="cards">
@@ -792,6 +793,16 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
           <span class="go">Xem dự án →</span>
         </div>
       </a>
+      <a class="pcard" href="/the-fullton/" data-tinh="hung-yen" data-kv="ocp3">
+        <img src="card-fullton.webp" alt="The Fullton" width="1200" height="675" loading="lazy">
+        <div class="body">
+          <span class="kvtag">Hưng Yên · Ocean Park 3</span>
+          <h3>The Fullton</h3>
+          <span class="loc">Vinhomes Ocean Park 3 · CapitaLand Development</span>
+          <ul><li>Biệt thự, nhà phố compound khép kín 25 ha</li><li>Gần 700 sản phẩm, hai giai đoạn Edition và Regal</li><li>Hoàn thành dự kiến GĐ1 2026 · GĐ2 2027</li></ul>
+          <span class="go">Xem dự án →</span>
+        </div>
+      </a>
       <p class="pempty" hidden>Chưa có dự án ở khu vực này. <a href="#lien-he">Nhắn em</a> nhu cầu của Anh/Chị.</p>
     </div>
   </div>
@@ -818,7 +829,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
       <p>Em làm việc tại hệ thống Newway Realty. Để làm việc chuyên sâu với từng chủ đầu tư, hệ thống có ba công ty, mỗi công ty là một pháp nhân riêng và phụ trách một nhóm chủ đầu tư riêng. Vì vậy, tùy dự án Anh/Chị quan tâm, tài liệu bán hàng, chứng nhận phân phối hay giấy tờ giao dịch có thể mang tên một trong ba công ty dưới đây. Người tư vấn và đồng hành cùng Anh/Chị vẫn là em.</p>
       <div class="brands">
         <div class="brand-card"><div class="blogo"><img loading="lazy" src="logo-newway.svg" alt="Logo Newway Realty" width="166" height="27"></div><b>Newway Realty</b><span>Chủ đầu tư: Masterise Homes</span><small>Các dự án LUMIÈRE và Masteri trên trang này</small></div>
-        <div class="brand-card"><div class="blogo blogo-red"><img src="logo-river-homes.webp" alt="Logo River Homes" width="600" height="317" loading="lazy"></div><b>River Homes</b><span>Chủ đầu tư: Gamuda Land, Mipec, CapitaLand (Singapore)</span><small><a href="/central-park/">Gamuda Central Park</a> · <a href="/iconia-lakeside/">Iconia LakeSide</a></small></div>
+        <div class="brand-card"><div class="blogo blogo-red"><img src="logo-river-homes.webp" alt="Logo River Homes" width="600" height="317" loading="lazy"></div><b>River Homes</b><span>Chủ đầu tư: Gamuda Land, Mipec, CapitaLand (Singapore)</span><small><a href="/central-park/">Gamuda Central Park</a> · <a href="/iconia-lakeside/">Iconia LakeSide</a> · <a href="/the-fullton/">The Fullton</a></small><small class="past">Đã phân phối: The Senique Hanoi (CapitaLand, đã hết hàng từ chủ đầu tư)</small></div>
         <div class="brand-card"><div class="blogo"><img src="logo-vision.svg" alt="Logo Vision Realty" width="128.9" height="24.5" loading="lazy"></div><b>Vision Realty</b><span>Chủ đầu tư: MIK Group, Vinhomes</span><small><a href="/the-parkland/">The ParkLand</a> · <a href="/the-cityon/">The CityOn</a></small></div>
       </div>
     </div>
@@ -856,7 +867,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
       <div class="leadform-head"><b>Nhận bảng giá và quỹ căn</b><span>Để lại số điện thoại hoặc Zalo, em gọi lại cho Anh/Chị.</span></div>
       <label>Họ tên<input name="ho-ten" autocomplete="name" required maxlength="60"></label>
       <label>Số điện thoại / Zalo<input name="so-dien-thoai" type="tel" inputmode="tel" autocomplete="tel" required maxlength="16"></label>
-      <label class="full">Quan tâm<select name="du-an"><option>Gamuda Central Park</option><option>Iconia LakeSide</option><option>LUMIÈRE Hanoi Seasons Garden (HSG · Nguyễn Trãi)</option><option>LUMIÈRE Essence Peak (LEP · Cổ Loa)</option><option>LUMIÈRE Prime Hills (LPH · Cổ Loa)</option><option>Masteri Era Landmark (MEL · Ocean Park 3)</option><option>Masteri Trinity Square (MTS · Ocean Park 2)</option><option>LUMIÈRE Ocean Crest (LOC · Ocean Park 2)</option><option>LUMIÈRE Orient Pearl (LOP · Ocean Park 1)</option><option>Lumière SpringBay (Masterise · Ocean Park 2)</option><option>Masteri Grand Coast (Masterise · Ocean Park 2)</option><option>The ParkLand (MIK · Ocean Park 2)</option><option>The CityOn (MIK · Ocean Park 3)</option><option>Ký gửi căn hộ</option><option>Khác</option></select></label>
+      <label class="full">Quan tâm<select name="du-an"><option>Gamuda Central Park</option><option>Iconia LakeSide</option><option>LUMIÈRE Hanoi Seasons Garden (HSG · Nguyễn Trãi)</option><option>LUMIÈRE Essence Peak (LEP · Cổ Loa)</option><option>LUMIÈRE Prime Hills (LPH · Cổ Loa)</option><option>Masteri Era Landmark (MEL · Ocean Park 3)</option><option>Masteri Trinity Square (MTS · Ocean Park 2)</option><option>LUMIÈRE Ocean Crest (LOC · Ocean Park 2)</option><option>LUMIÈRE Orient Pearl (LOP · Ocean Park 1)</option><option>Lumière SpringBay (Masterise · Ocean Park 2)</option><option>Masteri Grand Coast (Masterise · Ocean Park 2)</option><option>The ParkLand (MIK · Ocean Park 2)</option><option>The CityOn (MIK · Ocean Park 3)</option><option>The Fullton (CapitaLand · Ocean Park 3)</option><option>Ký gửi căn hộ</option><option>Khác</option></select></label>
       <label class="full">Ghi chú (không bắt buộc)<textarea name="ghi-chu" rows="2" maxlength="500" placeholder="Ngân sách, loại căn, thời điểm cần nhà…"></textarea></label>
       <p class="lead-consent">Khi bấm gửi, Anh/Chị đồng ý để chuyên viên Nguyễn Ngọc Quân dùng thông tin trên để liên hệ tư vấn.</p>
       <div class="lead-foot"><button class="btn btn-primary" type="submit">Gửi thông tin</button><p class="lead-msg" role="status" aria-live="polite"></p></div>
@@ -870,7 +881,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   <div class="wrap">
     <div class="cols">
       <div><div class="fname">Nguyễn Quân BĐS</div><p>Nguyễn Ngọc Quân · Chuyên viên kinh doanh<br>Hệ thống Newway Realty · River Homes · Vision Realty<br>Tư vấn căn hộ cao cấp tại Hà Nội &amp; Hưng Yên</p></div>
-      <div><h4>Dự án</h4><ul><li><a href="/central-park/">Gamuda Central Park</a></li><li><a href="/iconia-lakeside/">Iconia LakeSide</a></li><li><a href="/lumiere-hanoi-seasons-garden/">LUMIÈRE Hanoi Seasons Garden (HSG)</a></li><li><a href="/lumiere-essence-peak/">LUMIÈRE Essence Peak (LEP)</a></li><li><a href="/lumiere-prime-hills/">LUMIÈRE Prime Hills (LPH)</a></li><li><a href="/masteri-era-landmark/">Masteri Era Landmark (MEL)</a></li><li><a href="/masteri-trinity-square/">Masteri Trinity Square (MTS)</a></li><li><a href="/lumiere-ocean-crest/">LUMIÈRE Ocean Crest (LOC)</a></li><li><a href="/lumiere-orient-pearl/">LUMIÈRE Orient Pearl (LOP)</a></li><li><a href="/lumiere-springbay/">Lumière SpringBay</a></li><li><a href="/masteri-grand-coast/">Masteri Grand Coast</a></li><li><a href="/the-parkland/">The ParkLand</a></li><li><a href="/the-cityon/">The CityOn</a></li><li><a href="/#ky-gui">Ký gửi căn hộ</a></li></ul></div>
+      <div><h4>Dự án</h4><ul><li><a href="/central-park/">Gamuda Central Park</a></li><li><a href="/iconia-lakeside/">Iconia LakeSide</a></li><li><a href="/lumiere-hanoi-seasons-garden/">LUMIÈRE Hanoi Seasons Garden (HSG)</a></li><li><a href="/lumiere-essence-peak/">LUMIÈRE Essence Peak (LEP)</a></li><li><a href="/lumiere-prime-hills/">LUMIÈRE Prime Hills (LPH)</a></li><li><a href="/masteri-era-landmark/">Masteri Era Landmark (MEL)</a></li><li><a href="/masteri-trinity-square/">Masteri Trinity Square (MTS)</a></li><li><a href="/lumiere-ocean-crest/">LUMIÈRE Ocean Crest (LOC)</a></li><li><a href="/lumiere-orient-pearl/">LUMIÈRE Orient Pearl (LOP)</a></li><li><a href="/lumiere-springbay/">Lumière SpringBay</a></li><li><a href="/masteri-grand-coast/">Masteri Grand Coast</a></li><li><a href="/the-parkland/">The ParkLand</a></li><li><a href="/the-cityon/">The CityOn</a></li><li><a href="/the-fullton/">The Fullton</a></li><li><a href="/#ky-gui">Ký gửi căn hộ</a></li></ul></div>
       <div><h4>Liên hệ</h4><ul><li class="fphone">0929 599 292</li><li><a href="tel:0929599292">Gọi điện</a> · <a href="https://zalo.me/0929599292" target="_blank" rel="noopener">Nhắn Zalo</a></li></ul></div>
     </div>
     <p class="legal-note">Thông tin dự án tổng hợp từ tài liệu chủ đầu tư, mang tính tham khảo. © 2026 Nguyễn Quân BĐS.</p>
