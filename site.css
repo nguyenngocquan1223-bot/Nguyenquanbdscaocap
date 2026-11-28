@@ -1,22 +1,8 @@
 /* Phần dùng chung cho mọi trang, nạp sau CSS riêng của từng trang.
    Tiền tố "body" để chắc chắn ghi đè được CSS nội tuyến. */
 
-/* Thanh Gọi / Zalo trên điện thoại: nổi cao hơn đáy màn hình
-   để không bị biểu tượng "Powered by Netlify" (gói miễn phí, cao 64px ở góc phải dưới) che mất nút Zalo. */
+/* Menu cuộn ngang trên điện thoại: làm mờ mép phải để khách biết còn mục phía sau */
 @media (max-width: 860px) {
-  body .fab {
-    left: max(12px, env(safe-area-inset-left, 0px));
-    right: max(12px, env(safe-area-inset-right, 0px));
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
-    padding: 0;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .35);
-  }
-  body .fab a { border-top: 0 }
-  body footer { padding-bottom: 10rem }
-  /* Menu cuộn ngang: làm mờ mép phải để khách biết còn mục phía sau */
   body .links {
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
             mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
@@ -65,9 +51,17 @@ body .leadform .hp { position: absolute; left: -9999px; width: 1px; height: 1px;
   body .leadform { grid-template-columns: 1fr; padding: 1.1rem }
 }
 
-/* Nút Zalo / gọi nổi trên máy tính: nằm trên biểu tượng "Powered by Netlify" ở góc phải dưới */
-@media (min-width: 861px) {
-  body .float-contact { bottom: calc(env(safe-area-inset-bottom, 0px) + 84px) }
+/* Nút Zalo / gọi nổi ở góc phải dưới, trên mọi kích thước màn hình.
+   Đặt cao hơn biểu tượng "Powered by Netlify" (cao 64px ở góc phải dưới) để không bị che. */
+body .float-contact { display: grid; gap: 12px; position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 84px); z-index: 40 }
+body .float-contact a { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; text-decoration: none; font: 800 .82rem var(--f-body, system-ui, sans-serif); color: #FFFFFF; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .4); transition: transform .2s ease; -webkit-tap-highlight-color: transparent }
+body .float-contact a:hover { transform: scale(1.07) }
+body .float-contact .fz { background: #0068FF }
+body .float-contact .fp { background: var(--accent); color: var(--accent-ink, #FFFFFF); animation: fc-ring 2s infinite }
+body .float-contact svg { width: 24px; height: 24px; fill: currentColor }
+@keyframes fc-ring { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 65%, transparent) } 70% { box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent) } }
+@media (prefers-reduced-motion: reduce) { body .float-contact .fp { animation: none } }
+@media (max-width: 860px) { body .float-contact { gap: 10px } body .float-contact a { width: 52px; height: 52px } body .site-foot { padding-bottom: 9rem } }
 }
 
 /* Ảnh đại diện chuyên viên trên thẻ liên hệ */
