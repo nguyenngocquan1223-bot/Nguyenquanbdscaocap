@@ -1,6 +1,6 @@
 # Nguyễn Quân – BĐS Cao Cấp
 
-Website tĩnh của chuyên viên kinh doanh Nguyễn Ngọc Quân (River Homes), triển khai trên Netlify tại https://nguyenquanbdscaocap.com.
+Website tĩnh của chuyên viên kinh doanh Nguyễn Ngọc Quân (hệ thống Newway Realty: Newway Realty, River Homes, Vision Realty), triển khai trên Netlify tại https://nguyenquanbdscaocap.com.
 
 - `index.html`: trang chủ (giới thiệu, danh sách dự án, ký gửi, liên hệ)
 - `central-park/`: dự án Gamuda Central Park (tòa Brighton)
