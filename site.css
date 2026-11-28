@@ -69,3 +69,21 @@ body .leadform .hp { position: absolute; left: -9999px; width: 1px; height: 1px;
 @media (min-width: 861px) {
   body .float-contact { bottom: calc(env(safe-area-inset-bottom, 0px) + 84px) }
 }
+
+/* Mục "Phí quản lý vận hành" (#phi-van-hanh) */
+body .fee-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem; align-items: start }
+body .fee-free { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.2rem; display: grid; gap: .3rem }
+body .fee-free b { font-size: 1.6rem; color: var(--gold); line-height: 1.2 }
+body .fee-free span { color: var(--muted); font-size: .9rem }
+body .fee-t { width: 100%; min-width: 0; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-variant-numeric: tabular-nums }
+body .fee-t th, body .fee-t td { padding: .7rem 1rem; text-align: left; border-bottom: 1px solid var(--line) }
+body .fee-t th { font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600 }
+body .fee-t td:last-child, body .fee-t th:last-child { text-align: right; white-space: nowrap }
+body .fee-t th:last-child { text-transform: none; letter-spacing: 0 }
+body .fee-t tr:last-child td { border-bottom: 0 }
+body .fee-t tr.sum td { font-weight: 700 }
+@media (max-width: 640px) { body .fee-grid { grid-template-columns: minmax(0, 1fr) } body .fee-t th, body .fee-t td { padding: .6rem .75rem } }
+/* Bảng danh mục vật liệu bàn giao */
+body .dmvl-t th:last-child, body .dmvl-t td:last-child { text-align: left; white-space: normal }
+body .dmvl-t td { vertical-align: top; font-size: .9rem }
+@media (max-width: 640px) { body .dmvl-t { min-width: 560px } }
