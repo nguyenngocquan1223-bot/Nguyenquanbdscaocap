@@ -608,12 +608,21 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .bio p { margin: 0 }
 .bio .bio-cta { padding: .9rem 1.1rem; border-radius: 12px; background: color-mix(in srgb, var(--accent) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent) }
 .bio .bio-sign { color: var(--accent) }
+.principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem }
+.principles li { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 12px; padding: .9rem 1rem; display: grid; gap: .3rem; align-content: start; line-height: 1.55 }
+.principles span { color: var(--muted); font-size: .95rem }
+.creds { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.75rem }
+.creds .cert { margin: 0; grid-template-columns: 160px 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .8rem }
+.creds .cert img { width: 100%; height: auto; border-radius: 6px; cursor: zoom-in }
+.creds .cert p { margin: 0; font-size: .92rem }
+@media (max-width: 860px) { .principles, .creds { grid-template-columns: 1fr } }
+@media (max-width: 560px) { .creds .cert { grid-template-columns: 1fr } }
 .bio .ctas { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .4rem }
 </style>
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
     <a class="brand" href="/">Nguyễn Quân BĐS<small>Bất động sản cao cấp</small></a>
-    <div class="links"><a href="#du-an">Dự án</a><a href="#ve-toi">Về tôi</a><a href="#ky-gui">Ký gửi</a><a href="#lien-he">Liên hệ</a></div>
+    <div class="links"><a href="#du-an">Dự án</a><a href="#ve-toi">Về Quân</a><a href="#ky-gui">Ký gửi</a><a href="#lien-he">Liên hệ</a></div>
     <a class="navcall" href="tel:0929599292">0929 599 292</a>
   </div>
 </nav>
@@ -623,8 +632,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
       <div class="eyebrow">Bất động sản cao cấp · Hà Nội &amp; Hưng Yên</div>
       <h1>Uy tín tạo niềm tin<br>Giá trị tạo giao dịch</h1>
       <p class="slogan-sub">Không chỉ tìm một căn hộ phù hợp, mà còn tìm một giá trị sống xứng đáng.</p>
-      <p class="tag">Tôi là Nguyễn Ngọc Quân, chuyên viên kinh doanh tại River Homes. Tôi tư vấn căn hộ ở các dự án tôi trực tiếp phân phối, với tài liệu gốc của chủ đầu tư và cách tính dòng tiền rõ ràng.</p>
-      <div class="badges"><span>Đại lý F1 Gamuda Central Park</span><span>Phân phối Iconia LakeSide</span><span>9 dự án Masterise Homes</span><span>Dự án MIK tại Ocean City</span><span>Nhận ký gửi căn hộ</span></div>
+      <p class="tag">Em là Nguyễn Ngọc Quân, chuyên viên kinh doanh tại River Homes. Em tư vấn căn hộ ở các dự án em trực tiếp phân phối, với tài liệu gốc của chủ đầu tư và cách tính dòng tiền rõ ràng.</p>
+      <div class="badges"><span>Có chứng chỉ hành nghề môi giới BĐS</span><span>Đại lý F1 Gamuda Central Park</span><span>Phân phối Iconia LakeSide</span><span>9 dự án Masterise Homes</span><span>Dự án MIK tại Ocean City</span><span>Nhận ký gửi căn hộ</span></div>
       <div class="ctas"><a class="btn btn-primary" href="#du-an">Xem các dự án</a><a class="btn btn-ghost" href="#lien-he">Liên hệ tư vấn</a></div>
     </div>
     <figure class="photo"><img src="card-central-park.webp" alt="Phối cảnh dự án Gamuda Central Park bên hồ" width="1200" height="675"><figcaption>Gamuda Central Park · phối cảnh minh họa</figcaption></figure>
@@ -770,35 +779,39 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
           <span class="go">Xem dự án →</span>
         </div>
       </a>
-      <p class="pempty" hidden>Chưa có dự án ở khu vực này. <a href="#lien-he">Nhắn tôi</a> nhu cầu của bạn.</p>
+      <p class="pempty" hidden>Chưa có dự án ở khu vực này. <a href="#lien-he">Nhắn em</a> nhu cầu của Anh/Chị.</p>
     </div>
   </div>
 </section>
 <section class="alt" id="ve-toi">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Về tôi</div><h2>Quân – Bất động sản cao cấp Hà Nội &amp; Hưng Yên</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại River Homes, đơn vị phân phối chính thức dự án Central Park của Gamuda Land Việt Nam.</p></div>
+    <div class="head"><div class="eyebrow">Về Quân</div><h2>Quân – Bất động sản cao cấp Hà Nội &amp; Hưng Yên</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại River Homes, đơn vị phân phối chính thức dự án Central Park của Gamuda Land Việt Nam.</p></div>
     <blockquote class="motto"><b>Uy tín tạo niềm tin – Giá trị tạo giao dịch.</b><span>Không chỉ tìm một căn hộ phù hợp, mà còn tìm một giá trị sống xứng đáng.</span></blockquote>
     <div class="bio">
-      <p>Xin chào Anh/Chị! Em là Quân, chuyên tư vấn và phân phối các dòng sản phẩm căn hộ chung cư cao cấp và hạng sang tại Hà Nội – Hưng Yên, với 3 năm kinh nghiệm trong lĩnh vực bất động sản.</p>
-      <p>Em hiểu rằng, dù là mua căn nhà đầu tiên để an cư hay lựa chọn một sản phẩm để đầu tư, đó đều là quyết định quan trọng, gắn liền với tài chính và những dự định lâu dài của mỗi gia đình.</p>
-      <p>Em không dám nhận mình là người giỏi nhất hay có nhiều kinh nghiệm nhất trong nghề. Nhưng em luôn tin rằng, điều tạo nên giá trị của một người làm bất động sản không chỉ nằm ở khả năng bán được bao nhiêu sản phẩm, mà còn ở sự tận tâm, trách nhiệm và những giá trị thực sự mang lại cho khách hàng.</p>
-      <p>Có thể em không phải người nói chuyện quá khéo léo, nhưng em luôn cố gắng mang đến những thông tin trung thực, tư vấn khách quan và đặt lợi ích của khách hàng lên hàng đầu. Em mong muốn giúp Anh/Chị tìm được không chỉ một căn hộ phù hợp về tài chính, mà còn là một không gian sống xứng đáng với giá trị và mong muốn của gia đình.</p>
-      <p>Với em, mỗi khách hàng không đơn thuần là một giao dịch, mà còn là một mối quan hệ cần được xây dựng bằng sự chân thành và niềm tin.</p>
-      <p>Em luôn giữ tinh thần cầu tiến, không ngừng học hỏi từ khách hàng, đồng nghiệp và thị trường để hoàn thiện kiến thức, nâng cao chuyên môn và phục vụ Anh/Chị ngày một tốt hơn.</p>
-      <p class="bio-cta"><b>Nếu Anh/Chị đang có nhu cầu mua, bán, đầu tư căn hộ hoặc muốn tìm hiểu thông tin về các dự án bất động sản tại Hà Nội – Hưng Yên, hãy cứ liên hệ với em.</b></p>
-      <p>Em Quân luôn sẵn sàng lắng nghe, tư vấn và đồng hành cùng Anh/Chị trong suốt quá trình lựa chọn sản phẩm, với tinh thần tận tâm, trách nhiệm và nhiệt tình nhất.</p>
+      <p>Xin chào Anh/Chị! Em là Nguyễn Ngọc Quân, chuyên tư vấn và phân phối căn hộ chung cư cao cấp và hạng sang tại Hà Nội – Hưng Yên. Em có chứng chỉ hành nghề môi giới bất động sản và 3 năm kinh nghiệm trong nghề.</p>
+      <p>Dù mua căn nhà đầu tiên để an cư hay chọn một sản phẩm để đầu tư, đó đều là quyết định lớn, gắn với tài chính và kế hoạch lâu dài của cả gia đình. Vì vậy em làm việc theo ba nguyên tắc:</p>
+      <ul class="principles">
+        <li><b>Thông tin trung thực</b><span>Dựa trên tài liệu gốc của chủ đầu tư. Thông tin nào chưa được công bố, em nói rõ là chưa có.</span></li>
+        <li><b>Tư vấn khách quan</b><span>Nói rõ cả ưu điểm và hạn chế của từng dự án, từng căn để Anh/Chị tự đưa ra quyết định.</span></li>
+        <li><b>Rõ ràng dòng tiền</b><span>Tính trước lịch thanh toán, phương án vay và các khoản phí, để Anh/Chị biết chính xác mình cần chuẩn bị bao nhiêu và khi nào.</span></li>
+      </ul>
+      <p>Với em, mỗi khách hàng không chỉ là một giao dịch mà là một mối quan hệ lâu dài, xây bằng sự chân thành và niềm tin. Em luôn học hỏi từ khách hàng, đồng nghiệp và thị trường để phục vụ Anh/Chị ngày một tốt hơn.</p>
+      <p class="bio-cta"><b>Anh/Chị đang cần mua, bán, đầu tư hoặc ký gửi căn hộ tại Hà Nội – Hưng Yên? Cứ nhắn em, em sẵn sàng lắng nghe và đồng hành trong suốt quá trình lựa chọn.</b></p>
       <p class="bio-sign"><b>Cảm ơn Anh/Chị đã tin tưởng và cho Quân cơ hội được đồng hành!</b></p>
       <div class="ctas"><a class="btn btn-primary" href="tel:0929599292">Gọi 0929 599 292</a><a class="btn btn-ghost" href="https://zalo.me/0929599292" target="_blank" rel="noopener">Nhắn Zalo cho Quân</a></div>
     </div>
-    <div class="cert"><img class="zoomable" src="chung-nhan-f1.webp" alt="Chứng nhận đối tác phân phối chính thức Central Park cấp cho River Homes" width="600" height="400" loading="lazy"><p>Chứng nhận đối tác phân phối chính thức (Official Distribution Partner) dự án Central Park do Gamuda Land Việt Nam cấp cho River Homes.</p></div>
+    <div class="creds">
+      <div class="cert"><img class="zoomable" src="chung-chi-hanh-nghe.webp" alt="Chứng chỉ hành nghề môi giới bất động sản số HT-6210 cấp cho Nguyễn Ngọc Quân" width="1200" height="873" loading="lazy"><p><b>Chứng chỉ hành nghề môi giới bất động sản</b> số HT-6210 do Sở Xây dựng tỉnh Hà Tĩnh cấp tháng 11/2025, phạm vi hành nghề cả nước. Ngày sinh và số căn cước đã được che để bảo mật.</p></div>
+      <div class="cert"><img class="zoomable" src="chung-nhan-f1.webp" alt="Chứng nhận đối tác phân phối chính thức Central Park cấp cho River Homes" width="600" height="400" loading="lazy"><p><b>Đối tác phân phối chính thức</b> (Official Distribution Partner) dự án Central Park do Gamuda Land Việt Nam cấp cho River Homes.</p></div>
+    </div>
   </div>
 </section>
 <section id="ky-gui">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Ký gửi</div><h2>Có căn hộ cần bán hoặc cho thuê?</h2><p class="lead">Gửi thông tin căn cho tôi. Thông tin của bạn chỉ chuyên viên xem, không đăng công khai khi chưa được bạn đồng ý.</p></div>
+    <div class="head"><div class="eyebrow">Ký gửi</div><h2>Có căn hộ cần bán hoặc cho thuê?</h2><p class="lead">Gửi thông tin căn cho em. Thông tin của Anh/Chị chỉ chuyên viên xem, không đăng công khai khi chưa được Anh/Chị đồng ý.</p></div>
     <div class="steps4">
       <div><b>Gửi thông tin</b><p>Dự án, mã căn, diện tích, giá mong muốn và số Zalo.</p></div>
-      <div><b>Xác minh</b><p>Tôi gọi lại, kiểm tra pháp lý và hiện trạng căn.</p></div>
+      <div><b>Xác minh</b><p>Em gọi lại, kiểm tra pháp lý và hiện trạng căn.</p></div>
       <div><b>Định giá</b><p>Đối chiếu giá giao dịch thực tế trong dự án và khu vực.</p></div>
       <div><b>Tìm khách</b><p>Giới thiệu căn tới khách đang tìm mua hoặc thuê.</p></div>
     </div>
@@ -807,7 +820,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 </section>
 <section class="contact" id="lien-he">
   <div class="wrap">
-    <div class="head" style="margin:0"><div class="eyebrow">Liên hệ</div><h2>Hẹn xem nhà mẫu hoặc nhận bảng giá</h2><p>Nhắn cho tôi dự án bạn quan tâm, ngân sách và thời điểm cần nhà. Tôi gửi lại các căn phù hợp và cách thanh toán có lợi nhất.</p></div>
+    <div class="head" style="margin:0"><div class="eyebrow">Liên hệ</div><h2>Hẹn xem nhà mẫu hoặc nhận bảng giá</h2><p>Nhắn cho em dự án Anh/Chị quan tâm, ngân sách và thời điểm cần nhà. Em gửi lại các căn phù hợp và cách thanh toán có lợi nhất.</p></div>
     <div class="card">
       <div><div class="name">Nguyễn Ngọc Quân</div><p>Chuyên viên kinh doanh · River Homes</p></div>
       <div class="phone" id="phone">0929 599 292</div>
@@ -818,12 +831,12 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
       <input type="hidden" name="form-name" value="lien-he">
       <input type="hidden" name="trang" value="Trang chủ">
       <p class="hp" aria-hidden="true"><label>Bỏ trống ô này <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-      <div class="leadform-head"><b>Nhận bảng giá và quỹ căn</b><span>Để lại số điện thoại hoặc Zalo, tôi gọi lại cho bạn.</span></div>
+      <div class="leadform-head"><b>Nhận bảng giá và quỹ căn</b><span>Để lại số điện thoại hoặc Zalo, em gọi lại cho Anh/Chị.</span></div>
       <label>Họ tên<input name="ho-ten" autocomplete="name" required maxlength="60"></label>
       <label>Số điện thoại / Zalo<input name="so-dien-thoai" type="tel" inputmode="tel" autocomplete="tel" required maxlength="16"></label>
       <label class="full">Quan tâm<select name="du-an"><option>Gamuda Central Park</option><option>Iconia LakeSide</option><option>LUMIÈRE Hanoi Seasons Garden (HSG · Nguyễn Trãi)</option><option>LUMIÈRE Essence Peak (LEP · Cổ Loa)</option><option>LUMIÈRE Prime Hills (LPH · Cổ Loa)</option><option>Masteri Era Landmark (MEL · Ocean Park 3)</option><option>Masteri Trinity Square (MTS · Ocean Park 2)</option><option>LUMIÈRE Ocean Crest (LOC · Ocean Park 2)</option><option>LUMIÈRE Orient Pearl (LOP · Ocean Park 1)</option><option>Lumière SpringBay (Masterise · Ocean Park 2)</option><option>Masteri Grand Coast (Masterise · Ocean Park 2)</option><option>The ParkLand (MIK · Ocean Park 2)</option><option>The CityOn (MIK · Ocean Park 3)</option><option>Ký gửi căn hộ</option><option>Khác</option></select></label>
       <label class="full">Ghi chú (không bắt buộc)<textarea name="ghi-chu" rows="2" maxlength="500" placeholder="Ngân sách, loại căn, thời điểm cần nhà…"></textarea></label>
-      <p class="lead-consent">Khi bấm gửi, bạn đồng ý để chuyên viên Nguyễn Ngọc Quân dùng thông tin trên để liên hệ tư vấn.</p>
+      <p class="lead-consent">Khi bấm gửi, Anh/Chị đồng ý để chuyên viên Nguyễn Ngọc Quân dùng thông tin trên để liên hệ tư vấn.</p>
       <div class="lead-foot"><button class="btn btn-primary" type="submit">Gửi thông tin</button><p class="lead-msg" role="status" aria-live="polite"></p></div>
     </form>
   </div>

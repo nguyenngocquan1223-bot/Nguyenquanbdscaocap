@@ -26,9 +26,9 @@
       }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         form.reset();
-        say("Đã nhận thông tin. Tôi sẽ gọi lại cho bạn trong thời gian sớm nhất.", "ok");
+        say("Đã nhận thông tin. Em sẽ gọi lại cho Anh/Chị trong thời gian sớm nhất.", "ok");
       }).catch(function () {
-        say('Chưa gửi được. Bạn nhắn Zalo giúp tôi: <a href="https://zalo.me/0929599292" target="_blank" rel="noopener">0929 599 292</a>.', "err");
+        say('Chưa gửi được. Anh/Chị nhắn Zalo giúp em: <a href="https://zalo.me/0929599292" target="_blank" rel="noopener">0929 599 292</a>.', "err");
       }).finally(function () { btn.disabled = false; });
     });
   });
