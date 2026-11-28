@@ -624,7 +624,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .brand-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; display: grid; gap: .3rem; align-content: start }
 .brand-card .blogo { height: 56px; display: flex; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid var(--line); border-radius: 8px; margin-bottom: .4rem }
 .brand-card .blogo img { max-height: 30px; width: auto }
-.brand-card .wordmark { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #1F3B33; font-size: 1rem }
+.brand-card .blogo-red { background: #A5301C; border-color: #A5301C; overflow: hidden }
+.brand-card .blogo-red img { max-height: 56px; height: 56px }
 .brand-card span { color: var(--muted); font-size: .95rem }
 .brand-card small { font-size: .88rem }
 .brand-card a { color: var(--accent) }
@@ -797,7 +798,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 </section>
 <section class="alt" id="ve-toi">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Về Quân</div><h2>Quân – Bất động sản cao cấp Hà Nội &amp; Hưng Yên</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại hệ thống Newway Realty, gồm ba đơn vị Newway Realty, River Homes và Vision Realty.</p></div>
+    <div class="head"><div class="eyebrow">Về Quân</div><h2>Quân – Bất động sản cao cấp Hà Nội &amp; Hưng Yên</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại hệ thống Newway Realty, gồm ba công ty Newway Realty, River Homes và Vision Realty.</p></div>
     <blockquote class="motto"><b>Uy tín tạo niềm tin – Giá trị tạo giao dịch.</b><span>Không chỉ tìm một căn hộ phù hợp, mà còn tìm một giá trị sống xứng đáng.</span></blockquote>
     <div class="bio">
       <p>Xin chào Anh/Chị! Em là Nguyễn Ngọc Quân, chuyên tư vấn và phân phối căn hộ chung cư cao cấp và hạng sang tại Hà Nội – Hưng Yên. Em có chứng chỉ hành nghề môi giới bất động sản và 3 năm kinh nghiệm trong nghề.</p>
@@ -814,11 +815,11 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
     </div>
     <div class="system">
       <h3>Newway Realty, River Homes, Vision Realty: một hệ thống, không phải ba sàn</h3>
-      <p>Em làm việc tại hệ thống Newway Realty. Để làm việc chuyên sâu với từng chủ đầu tư, hệ thống chia thành ba đơn vị, mỗi đơn vị phụ trách một nhóm chủ đầu tư riêng. Vì vậy, tùy dự án Anh/Chị quan tâm, tài liệu bán hàng, chứng nhận phân phối hay giấy tờ giao dịch có thể mang tên một trong ba đơn vị dưới đây. Người tư vấn và đồng hành cùng Anh/Chị vẫn là em.</p>
+      <p>Em làm việc tại hệ thống Newway Realty. Để làm việc chuyên sâu với từng chủ đầu tư, hệ thống có ba công ty, mỗi công ty là một pháp nhân riêng và phụ trách một nhóm chủ đầu tư riêng. Vì vậy, tùy dự án Anh/Chị quan tâm, tài liệu bán hàng, chứng nhận phân phối hay giấy tờ giao dịch có thể mang tên một trong ba công ty dưới đây. Người tư vấn và đồng hành cùng Anh/Chị vẫn là em.</p>
       <div class="brands">
-        <div class="brand-card"><div class="blogo"><img src="logo-newway.svg" alt="Logo Newway Realty" width="166" height="27"></div><b>Newway Realty</b><span>Chủ đầu tư: Masterise Homes</span><small>Các dự án LUMIÈRE và Masteri trên trang này</small></div>
-        <div class="brand-card"><div class="blogo"><span class="wordmark">River Homes</span></div><b>River Homes</b><span>Chủ đầu tư: Gamuda Land, Mipec và một số chủ đầu tư khác</span><small><a href="/central-park/">Gamuda Central Park</a> · <a href="/iconia-lakeside/">Iconia LakeSide</a></small></div>
-        <div class="brand-card"><div class="blogo"><span class="wordmark">Vision Realty</span></div><b>Vision Realty</b><span>Chủ đầu tư: MIK Group, Vinhomes</span><small><a href="/the-parkland/">The ParkLand</a> · <a href="/the-cityon/">The CityOn</a></small></div>
+        <div class="brand-card"><div class="blogo"><img loading="lazy" src="logo-newway.svg" alt="Logo Newway Realty" width="166" height="27"></div><b>Newway Realty</b><span>Chủ đầu tư: Masterise Homes</span><small>Các dự án LUMIÈRE và Masteri trên trang này</small></div>
+        <div class="brand-card"><div class="blogo blogo-red"><img src="logo-river-homes.webp" alt="Logo River Homes" width="600" height="317" loading="lazy"></div><b>River Homes</b><span>Chủ đầu tư: Gamuda Land, Mipec, CapitaLand (Singapore)</span><small><a href="/central-park/">Gamuda Central Park</a> · <a href="/iconia-lakeside/">Iconia LakeSide</a></small></div>
+        <div class="brand-card"><div class="blogo"><img src="logo-vision.svg" alt="Logo Vision Realty" width="128.9" height="24.5" loading="lazy"></div><b>Vision Realty</b><span>Chủ đầu tư: MIK Group, Vinhomes</span><small><a href="/the-parkland/">The ParkLand</a> · <a href="/the-cityon/">The CityOn</a></small></div>
       </div>
     </div>
     <div class="creds">
