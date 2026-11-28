@@ -599,6 +599,16 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .hero h1 { line-height: 1.1 }
 @media (prefers-reduced-motion: reduce) { .navcall, .float-contact a { transition: none } }
 @media (prefers-reduced-motion: reduce) { section.cta-band { animation: none } }
+/* Slogan và tiểu sử */
+.hero .slogan-sub { margin-top: .7rem; font-size: 1.12rem; font-style: italic; font-weight: 500; max-width: 46ch }
+.motto { margin: 0 0 1.5rem; padding: 1.1rem 1.3rem; border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; background: var(--surface); display: grid; gap: .3rem; max-width: 72ch }
+.motto b { font-size: 1.2rem; font-weight: 800; color: var(--fg) }
+.motto span { color: var(--muted); font-style: italic }
+.bio { max-width: 72ch; display: grid; gap: .85rem; font-size: 1.02rem; line-height: 1.7 }
+.bio p { margin: 0 }
+.bio .bio-cta { padding: .9rem 1.1rem; border-radius: 12px; background: color-mix(in srgb, var(--accent) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent) }
+.bio .bio-sign { color: var(--accent) }
+.bio .ctas { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .4rem }
 </style>
 <nav class="topnav" aria-label="Mục lục">
   <div class="navin">
@@ -610,8 +620,9 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 <header class="hero home" id="top">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Bất động sản cao cấp · Hà Nội</div>
-      <h1>Tìm đúng căn nhà, đúng dòng tiền</h1>
+      <div class="eyebrow">Bất động sản cao cấp · Hà Nội &amp; Hưng Yên</div>
+      <h1>Uy tín tạo niềm tin<br>Giá trị tạo giao dịch</h1>
+      <p class="slogan-sub">Không chỉ tìm một căn hộ phù hợp, mà còn tìm một giá trị sống xứng đáng.</p>
       <p class="tag">Tôi là Nguyễn Ngọc Quân, chuyên viên kinh doanh tại River Homes. Tôi tư vấn căn hộ ở các dự án tôi trực tiếp phân phối, với tài liệu gốc của chủ đầu tư và cách tính dòng tiền rõ ràng.</p>
       <div class="badges"><span>Đại lý F1 Gamuda Central Park</span><span>Phân phối Iconia LakeSide</span><span>9 dự án Masterise Homes</span><span>Dự án MIK tại Ocean City</span><span>Nhận ký gửi căn hộ</span></div>
       <div class="ctas"><a class="btn btn-primary" href="#du-an">Xem các dự án</a><a class="btn btn-ghost" href="#lien-he">Liên hệ tư vấn</a></div>
@@ -765,7 +776,20 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 </section>
 <section class="alt" id="ve-toi">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Về tôi</div><h2>Nguyễn Ngọc Quân</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại River Homes, đơn vị phân phối chính thức dự án Central Park của Gamuda Land Việt Nam.</p></div>
+    <div class="head"><div class="eyebrow">Về tôi</div><h2>Quân – Bất động sản cao cấp Hà Nội &amp; Hưng Yên</h2><p class="lead">Chuyên viên kinh doanh (CVKD) tại River Homes, đơn vị phân phối chính thức dự án Central Park của Gamuda Land Việt Nam.</p></div>
+    <blockquote class="motto"><b>Uy tín tạo niềm tin – Giá trị tạo giao dịch.</b><span>Không chỉ tìm một căn hộ phù hợp, mà còn tìm một giá trị sống xứng đáng.</span></blockquote>
+    <div class="bio">
+      <p>Xin chào Anh/Chị! Em là Quân, chuyên tư vấn và phân phối các dòng sản phẩm căn hộ chung cư cao cấp và hạng sang tại Hà Nội – Hưng Yên, với 3 năm kinh nghiệm trong lĩnh vực bất động sản.</p>
+      <p>Em hiểu rằng, dù là mua căn nhà đầu tiên để an cư hay lựa chọn một sản phẩm để đầu tư, đó đều là quyết định quan trọng, gắn liền với tài chính và những dự định lâu dài của mỗi gia đình.</p>
+      <p>Em không dám nhận mình là người giỏi nhất hay có nhiều kinh nghiệm nhất trong nghề. Nhưng em luôn tin rằng, điều tạo nên giá trị của một người làm bất động sản không chỉ nằm ở khả năng bán được bao nhiêu sản phẩm, mà còn ở sự tận tâm, trách nhiệm và những giá trị thực sự mang lại cho khách hàng.</p>
+      <p>Có thể em không phải người nói chuyện quá khéo léo, nhưng em luôn cố gắng mang đến những thông tin trung thực, tư vấn khách quan và đặt lợi ích của khách hàng lên hàng đầu. Em mong muốn giúp Anh/Chị tìm được không chỉ một căn hộ phù hợp về tài chính, mà còn là một không gian sống xứng đáng với giá trị và mong muốn của gia đình.</p>
+      <p>Với em, mỗi khách hàng không đơn thuần là một giao dịch, mà còn là một mối quan hệ cần được xây dựng bằng sự chân thành và niềm tin.</p>
+      <p>Em luôn giữ tinh thần cầu tiến, không ngừng học hỏi từ khách hàng, đồng nghiệp và thị trường để hoàn thiện kiến thức, nâng cao chuyên môn và phục vụ Anh/Chị ngày một tốt hơn.</p>
+      <p class="bio-cta"><b>Nếu Anh/Chị đang có nhu cầu mua, bán, đầu tư căn hộ hoặc muốn tìm hiểu thông tin về các dự án bất động sản tại Hà Nội – Hưng Yên, hãy cứ liên hệ với em.</b></p>
+      <p>Em Quân luôn sẵn sàng lắng nghe, tư vấn và đồng hành cùng Anh/Chị trong suốt quá trình lựa chọn sản phẩm, với tinh thần tận tâm, trách nhiệm và nhiệt tình nhất.</p>
+      <p class="bio-sign"><b>Cảm ơn Anh/Chị đã tin tưởng và cho Quân cơ hội được đồng hành!</b></p>
+      <div class="ctas"><a class="btn btn-primary" href="tel:0929599292">Gọi 0929 599 292</a><a class="btn btn-ghost" href="https://zalo.me/0929599292" target="_blank" rel="noopener">Nhắn Zalo cho Quân</a></div>
+    </div>
     <div class="cert"><img class="zoomable" src="chung-nhan-f1.webp" alt="Chứng nhận đối tác phân phối chính thức Central Park cấp cho River Homes" width="600" height="400" loading="lazy"><p>Chứng nhận đối tác phân phối chính thức (Official Distribution Partner) dự án Central Park do Gamuda Land Việt Nam cấp cho River Homes.</p></div>
   </div>
 </section>
